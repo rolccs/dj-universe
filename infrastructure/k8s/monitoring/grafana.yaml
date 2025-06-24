@@ -1,0 +1,418 @@
+# DJ Universe - Grafana Dashboards
+
+# Grafana ConfigMap for Datasources
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: datasources
+data:
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      access: proxy
+      url: http://prometheus:9090
+      isDefault: true
+      editable: true
+    - name: InfluxDB
+      type: influxdb
+      access: proxy
+      url: http://influxdb.dj-universe-prod.svc.cluster.local:8086
+      database: metrics
+      user: dj_admin
+      secureJsonData:
+        password: ${INFLUXDB_PASSWORD}
+      jsonData:
+        version: Flux
+        organization: dj-universe
+        defaultBucket: metrics
+        tlsSkipVerify: true
+
+---
+# Grafana ConfigMap for Dashboard Providers
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-providers
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: dashboards
+data:
+  dashboards.yaml: |
+    apiVersion: 1
+    providers:
+    - name: 'dj-universe'
+      orgId: 1
+      folder: 'DJ Universe'
+      type: file
+      disableDeletion: false
+      updateIntervalSeconds: 10
+      allowUiUpdates: true
+      options:
+        path: /var/lib/grafana/dashboards/dj-universe
+    - name: 'kubernetes'
+      orgId: 1
+      folder: 'Kubernetes'
+      type: file
+      disableDeletion: false
+      updateIntervalSeconds: 10
+      allowUiUpdates: true
+      options:
+        path: /var/lib/grafana/dashboards/kubernetes
+    - name: 'infrastructure'
+      orgId: 1
+      folder: 'Infrastructure'
+      type: file
+      disableDeletion: false
+      updateIntervalSeconds: 10
+      allowUiUpdates: true
+      options:
+        path: /var/lib/grafana/dashboards/infrastructure
+
+---
+# Grafana ConfigMap for DJ Universe Dashboard
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dj-universe-dashboard
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: dashboard
+data:
+  dj-universe-overview.json: |
+    {
+      "dashboard": {
+        "id": null,
+        "title": "DJ Universe - Overview",
+        "tags": ["dj-universe", "overview"],
+        "timezone": "browser",
+        "panels": [
+          {
+            "id": 1,
+            "title": "Active Battles",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "sum(battle_active_total)",
+                "legendFormat": "Active Battles"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": null},
+                    {"color": "yellow", "value": 10},
+                    {"color": "red", "value": 50}
+                  ]
+                }
+              }
+            },
+            "gridPos": {"h": 8, "w": 6, "x": 0, "y": 0}
+          },
+          {
+            "id": 2,
+            "title": "Connected Users",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "sum(websocket_connections_active)",
+                "legendFormat": "Connected Users"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": null},
+                    {"color": "yellow", "value": 1000},
+                    {"color": "red", "value": 5000}
+                  ]
+                }
+              }
+            },
+            "gridPos": {"h": 8, "w": 6, "x": 6, "y": 0}
+          },
+          {
+            "id": 3,
+            "title": "Audio Processing Queue",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "sum(ai_processing_queue_length)",
+                "legendFormat": "Queue Length"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": null},
+                    {"color": "yellow", "value": 20},
+                    {"color": "red", "value": 50}
+                  ]
+                }
+              }
+            },
+            "gridPos": {"h": 8, "w": 6, "x": 12, "y": 0}
+          },
+          {
+            "id": 4,
+            "title": "API Response Time (95th percentile)",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job=\"dj-universe-api\"}[5m]))",
+                "legendFormat": "Response Time"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "unit": "s",
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": null},
+                    {"color": "yellow", "value": 1},
+                    {"color": "red", "value": 2}
+                  ]
+                }
+              }
+            },
+            "gridPos": {"h": 8, "w": 6, "x": 18, "y": 0}
+          },
+          {
+            "id": 5,
+            "title": "Battle Audio Latency",
+            "type": "timeseries",
+            "targets": [
+              {
+                "expr": "histogram_quantile(0.50, rate(battle_audio_latency_seconds_bucket[5m]))",
+                "legendFormat": "50th percentile"
+              },
+              {
+                "expr": "histogram_quantile(0.95, rate(battle_audio_latency_seconds_bucket[5m]))",
+                "legendFormat": "95th percentile"
+              },
+              {
+                "expr": "histogram_quantile(0.99, rate(battle_audio_latency_seconds_bucket[5m]))",
+                "legendFormat": "99th percentile"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "unit": "s",
+                "max": 0.1
+              }
+            },
+            "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+          },
+          {
+            "id": 6,
+            "title": "WebSocket Connections",
+            "type": "timeseries",
+            "targets": [
+              {
+                "expr": "sum(websocket_connections_active) by (instance)",
+                "legendFormat": "Active Connections - {{instance}}"
+              },
+              {
+                "expr": "rate(websocket_connections_opened_total[5m])",
+                "legendFormat": "Connection Rate"
+              }
+            ],
+            "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}
+          },
+          {
+            "id": 7,
+            "title": "AI Judge Performance",
+            "type": "timeseries",
+            "targets": [
+              {
+                "expr": "rate(ai_judge_evaluations_total[5m])",
+                "legendFormat": "Evaluations/sec"
+              },
+              {
+                "expr": "histogram_quantile(0.95, rate(ai_judge_evaluation_duration_seconds_bucket[5m]))",
+                "legendFormat": "95th percentile duration"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "unit": "short"
+              }
+            },
+            "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16}
+          },
+          {
+            "id": 8,
+            "title": "Audio Upload Rate",
+            "type": "timeseries",
+            "targets": [
+              {
+                "expr": "rate(audio_uploads_total[5m])",
+                "legendFormat": "Uploads/sec"
+              },
+              {
+                "expr": "rate(audio_upload_failures_total[5m])",
+                "legendFormat": "Failures/sec"
+              }
+            ],
+            "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16}
+          }
+        ],
+        "time": {
+          "from": "now-1h",
+          "to": "now"
+        },
+        "refresh": "10s"
+      }
+    }
+
+---
+# Grafana Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: grafana
+      app.kubernetes.io/component: server
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: grafana
+        app.kubernetes.io/component: server
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        ports:
+        - containerPort: 3000
+          name: http
+        env:
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: GRAFANA_ADMIN_PASSWORD
+        - name: GF_USERS_ALLOW_SIGN_UP
+          value: "false"
+        - name: GF_INSTALL_PLUGINS
+          value: "grafana-piechart-panel,grafana-worldmap-panel,grafana-clock-panel"
+        - name: GF_SECURITY_ALLOW_EMBEDDING
+          value: "true"
+        - name: GF_AUTH_ANONYMOUS_ENABLED
+          value: "false"
+        - name: GF_SERVER_ROOT_URL
+          value: "https://grafana.djuniverse.app"
+        - name: INFLUXDB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: INFLUXDB_PASSWORD
+        volumeMounts:
+        - name: grafana-storage
+          mountPath: /var/lib/grafana
+        - name: grafana-datasources
+          mountPath: /etc/grafana/provisioning/datasources
+        - name: grafana-dashboard-providers
+          mountPath: /etc/grafana/provisioning/dashboards
+        - name: grafana-dj-universe-dashboard
+          mountPath: /var/lib/grafana/dashboards/dj-universe
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          initialDelaySeconds: 60
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+      volumes:
+      - name: grafana-storage
+        persistentVolumeClaim:
+          claimName: grafana-storage
+      - name: grafana-datasources
+        configMap:
+          name: grafana-datasources
+      - name: grafana-dashboard-providers
+        configMap:
+          name: grafana-dashboard-providers
+      - name: grafana-dj-universe-dashboard
+        configMap:
+          name: grafana-dj-universe-dashboard
+
+---
+# Grafana Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: server
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: server
+
+---
+# Grafana PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana-storage
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/component: storage
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: "fast-ssd"
+  resources:
+    requests:
+      storage: 10Gi

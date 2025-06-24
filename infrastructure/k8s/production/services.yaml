@@ -1,0 +1,259 @@
+# DJ Universe - Production Services
+
+# Web Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: dj-universe-web
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: web
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: web
+
+---
+# API Backend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: dj-universe-api
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: api
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9090"
+    prometheus.io/path: "/metrics"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  - port: 9090
+    targetPort: 9090
+    protocol: TCP
+    name: metrics
+  selector:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: api
+
+---
+# WebSocket Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: dj-universe-websocket
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: websocket
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8001"
+    prometheus.io/path: "/metrics"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8001
+    targetPort: 8001
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: websocket
+
+---
+# AI Services Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: dj-universe-ai
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ai-services
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8002"
+    prometheus.io/path: "/metrics"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8002
+    targetPort: 8002
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ai-services
+
+---
+# Nginx Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: dj-universe-nginx
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: nginx
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  - port: 443
+    targetPort: 443
+    protocol: TCP
+    name: https
+  selector:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: nginx
+
+---
+# PostgreSQL Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: postgres
+    app.kubernetes.io/component: database
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5432
+    targetPort: 5432
+    protocol: TCP
+    name: postgres
+  selector:
+    app.kubernetes.io/name: postgres
+    app.kubernetes.io/component: database
+
+---
+# MongoDB Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: mongodb
+    app.kubernetes.io/component: database
+spec:
+  type: ClusterIP
+  ports:
+  - port: 27017
+    targetPort: 27017
+    protocol: TCP
+    name: mongodb
+  selector:
+    app.kubernetes.io/name: mongodb
+    app.kubernetes.io/component: database
+
+---
+# Redis Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/component: cache
+spec:
+  type: ClusterIP
+  ports:
+  - port: 6379
+    targetPort: 6379
+    protocol: TCP
+    name: redis
+  selector:
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/component: cache
+
+---
+# Elasticsearch Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/component: search
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9200
+    targetPort: 9200
+    protocol: TCP
+    name: http
+  - port: 9300
+    targetPort: 9300
+    protocol: TCP
+    name: transport
+  selector:
+    app.kubernetes.io/name: elasticsearch
+    app.kubernetes.io/component: search
+
+---
+# InfluxDB Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: influxdb
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: influxdb
+    app.kubernetes.io/component: timeseries
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8086
+    targetPort: 8086
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: influxdb
+    app.kubernetes.io/component: timeseries
+
+---
+# MinIO Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: minio
+    app.kubernetes.io/component: storage
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9000
+    targetPort: 9000
+    protocol: TCP
+    name: api
+  - port: 9001
+    targetPort: 9001
+    protocol: TCP
+    name: console
+  selector:
+    app.kubernetes.io/name: minio
+    app.kubernetes.io/component: storage

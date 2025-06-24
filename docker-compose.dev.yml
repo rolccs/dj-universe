@@ -1,0 +1,104 @@
+# DJ Universe Development Override
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+version: '3.8'
+
+services:
+  # PostgreSQL with external access
+  postgres:
+    ports:
+      - "0.0.0.0:5432:5432"
+    environment:
+      POSTGRES_DB: dj_universe_dev
+      POSTGRES_USER: dj_dev_user
+      POSTGRES_PASSWORD: dev_password_123
+
+  # Redis with external access
+  redis:
+    ports:
+      - "0.0.0.0:6379:6379"
+    command: redis-server --requirepass dev_redis_123
+
+  # Development Next.js Web App
+  web:
+    build:
+      context: ./packages/web
+      dockerfile: Dockerfile.dev
+    container_name: dj_universe_web_dev
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      PORT: 3000
+      NEXT_PUBLIC_API_URL: http://0.0.0.0:3001
+      NEXT_PUBLIC_WS_URL: ws://0.0.0.0:3002
+    ports:
+      - "0.0.0.0:3000:3000"
+    volumes:
+      - ./packages/web:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - dj_network
+    depends_on:
+      - api
+
+  # Development API with external access
+  api:
+    build:
+      context: ./packages/api
+      dockerfile: Dockerfile.dev
+    container_name: dj_universe_api_dev
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      PORT: 3001
+      API_PORT: 3001
+      DATABASE_URL: postgresql://dj_dev_user:dev_password_123@postgres:5432/dj_universe_dev
+      REDIS_URL: redis://:dev_redis_123@redis:6379
+      JWT_SECRET: development_jwt_secret_key_32_chars_minimum
+      FRONTEND_URL: http://0.0.0.0:3000
+    ports:
+      - "0.0.0.0:3001:3001"
+    volumes:
+      - ./packages/api:/app
+      - /app/node_modules
+      - /app/dist
+    networks:
+      - dj_network
+    depends_on:
+      - postgres
+      - redis
+
+  # Development AI Services
+  ai-services:
+    build:
+      context: ./packages/ai-services
+      dockerfile: Dockerfile.dev
+    container_name: dj_universe_ai_dev
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8002
+      API_URL: http://api:3001
+    ports:
+      - "0.0.0.0:8002:8002"
+    volumes:
+      - ./packages/ai-services:/app
+      - ./models:/app/models
+    networks:
+      - dj_network
+    depends_on:
+      - api
+
+  # Remove services not needed for development
+  nginx:
+    profiles: ["production"]
+  
+  mediasoup:
+    profiles: ["production"]
+
+networks:
+  dj_network:
+    driver: bridge

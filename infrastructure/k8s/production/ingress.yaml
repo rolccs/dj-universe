@@ -1,0 +1,266 @@
+# DJ Universe - Production Ingress Configuration
+
+# Main Ingress for HTTPS traffic
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dj-universe-ingress
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ingress
+  annotations:
+    # Nginx Ingress Controller
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    
+    # SSL/TLS Configuration
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-protocols: "TLSv1.2 TLSv1.3"
+    nginx.ingress.kubernetes.io/ssl-ciphers: "ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384"
+    
+    # Performance and Security
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "8k"
+    nginx.ingress.kubernetes.io/proxy-buffers-number: "8"
+    
+    # Security Headers
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Frame-Options "SAMEORIGIN" always;
+      add_header X-Content-Type-Options "nosniff" always;
+      add_header X-XSS-Protection "1; mode=block" always;
+      add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+      add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' ws: wss:; media-src 'self' blob:; worker-src 'self' blob:;" always;
+    
+    # Rate Limiting
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    
+    # Compression
+    nginx.ingress.kubernetes.io/enable-compression: "true"
+    nginx.ingress.kubernetes.io/compression-types: "text/plain,text/css,application/json,application/javascript,text/xml,application/xml,application/xml+rss,text/javascript"
+    
+spec:
+  tls:
+  - hosts:
+    - djuniverse.app
+    - www.djuniverse.app
+    - api.djuniverse.app
+    - ws.djuniverse.app
+    - ai.djuniverse.app
+    secretName: dj-universe-tls
+  rules:
+  # Main domain
+  - host: djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dj-universe-nginx
+            port:
+              number: 80
+  # WWW redirect
+  - host: www.djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dj-universe-nginx
+            port:
+              number: 80
+
+---
+# API Subdomain Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dj-universe-api-ingress
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    
+    # API Specific Configuration
+    nginx.ingress.kubernetes.io/rate-limit: "1000"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    
+    # CORS Configuration
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://djuniverse.app,https://www.djuniverse.app"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+    nginx.ingress.kubernetes.io/cors-expose-headers: "Content-Length,Content-Range"
+    
+spec:
+  tls:
+  - hosts:
+    - api.djuniverse.app
+    secretName: dj-universe-api-tls
+  rules:
+  - host: api.djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dj-universe-api
+            port:
+              number: 8000
+
+---
+# WebSocket Subdomain Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dj-universe-ws-ingress
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    
+    # WebSocket Specific Configuration
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "86400"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "86400"
+    nginx.ingress.kubernetes.io/websocket-services: "dj-universe-websocket"
+    
+    # WebSocket Headers
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+      proxy_cache_bypass $http_upgrade;
+    
+spec:
+  tls:
+  - hosts:
+    - ws.djuniverse.app
+    secretName: dj-universe-ws-tls
+  rules:
+  - host: ws.djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dj-universe-websocket
+            port:
+              number: 8001
+
+---
+# AI Services Subdomain Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dj-universe-ai-ingress
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    
+    # AI Services Configuration
+    nginx.ingress.kubernetes.io/rate-limit: "50"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
+    
+    # Authentication
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: ai-basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: "DJ Universe AI Services"
+    
+spec:
+  tls:
+  - hosts:
+    - ai.djuniverse.app
+    secretName: dj-universe-ai-tls
+  rules:
+  - host: ai.djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dj-universe-ai
+            port:
+              number: 8002
+
+---
+# Static/CDN Subdomain Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dj-universe-cdn-ingress
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    
+    # CDN Configuration
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/proxy-cache-valid: "200 302 1h"
+    nginx.ingress.kubernetes.io/proxy-cache-valid-404: "1m"
+    
+    # Static file caching
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|mp3|wav|flac)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        add_header Access-Control-Allow-Origin "*";
+      }
+    
+spec:
+  tls:
+  - hosts:
+    - cdn.djuniverse.app
+    - static.djuniverse.app
+    secretName: dj-universe-cdn-tls
+  rules:
+  - host: cdn.djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio
+            port:
+              number: 9000
+  - host: static.djuniverse.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio
+            port:
+              number: 9000

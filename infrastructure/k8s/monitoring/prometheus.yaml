@@ -1,0 +1,395 @@
+# DJ Universe - Prometheus Monitoring
+
+# Prometheus Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+  labels:
+    app.kubernetes.io/name: monitoring
+    app.kubernetes.io/component: prometheus
+
+---
+# Prometheus ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: config
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+      evaluation_interval: 15s
+      external_labels:
+        cluster: 'dj-universe-prod'
+        environment: 'production'
+
+    rule_files:
+      - "/etc/prometheus/rules/*.yml"
+
+    alerting:
+      alertmanagers:
+        - static_configs:
+            - targets:
+              - alertmanager:9093
+
+    scrape_configs:
+      # Kubernetes API Server
+      - job_name: 'kubernetes-apiservers'
+        kubernetes_sd_configs:
+        - role: endpoints
+        scheme: https
+        tls_config:
+          ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
+          action: keep
+          regex: default;kubernetes;https
+
+      # Kubernetes Nodes
+      - job_name: 'kubernetes-nodes'
+        kubernetes_sd_configs:
+        - role: node
+        scheme: https
+        tls_config:
+          ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+        relabel_configs:
+        - action: labelmap
+          regex: __meta_kubernetes_node_label_(.+)
+        - target_label: __address__
+          replacement: kubernetes.default.svc:443
+        - source_labels: [__meta_kubernetes_node_name]
+          regex: (.+)
+          target_label: __metrics_path__
+          replacement: /api/v1/nodes/${1}/proxy/metrics
+
+      # Kubernetes Pods
+      - job_name: 'kubernetes-pods'
+        kubernetes_sd_configs:
+        - role: pod
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+          action: keep
+          regex: true
+        - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+          action: replace
+          target_label: __metrics_path__
+          regex: (.+)
+        - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+          action: replace
+          regex: ([^:]+)(?::\d+)?;(\d+)
+          replacement: $1:$2
+          target_label: __address__
+        - action: labelmap
+          regex: __meta_kubernetes_pod_label_(.+)
+        - source_labels: [__meta_kubernetes_namespace]
+          action: replace
+          target_label: kubernetes_namespace
+        - source_labels: [__meta_kubernetes_pod_name]
+          action: replace
+          target_label: kubernetes_pod_name
+
+      # DJ Universe Services
+      - job_name: 'dj-universe-web'
+        static_configs:
+        - targets: ['dj-universe-web.dj-universe-prod.svc.cluster.local:3000']
+        metrics_path: '/metrics'
+        scrape_interval: 10s
+
+      - job_name: 'dj-universe-api'
+        static_configs:
+        - targets: ['dj-universe-api.dj-universe-prod.svc.cluster.local:9090']
+        metrics_path: '/metrics'
+        scrape_interval: 5s
+
+      - job_name: 'dj-universe-websocket'
+        static_configs:
+        - targets: ['dj-universe-websocket.dj-universe-prod.svc.cluster.local:8001']
+        metrics_path: '/metrics'
+        scrape_interval: 10s
+
+      - job_name: 'dj-universe-ai'
+        static_configs:
+        - targets: ['dj-universe-ai.dj-universe-prod.svc.cluster.local:8002']
+        metrics_path: '/metrics'
+        scrape_interval: 30s
+
+      # Databases
+      - job_name: 'postgres-exporter'
+        static_configs:
+        - targets: ['postgres-exporter.dj-universe-prod.svc.cluster.local:9187']
+
+      - job_name: 'redis-exporter'
+        static_configs:
+        - targets: ['redis-exporter.dj-universe-prod.svc.cluster.local:9121']
+
+      - job_name: 'mongodb-exporter'
+        static_configs:
+        - targets: ['mongodb-exporter.dj-universe-prod.svc.cluster.local:9216']
+
+      # Nginx
+      - job_name: 'nginx-exporter'
+        static_configs:
+        - targets: ['nginx-exporter.dj-universe-prod.svc.cluster.local:9113']
+
+      # Node Exporter
+      - job_name: 'node-exporter'
+        kubernetes_sd_configs:
+        - role: endpoints
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_endpoints_name]
+          regex: 'node-exporter'
+          action: keep
+
+  alerts.yml: |
+    groups:
+    - name: dj-universe.rules
+      rules:
+      # High CPU Usage
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage is above 80% for more than 5 minutes on {{ $labels.instance }}"
+
+      # High Memory Usage
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is above 85% on {{ $labels.instance }}"
+
+      # API Response Time
+      - alert: HighAPIResponseTime
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="dj-universe-api"}[5m])) > 2
+        for: 3m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High API response time"
+          description: "95th percentile response time is above 2 seconds"
+
+      # WebSocket Connection Issues
+      - alert: WebSocketConnectionDrop
+        expr: rate(websocket_connections_closed_total[5m]) > 10
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High WebSocket connection drop rate"
+          description: "WebSocket connections are dropping at a rate of {{ $value }} per second"
+
+      # Database Connection Issues
+      - alert: DatabaseConnectionIssue
+        expr: postgres_up == 0 or mongodb_up == 0 or redis_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Database connection issue"
+          description: "One or more databases are not accessible"
+
+      # Audio Processing Queue
+      - alert: HighAudioProcessingQueue
+        expr: ai_processing_queue_length > 50
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High audio processing queue"
+          description: "Audio processing queue has {{ $value }} items pending"
+
+      # Battle System Latency
+      - alert: HighBattleLatency
+        expr: histogram_quantile(0.95, rate(battle_audio_latency_seconds_bucket[5m])) > 0.05
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High battle audio latency"
+          description: "Battle audio latency is above 50ms threshold"
+
+      # Disk Space
+      - alert: LowDiskSpace
+        expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100 < 10
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Low disk space"
+          description: "Disk space is below 10% on {{ $labels.instance }}"
+
+---
+# Prometheus Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: prometheus
+      app.kubernetes.io/component: server
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: prometheus
+        app.kubernetes.io/component: server
+    spec:
+      serviceAccountName: prometheus
+      containers:
+      - name: prometheus
+        image: prom/prometheus:latest
+        args:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+        - '--storage.tsdb.path=/prometheus/'
+        - '--web.console.libraries=/etc/prometheus/console_libraries'
+        - '--web.console.templates=/etc/prometheus/consoles'
+        - '--web.enable-lifecycle'
+        - '--storage.tsdb.retention.time=30d'
+        - '--storage.tsdb.retention.size=50GB'
+        ports:
+        - containerPort: 9090
+          name: http
+        volumeMounts:
+        - name: prometheus-config
+          mountPath: /etc/prometheus
+        - name: prometheus-storage
+          mountPath: /prometheus
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        livenessProbe:
+          httpGet:
+            path: /-/healthy
+            port: 9090
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /-/ready
+            port: 9090
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+      volumes:
+      - name: prometheus-config
+        configMap:
+          name: prometheus-config
+      - name: prometheus-storage
+        persistentVolumeClaim:
+          claimName: prometheus-storage
+
+---
+# Prometheus Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: server
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9090
+    targetPort: 9090
+    protocol: TCP
+    name: http
+  selector:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: server
+
+---
+# Prometheus ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: prometheus
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: server
+
+---
+# Prometheus ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: prometheus
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: server
+rules:
+- apiGroups: [""]
+  resources:
+  - nodes
+  - nodes/proxy
+  - services
+  - endpoints
+  - pods
+  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - extensions
+  resources:
+  - ingresses
+  verbs: ["get", "list", "watch"]
+- nonResourceURLs: ["/metrics"]
+  verbs: ["get"]
+
+---
+# Prometheus ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: prometheus
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: server
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: prometheus
+subjects:
+- kind: ServiceAccount
+  name: prometheus
+  namespace: monitoring
+
+---
+# Prometheus PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-storage
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/component: storage
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: "fast-ssd"
+  resources:
+    requests:
+      storage: 100Gi

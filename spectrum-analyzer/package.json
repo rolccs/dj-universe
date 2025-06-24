@@ -1,0 +1,38 @@
+{
+  "name": "dj-universe-spectrum-analyzer",
+  "version": "1.0.0",
+  "description": "Analizador de espectro en tiempo real para DJ Universe",
+  "main": "index.js",
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "build": "node-gyp build",
+    "rebuild": "node-gyp rebuild",
+    "clean": "node-gyp clean",
+    "test": "node test/test.js"
+  },
+  "dependencies": {
+    "node-addon-api": "^7.0.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^10.0.0"
+  },
+  "gypfile": true,
+  "author": "DJ Universe Team",
+  "license": "MIT",
+  "keywords": [
+    "audio",
+    "spectrum",
+    "fft",
+    "real-time",
+    "dj",
+    "music",
+    "c++"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dj-universe/spectrum-analyzer.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

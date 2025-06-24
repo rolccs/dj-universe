@@ -1,0 +1,199 @@
+# DJ Universe - AlertManager Configuration
+
+# AlertManager ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-config
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: alertmanager
+    app.kubernetes.io/component: config
+data:
+  alertmanager.yml: |
+    global:
+      smtp_smarthost: 'localhost:587'
+      smtp_from: 'alerts@djuniverse.app'
+      smtp_auth_username: 'alerts@djuniverse.app'
+      smtp_auth_password: 'SMTP_PASSWORD_PLACEHOLDER'
+
+    route:
+      group_by: ['alertname']
+      group_wait: 10s
+      group_interval: 10s
+      repeat_interval: 1h
+      receiver: 'web.hook'
+      routes:
+      - match:
+          severity: critical
+        receiver: 'critical-alerts'
+      - match:
+          severity: warning
+        receiver: 'warning-alerts'
+      - match:
+          alertname: HighBattleLatency
+        receiver: 'battle-alerts'
+
+    receivers:
+    - name: 'web.hook'
+      webhook_configs:
+      - url: 'http://dj-universe-api.dj-universe-prod.svc.cluster.local:8000/api/webhooks/alerts'
+        send_resolved: true
+
+    - name: 'critical-alerts'
+      email_configs:
+      - to: 'devops@djuniverse.app'
+        subject: '🚨 CRITICAL: {{ .GroupLabels.alertname }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Instance: {{ .Labels.instance }}
+          Severity: {{ .Labels.severity }}
+          Time: {{ .StartsAt }}
+          {{ end }}
+      slack_configs:
+      - api_url: 'SLACK_WEBHOOK_URL_PLACEHOLDER'
+        channel: '#alerts-critical'
+        title: '🚨 Critical Alert'
+        text: '{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}'
+
+    - name: 'warning-alerts'
+      email_configs:
+      - to: 'devops@djuniverse.app'
+        subject: '⚠️ WARNING: {{ .GroupLabels.alertname }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Instance: {{ .Labels.instance }}
+          Severity: {{ .Labels.severity }}
+          Time: {{ .StartsAt }}
+          {{ end }}
+
+    - name: 'battle-alerts'
+      slack_configs:
+      - api_url: 'SLACK_WEBHOOK_URL_PLACEHOLDER'
+        channel: '#alerts-battle'
+        title: '🎵 Battle System Alert'
+        text: '{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}'
+      webhook_configs:
+      - url: 'http://dj-universe-ai.dj-universe-prod.svc.cluster.local:8002/api/webhooks/battle-alerts'
+        send_resolved: true
+
+    inhibit_rules:
+    - source_match:
+        severity: 'critical'
+      target_match:
+        severity: 'warning'
+      equal: ['alertname', 'instance']
+
+---
+# AlertManager Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: alertmanager
+    app.kubernetes.io/component: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: alertmanager
+      app.kubernetes.io/component: server
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: alertmanager
+        app.kubernetes.io/component: server
+    spec:
+      containers:
+      - name: alertmanager
+        image: prom/alertmanager:latest
+        args:
+        - '--config.file=/etc/alertmanager/alertmanager.yml'
+        - '--storage.path=/alertmanager'
+        - '--web.external-url=http://alertmanager.djuniverse.app'
+        - '--cluster.listen-address=0.0.0.0:9094'
+        ports:
+        - containerPort: 9093
+          name: http
+        - containerPort: 9094
+          name: cluster
+        volumeMounts:
+        - name: alertmanager-config
+          mountPath: /etc/alertmanager
+        - name: alertmanager-storage
+          mountPath: /alertmanager
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /-/healthy
+            port: 9093
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /-/ready
+            port: 9093
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+      volumes:
+      - name: alertmanager-config
+        configMap:
+          name: alertmanager-config
+      - name: alertmanager-storage
+        persistentVolumeClaim:
+          claimName: alertmanager-storage
+
+---
+# AlertManager Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: alertmanager
+    app.kubernetes.io/component: server
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9093
+    targetPort: 9093
+    protocol: TCP
+    name: http
+  - port: 9094
+    targetPort: 9094
+    protocol: TCP
+    name: cluster
+  selector:
+    app.kubernetes.io/name: alertmanager
+    app.kubernetes.io/component: server
+
+---
+# AlertManager PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: alertmanager-storage
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: alertmanager
+    app.kubernetes.io/component: storage
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: "fast-ssd"
+  resources:
+    requests:
+      storage: 10Gi

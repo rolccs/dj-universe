@@ -1,0 +1,354 @@
+# DJ Universe - Docker Compose Configuration
+# Complete development and production environment
+
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: dj-universe-postgres
+    environment:
+      POSTGRES_DB: dj_universe
+      POSTGRES_USER: dj_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dev_password}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - dj-universe-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dj_user -d dj_universe"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # MongoDB Database
+  mongodb:
+    image: mongo:6-jammy
+    container_name: dj-universe-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dj_admin
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-dev_password}
+      MONGO_INITDB_DATABASE: dj_universe
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    ports:
+      - "27017:27017"
+    networks:
+      - dj-universe-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: dj-universe-redis
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-dev_password}
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - dj-universe-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Elasticsearch
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.8.0
+    container_name: dj-universe-elasticsearch
+    environment:
+      - node.name=es-node
+      - cluster.name=dj-universe-cluster
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    networks:
+      - dj-universe-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # InfluxDB (Time Series)
+  influxdb:
+    image: influxdb:2.7-alpine
+    container_name: dj-universe-influxdb
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: dj_admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: ${INFLUX_PASSWORD:-dev_password}
+      DOCKER_INFLUXDB_INIT_ORG: dj-universe
+      DOCKER_INFLUXDB_INIT_BUCKET: metrics
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: ${INFLUX_TOKEN:-dev_token}
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    ports:
+      - "8086:8086"
+    networks:
+      - dj-universe-network
+    healthcheck:
+      test: ["CMD", "influx", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # API Service
+  api:
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/api.Dockerfile
+    container_name: dj-universe-api
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 8000
+      DATABASE_URL: postgresql://dj_user:${POSTGRES_PASSWORD:-dev_password}@postgres:5432/dj_universe
+      MONGODB_URL: mongodb://dj_admin:${MONGO_PASSWORD:-dev_password}@mongodb:27017/dj_universe
+      REDIS_URL: redis://:${REDIS_PASSWORD:-dev_password}@redis:6379
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      INFLUXDB_URL: http://influxdb:8086
+      INFLUXDB_TOKEN: ${INFLUX_TOKEN:-dev_token}
+      JWT_SECRET: ${JWT_SECRET:-dev_jwt_secret}
+      AUDIO_UPLOAD_PATH: /app/uploads/audio
+    volumes:
+      - audio_uploads:/app/uploads/audio
+      - audio_cache:/app/cache/audio
+    ports:
+      - "8000:8000"
+    networks:
+      - dj-universe-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # WebSocket Service
+  websocket:
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/websocket.Dockerfile
+    container_name: dj-universe-websocket
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 8001
+      REDIS_URL: redis://:${REDIS_PASSWORD:-dev_password}@redis:6379
+      API_URL: http://api:8000
+    ports:
+      - "8001:8001"
+    networks:
+      - dj-universe-network
+    depends_on:
+      redis:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # AI Services
+  ai-services:
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/ai-services.Dockerfile
+    container_name: dj-universe-ai
+    environment:
+      PYTHONPATH: /app
+      PYTHONUNBUFFERED: 1
+      PORT: 8002
+      REDIS_URL: redis://:${REDIS_PASSWORD:-dev_password}@redis:6379
+      MODEL_CACHE_PATH: /app/models
+      AUDIO_PROCESSING_WORKERS: 4
+    volumes:
+      - ai_models:/app/models
+      - audio_analysis:/app/analysis
+    ports:
+      - "8002:8002"
+    networks:
+      - dj-universe-network
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+
+  # Web Frontend
+  web:
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/web.Dockerfile
+    container_name: dj-universe-web
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+      NEXT_PUBLIC_WS_URL: ${NEXT_PUBLIC_WS_URL:-ws://localhost:8001}
+      NEXT_PUBLIC_CDN_URL: ${NEXT_PUBLIC_CDN_URL:-http://localhost:9000}
+    ports:
+      - "3000:3000"
+    networks:
+      - dj-universe-network
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy
+  nginx:
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/nginx.Dockerfile
+    container_name: dj-universe-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - dj-universe-network
+    depends_on:
+      - web
+      - api
+      - websocket
+      - ai-services
+    volumes:
+      - ./ssl:/etc/nginx/ssl:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # MinIO (S3-compatible storage)
+  minio:
+    image: minio/minio:latest
+    container_name: dj-universe-minio
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-dj_admin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-dev_password}
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - dj-universe-network
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Prometheus (Monitoring)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: dj-universe-prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - dj-universe-network
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    restart: unless-stopped
+
+  # Grafana (Dashboards)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: dj-universe-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_USERS_ALLOW_SIGN_UP: false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    ports:
+      - "3001:3000"
+    networks:
+      - dj-universe-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  mongodb_data:
+  redis_data:
+  elasticsearch_data:
+  influxdb_data:
+  audio_uploads:
+  audio_cache:
+  audio_analysis:
+  ai_models:
+  minio_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  dj-universe-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

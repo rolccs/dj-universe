@@ -1,0 +1,165 @@
+# DJ Universe - Production Persistent Volume Claims
+
+# Audio Uploads PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: audio-uploads-pvc
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: audio-storage
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: "nfs-storage"
+  resources:
+    requests:
+      storage: 500Gi
+
+---
+# Audio Cache PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: audio-cache-pvc
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: audio-storage
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: "fast-ssd"
+  resources:
+    requests:
+      storage: 100Gi
+
+---
+# AI Models PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ai-models-pvc
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: ai-storage
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: "fast-ssd"
+  resources:
+    requests:
+      storage: 50Gi
+
+---
+# Audio Analysis PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: audio-analysis-pvc
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: ai-storage
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: "fast-ssd"
+  resources:
+    requests:
+      storage: 200Gi
+
+---
+# Static Assets PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: static-assets-pvc
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: web-storage
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: "standard"
+  resources:
+    requests:
+      storage: 50Gi
+
+---
+# Backups PVC
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: backups-pvc
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/part-of: backup-storage
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: "backup-storage"
+  resources:
+    requests:
+      storage: 1Ti
+
+---
+# Storage Classes
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast-ssd
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp3
+  fsType: ext4
+  encrypted: "true"
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-storage
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: nfs-server.dj-universe-prod.svc.cluster.local
+  share: /exports/audio
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: backup-storage
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: storage
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: sc1
+  fsType: ext4
+  encrypted: "true"
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer

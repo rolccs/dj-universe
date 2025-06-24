@@ -1,0 +1,487 @@
+# DJ Universe - Production Deployments
+
+# Web Frontend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dj-universe-web
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: web
+    app.kubernetes.io/version: "1.0.0"
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dj-universe
+      app.kubernetes.io/component: web
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dj-universe
+        app.kubernetes.io/component: web
+        app.kubernetes.io/version: "1.0.0"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3000"
+        prometheus.io/path: "/metrics"
+    spec:
+      imagePullSecrets:
+      - name: dj-universe-registry
+      containers:
+      - name: web
+        image: ghcr.io/dj-universe/web:latest
+        ports:
+        - containerPort: 3000
+          name: http
+        env:
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: NODE_ENV
+        - name: NEXT_PUBLIC_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: API_URL
+        - name: NEXT_PUBLIC_WS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: WEBSOCKET_URL
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 2
+
+---
+# API Backend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dj-universe-api
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: api
+    app.kubernetes.io/version: "1.0.0"
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dj-universe
+      app.kubernetes.io/component: api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dj-universe
+        app.kubernetes.io/component: api
+        app.kubernetes.io/version: "1.0.0"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      imagePullSecrets:
+      - name: dj-universe-registry
+      containers:
+      - name: api
+        image: ghcr.io/dj-universe/api:latest
+        ports:
+        - containerPort: 8000
+          name: http
+        - containerPort: 9090
+          name: metrics
+        env:
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: NODE_ENV
+        - name: DATABASE_URL
+          value: "postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/$(POSTGRES_DB)"
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: POSTGRES_USER
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: POSTGRES_DB
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: POSTGRES_PASSWORD
+        - name: MONGODB_URL
+          value: "mongodb://dj_admin:$(MONGODB_PASSWORD)@mongodb:27017/$(MONGODB_DB)"
+        - name: MONGODB_DB
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: MONGODB_DB
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: MONGODB_PASSWORD
+        - name: REDIS_URL
+          value: "redis://:$(REDIS_PASSWORD)@redis:6379/$(REDIS_DB)"
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: REDIS_PASSWORD
+        - name: REDIS_DB
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: REDIS_DB
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: JWT_SECRET
+        - name: AUDIO_UPLOAD_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: AUDIO_UPLOAD_PATH
+        volumeMounts:
+        - name: audio-uploads
+          mountPath: /app/uploads/audio
+        - name: audio-cache
+          mountPath: /app/cache/audio
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 2
+      volumes:
+      - name: audio-uploads
+        persistentVolumeClaim:
+          claimName: audio-uploads-pvc
+      - name: audio-cache
+        persistentVolumeClaim:
+          claimName: audio-cache-pvc
+
+---
+# WebSocket Service Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dj-universe-websocket
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: websocket
+    app.kubernetes.io/version: "1.0.0"
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dj-universe
+      app.kubernetes.io/component: websocket
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dj-universe
+        app.kubernetes.io/component: websocket
+        app.kubernetes.io/version: "1.0.0"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8001"
+        prometheus.io/path: "/metrics"
+    spec:
+      imagePullSecrets:
+      - name: dj-universe-registry
+      containers:
+      - name: websocket
+        image: ghcr.io/dj-universe/websocket:latest
+        ports:
+        - containerPort: 8001
+          name: http
+        env:
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: NODE_ENV
+        - name: REDIS_URL
+          value: "redis://:$(REDIS_PASSWORD)@redis:6379/$(REDIS_DB)"
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: REDIS_PASSWORD
+        - name: REDIS_DB
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: REDIS_DB
+        - name: API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: API_URL
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8001
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8001
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 2
+
+---
+# AI Services Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dj-universe-ai
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: ai-services
+    app.kubernetes.io/version: "1.0.0"
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dj-universe
+      app.kubernetes.io/component: ai-services
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dj-universe
+        app.kubernetes.io/component: ai-services
+        app.kubernetes.io/version: "1.0.0"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8002"
+        prometheus.io/path: "/metrics"
+    spec:
+      imagePullSecrets:
+      - name: dj-universe-registry
+      containers:
+      - name: ai-services
+        image: ghcr.io/dj-universe/ai-services:latest
+        ports:
+        - containerPort: 8002
+          name: http
+        env:
+        - name: PYTHONPATH
+          value: "/app"
+        - name: PYTHONUNBUFFERED
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: PYTHONUNBUFFERED
+        - name: REDIS_URL
+          value: "redis://:$(REDIS_PASSWORD)@redis:6379/$(REDIS_DB)"
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dj-universe-secrets
+              key: REDIS_PASSWORD
+        - name: REDIS_DB
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: REDIS_DB
+        - name: MODEL_CACHE_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: MODEL_CACHE_PATH
+        - name: AUDIO_PROCESSING_WORKERS
+          valueFrom:
+            configMapKeyRef:
+              name: dj-universe-config
+              key: AUDIO_PROCESSING_WORKERS
+        volumeMounts:
+        - name: ai-models
+          mountPath: /app/models
+        - name: audio-analysis
+          mountPath: /app/analysis
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 60
+          periodSeconds: 15
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 2
+      volumes:
+      - name: ai-models
+        persistentVolumeClaim:
+          claimName: ai-models-pvc
+      - name: audio-analysis
+        persistentVolumeClaim:
+          claimName: audio-analysis-pvc
+
+---
+# Nginx Reverse Proxy Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dj-universe-nginx
+  namespace: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: nginx
+    app.kubernetes.io/version: "1.0.0"
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dj-universe
+      app.kubernetes.io/component: nginx
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dj-universe
+        app.kubernetes.io/component: nginx
+        app.kubernetes.io/version: "1.0.0"
+    spec:
+      containers:
+      - name: nginx
+        image: ghcr.io/dj-universe/nginx:latest
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+        - name: tls-certs
+          mountPath: /etc/nginx/ssl
+          readOnly: true
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 2
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+      - name: tls-certs
+        secret:
+          secretName: dj-universe-tls

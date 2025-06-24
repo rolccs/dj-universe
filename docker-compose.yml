@@ -1,0 +1,133 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: dj_universe_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dj_universe
+      POSTGRES_USER: djuser
+      POSTGRES_PASSWORD: djpass123
+    ports:
+      - "0.0.0.0:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/src/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - dj_network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: dj_universe_redis
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - dj_network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: dj_universe_api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      PORT: 3000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: dj_universe
+      DB_USER: djuser
+      DB_PASSWORD: djpass123
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: your_super_secret_jwt_key_here
+      AWS_ACCESS_KEY_ID: your_aws_key
+      AWS_SECRET_ACCESS_KEY: your_aws_secret
+      AWS_S3_BUCKET: dj-universe-media
+      STRIPE_SECRET_KEY: sk_test_your_stripe_key
+      POLYGON_RPC_URL: https://polygon-rpc.com
+    ports:
+      - "0.0.0.0:3000:3000"
+      - "0.0.0.0:3001:3001"  # Socket.IO
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - dj_network
+
+  # Frontend Angular
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: dj_universe_frontend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+    ports:
+      - "0.0.0.0:4200:4200"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - dj_network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: dj_universe_nginx
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - dj_network
+
+  # Mediasoup Streaming Server
+  mediasoup:
+    build:
+      context: ./streaming
+      dockerfile: Dockerfile
+    container_name: dj_universe_streaming
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      MEDIASOUP_MIN_PORT: 40000
+      MEDIASOUP_MAX_PORT: 49999
+      ANNOUNCED_IP: 0.0.0.0  # Cambiar por IP pública en producción
+    ports:
+      - "0.0.0.0:3002:3002"  # HTTP API
+      - "0.0.0.0:40000-49999:40000-49999/udp"  # RTC ports
+    volumes:
+      - ./streaming:/app
+      - /app/node_modules
+    networks:
+      - dj_network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  dj_network:
+    driver: bridge
+

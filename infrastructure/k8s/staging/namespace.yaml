@@ -1,0 +1,47 @@
+# DJ Universe - Staging Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dj-universe-staging
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/environment: staging
+    app.kubernetes.io/version: "1.0.0"
+---
+# Resource Quotas for Staging
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: dj-universe-staging-quota
+  namespace: dj-universe-staging
+spec:
+  hard:
+    requests.cpu: "5"
+    requests.memory: 10Gi
+    limits.cpu: "10"
+    limits.memory: 20Gi
+    pods: "25"
+    services: "15"
+    persistentvolumeclaims: "5"
+---
+# Network Policy for Staging
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: dj-universe-staging-netpol
+  namespace: dj-universe-staging
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: dj-universe-staging
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+  egress:
+  - {}  # Allow all egress for staging

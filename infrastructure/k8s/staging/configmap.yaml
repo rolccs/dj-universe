@@ -1,0 +1,72 @@
+# DJ Universe - Staging ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dj-universe-staging-config
+  namespace: dj-universe-staging
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/component: config
+    app.kubernetes.io/environment: staging
+data:
+  # Database Configuration
+  POSTGRES_DB: "dj_universe_staging"
+  POSTGRES_USER: "dj_user_staging"
+  MONGODB_DB: "dj_universe_staging"
+  REDIS_DB: "1"
+  
+  # Service URLs
+  API_URL: "http://dj-universe-api-staging:8000"
+  WEBSOCKET_URL: "ws://dj-universe-websocket-staging:8001"
+  AI_SERVICE_URL: "http://dj-universe-ai-staging:8002"
+  
+  # Application Configuration
+  NODE_ENV: "staging"
+  PYTHONUNBUFFERED: "1"
+  LOG_LEVEL: "debug"
+  
+  # Audio Processing (reduced for staging)
+  AUDIO_UPLOAD_PATH: "/app/uploads/audio"
+  AUDIO_CACHE_PATH: "/app/cache/audio"
+  MODEL_CACHE_PATH: "/app/models"
+  AUDIO_PROCESSING_WORKERS: "2"
+  
+  # Performance Settings (reduced for staging)
+  WEB_CONCURRENCY: "2"
+  MAX_CONNECTIONS: "100"
+  
+  # Monitoring
+  ENABLE_METRICS: "true"
+  METRICS_PORT: "9090"
+  
+  # CDN Configuration
+  CDN_URL: "https://staging-cdn.djuniverse.app"
+  STATIC_URL: "https://staging-static.djuniverse.app"
+  
+  # Feature Flags (enable all for testing)
+  ENABLE_AI_JUDGE: "true"
+  ENABLE_REAL_TIME_ANALYSIS: "true"
+  ENABLE_NDI_STREAMING: "true"
+  ENABLE_BATTLE_RECORDING: "true"
+  ENABLE_DEBUG_MODE: "true"
+  
+  # Rate Limiting (relaxed for staging)
+  API_RATE_LIMIT: "1000"
+  WEBSOCKET_RATE_LIMIT: "10000"
+  UPLOAD_RATE_LIMIT: "100"
+  
+  # Audio Quality Settings
+  AUDIO_SAMPLE_RATE: "44100"
+  AUDIO_BITRATE: "192"  # Lower for staging
+  AUDIO_FORMAT: "mp3"
+  MAX_TRACK_SIZE: "25MB"  # Reduced for staging
+  
+  # Battle Configuration
+  MAX_BATTLE_PARTICIPANTS: "4"  # Reduced for staging
+  BATTLE_ROUND_DURATION: "120"  # Shorter for testing
+  BATTLE_PREP_TIME: "15"
+  
+  # Social Network
+  MAX_POST_LENGTH: "500"
+  MAX_FOLLOWERS: "1000"  # Reduced for staging
+  MAX_CREW_MEMBERS: "10"

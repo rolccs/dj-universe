@@ -1,0 +1,47 @@
+# DJ Universe - Production Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dj-universe-prod
+  labels:
+    app.kubernetes.io/name: dj-universe
+    app.kubernetes.io/environment: production
+    app.kubernetes.io/version: "1.0.0"
+---
+# Resource Quotas
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: dj-universe-quota
+  namespace: dj-universe-prod
+spec:
+  hard:
+    requests.cpu: "10"
+    requests.memory: 20Gi
+    limits.cpu: "20"
+    limits.memory: 40Gi
+    pods: "50"
+    services: "20"
+    persistentvolumeclaims: "10"
+---
+# Network Policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: dj-universe-netpol
+  namespace: dj-universe-prod
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: dj-universe-prod
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+  egress:
+  - {}  # Allow all egress for now, restrict in production
