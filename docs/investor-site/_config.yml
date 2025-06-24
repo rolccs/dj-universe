@@ -1,0 +1,82 @@
+# GitHub Pages Configuration for DJ Universe Investor Site
+
+title: "DJ Universe - Investment Opportunity"
+description: "The world's first AI-powered global DJ battle platform. Disrupting the $7.3B DJ equipment market with revolutionary technology."
+url: "https://rolccs.github.io"
+baseurl: "/dj-universe"
+
+# Site settings
+author:
+  name: "HECTOR NOLIVOS"
+  email: "admin@iamigrante.com"
+  github: "rolccs"
+
+# SEO settings
+lang: "en"
+locale: "en_US"
+timezone: "UTC"
+
+# GitHub Pages settings
+remote_theme: "pages-themes/minimal@v0.2.0"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _pages
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Social media and contact
+social:
+  github: "rolccs"
+  email: "admin@iamigrante.com"
+
+# Investment details
+investment:
+  round_type: "Seed Funding"
+  amount: "$2.5M"
+  valuation: "$10M post-money"
+  equity: "25%"
+  minimum: "$25K"
+  closing_timeline: "90 days"
+  
+# Key metrics
+metrics:
+  market_size: "$7.3B"
+  target_users: "50M+"
+  global_latency: "<50ms"
+  ai_accuracy: "94%"
+  projected_revenue_y5: "$84M"
+  projected_roi: "12x"
