@@ -45,7 +45,7 @@ Before you begin, ensure you have the following installed:
 
 3. **Add the upstream repository**:
    ```bash
-   git remote add upstream https://github.com/HectorNolivos/dj-universe.git
+   git remote add upstream https://github.com/rolccs/dj-universe.git
    ```
 
 4. **Install dependencies**:

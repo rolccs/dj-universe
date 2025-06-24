@@ -107,7 +107,7 @@ dj-universe/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/HectorNolivos/dj-universe.git
+   git clone https://github.com/rolccs/dj-universe.git
    cd dj-universe
    ```
 
@@ -374,7 +374,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 👨‍💻 Creator & Maintainer
 
-**DJ Universe** is created and maintained by **[HECTOR NOLIVOS](https://github.com/HectorNolivos)**.
+**DJ Universe** is created and maintained by **[HECTOR NOLIVOS](https://github.com/rolccs)**.
 
 ### About the Creator
 
@@ -382,9 +382,9 @@ HECTOR NOLIVOS is a passionate developer and DJ enthusiast who envisioned a glob
 
 ### Contact
 
-- **GitHub**: [@HectorNolivos](https://github.com/HectorNolivos)
+- **GitHub**: [@rolccs](https://github.com/rolccs)
 - **Email**: [hector@djuniverse.app](mailto:hector@djuniverse.app)
-- **LinkedIn**: [HECTOR NOLIVOS](https://linkedin.com/in/hectornolivos)
+- **LinkedIn**: [HECTOR NOLIVOS](https://linkedin.com/in/rolccs)
 
 ## 🙏 Acknowledgments
 

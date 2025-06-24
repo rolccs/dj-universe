@@ -123,7 +123,7 @@ API_BASE_URL=https://api.djuniverse.app
 
 # Docker Registry
 REGISTRY=ghcr.io
-REGISTRY_USERNAME=hectornolivos
+REGISTRY_USERNAME=rolccs
 ```
 
 ## 🔄 GitHub Actions & CI/CD
@@ -212,10 +212,10 @@ jobs:
       
       - name: Push Docker images
         run: |
-          docker push ghcr.io/hectornolivos/dj-universe-web:latest
-          docker push ghcr.io/hectornolivos/dj-universe-api:latest
-          docker push ghcr.io/hectornolivos/dj-universe-websocket:latest
-          docker push ghcr.io/hectornolivos/dj-universe-ai:latest
+          docker push ghcr.io/rolccs/dj-universe-web:latest
+          docker push ghcr.io/rolccs/dj-universe-api:latest
+          docker push ghcr.io/rolccs/dj-universe-websocket:latest
+          docker push ghcr.io/rolccs/dj-universe-ai:latest
 ```
 
 #### Dependency Updates (`.github/workflows/dependabot-auto-merge.yml`)
@@ -256,9 +256,9 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 10
     reviewers:
-      - "HectorNolivos"
+      - "rolccs"
     assignees:
-      - "HectorNolivos"
+      - "rolccs"
     commit-message:
       prefix: "chore"
       include: "scope"
@@ -336,7 +336,7 @@ name: Bug Report
 description: Report a bug to help us improve
 title: "[BUG]: "
 labels: ["bug", "triage"]
-assignees: ["HectorNolivos"]
+assignees: ["rolccs"]
 
 body:
   - type: markdown
@@ -395,7 +395,7 @@ name: Feature Request
 description: Suggest an idea for DJ Universe
 title: "[FEATURE]: "
 labels: ["enhancement", "triage"]
-assignees: ["HectorNolivos"]
+assignees: ["rolccs"]
 
 body:
   - type: markdown

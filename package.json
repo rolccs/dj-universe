@@ -19,10 +19,10 @@
     "build:audio-engine": "npm run build --workspace=packages/audio-engine",
     "build:all": "npm run build --workspace=packages/web && npm run build --workspace=packages/api && npm run build --workspace=packages/websocket",
     "build:docker": "npm run build:docker:web && npm run build:docker:api && npm run build:docker:websocket && npm run build:docker:ai",
-    "build:docker:web": "docker build -f infrastructure/docker/web.Dockerfile -t ghcr.io/hectornolivos/dj-universe-web:latest .",
-    "build:docker:api": "docker build -f infrastructure/docker/api.Dockerfile -t ghcr.io/hectornolivos/dj-universe-api:latest .",
-    "build:docker:websocket": "docker build -f infrastructure/docker/websocket.Dockerfile -t ghcr.io/hectornolivos/dj-universe-websocket:latest .",
-    "build:docker:ai": "docker build -f infrastructure/docker/ai-services.Dockerfile -t ghcr.io/hectornolivos/dj-universe-ai:latest .",
+    "build:docker:web": "docker build -f infrastructure/docker/web.Dockerfile -t ghcr.io/rolccs/dj-universe-web:latest .",
+    "build:docker:api": "docker build -f infrastructure/docker/api.Dockerfile -t ghcr.io/rolccs/dj-universe-api:latest .",
+    "build:docker:websocket": "docker build -f infrastructure/docker/websocket.Dockerfile -t ghcr.io/rolccs/dj-universe-websocket:latest .",
+    "build:docker:ai": "docker build -f infrastructure/docker/ai-services.Dockerfile -t ghcr.io/rolccs/dj-universe-ai:latest .",
     "test": "jest --config tests/jest.config.js",
     "test:watch": "jest --config tests/jest.config.js --watch",
     "test:coverage": "jest --config tests/jest.config.js --coverage",
@@ -76,23 +76,23 @@
   ],
   "author": {
     "name": "HECTOR NOLIVOS",
-    "email": "hector@djuniverse.app",
-    "url": "https://github.com/HectorNolivos"
+    "email": "hector@nolivos.cloud",
+    "url": "https://github.com/rolccs"
   },
   "contributors": [
     {
       "name": "HECTOR NOLIVOS",
       "email": "hector@djuniverse.app",
-      "url": "https://github.com/HectorNolivos"
+      "url": "https://github.com/rolccs"
     }
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HectorNolivos/dj-universe.git"
+    "url": "https://github.com/rolccs/dj-universe.git"
   },
   "bugs": {
-    "url": "https://github.com/HectorNolivos/dj-universe/issues"
+    "url": "https://github.com/rolccs/dj-universe/issues"
   },
   "homepage": "https://djuniverse.app",
   "engines": {
