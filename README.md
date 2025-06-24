@@ -93,6 +93,15 @@ dj-universe/
 - **Elasticsearch** - Search and analytics
 - **InfluxDB** - Time-series database
 
+## 💰 Investment Opportunity
+
+**🎯 Seeking $2.5M Seed Round for Global DJ Battle Platform**
+
+- **Market**: $7.3B DJ equipment industry
+- **Technology**: AI-powered judge system with <50ms global latency
+- **Contact**: admin@iamigrante.com
+- **Investor Site**: [View Investment Materials](https://rolccs.github.io/dj-universe/)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
