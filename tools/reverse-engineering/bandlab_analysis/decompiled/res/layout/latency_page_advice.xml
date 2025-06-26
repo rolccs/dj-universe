@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/latency_page_advice_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:textColor="@color/glyphs_primary" android:id="@id/textView5" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="39.0dip" bind:layout_constraintBottom_toTopOf="@id/button3" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" />
+    <Button android:textColor="@color/glyphs_inverted" android:id="@id/button3" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/contact_us" android:backgroundTint="@color/surface_interactive_primaryRested" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" style="@style/Button.Action.Pill" />
+</androidx.constraintlayout.widget.ConstraintLayout>

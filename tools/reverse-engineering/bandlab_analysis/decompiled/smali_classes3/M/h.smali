@@ -1,0 +1,30 @@
+.class public interface abstract LM/h;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LH/t0;
+
+
+# static fields
+.field public static final q1:LH/c;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
+
+    new-instance v0, LH/c;
+
+    const-string v1, "camerax.core.io.ioExecutor"
+
+    const-class v2, Ljava/util/concurrent/Executor;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, LH/c;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, LM/h;->q1:LH/c;
+
+    return-void
+.end method

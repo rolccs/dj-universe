@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/text_medium" android:textColor="@color/me_popup_menu_text_color" android:ellipsize="end" android:gravity="center_vertical" android:tag="layout/v_me_menu_item_0" android:background="@drawable/bg_me_option_menu_item" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x6" android:maxLines="1" android:paddingStart="@dimen/grid_size_x2" android:paddingEnd="@dimen/grid_size_x2"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto" />

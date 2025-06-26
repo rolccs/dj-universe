@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="about_n_minutes_remaining">
+        <item quantity="other">Осталось около %s мин.</item>
+        <item quantity="one">Осталось около %s минуты</item>
+        <item quantity="few">Осталось около %s мин.</item>
+        <item quantity="many">Осталось около %s мин.</item>
+    </plurals>
+    <plurals name="add_n_tracks">
+        <item quantity="other">Добавить %s дорожек</item>
+        <item quantity="one">Добавить %s дорожку</item>
+        <item quantity="few">Добавить %s дорожки</item>
+        <item quantity="many">Добавить %s дорожек</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days">
+        <item quantity="other">Эта кампания будет завершена через &lt;b>%s дней&lt;/b>.</item>
+        <item quantity="one">Эта кампания будет завершена через &lt;b>%s день&lt;/b>.</item>
+        <item quantity="few">Эта кампания будет завершена через &lt;b>%s дней&lt;/b>.</item>
+        <item quantity="many">Эта кампания будет завершена через &lt;b>%s дней&lt;/b>.</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days_short">
+        <item quantity="other">Заканчивается через %s день</item>
+        <item quantity="one">Заканчивается через %s день</item>
+        <item quantity="few">Заканчивается через %s дня</item>
+        <item quantity="many">Заканчивается через %s дней</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">Перемотать на %d секунды вперед</item>
+        <item quantity="one">Перемотать на %d секунду вперед</item>
+        <item quantity="few">Перемотать на %d секунды вперед</item>
+        <item quantity="many">Перемотать на %d секунд вперед</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">Перемотать на %d секунды назад</item>
+        <item quantity="one">Перемотать на %d секунду назад</item>
+        <item quantity="few">Перемотать на %d секунды назад</item>
+        <item quantity="many">Перемотать на %d секунд назад</item>
+    </plurals>
+    <plurals name="in_the_last_n_days">
+        <item quantity="other">за последний %s день</item>
+        <item quantity="one">за последний %s день</item>
+        <item quantity="few">за последние %s дня</item>
+        <item quantity="many">за последние %s дней</item>
+    </plurals>
+    <plurals name="last_n_days">
+        <item quantity="other">последний %s день</item>
+        <item quantity="one">последний %s день</item>
+        <item quantity="few">последние %s дня</item>
+        <item quantity="many">последние %s дней</item>
+    </plurals>
+    <plurals name="long_record_length_warning">
+        <item quantity="other">Запись остановлена. Достигнута максимальная длительность (%s мин.)</item>
+        <item quantity="one">Запись остановлена. Достигнута максимальная длительность (%s минута)</item>
+        <item quantity="few">Запись остановлена. Достигнута максимальная длительность (%s мин.)</item>
+        <item quantity="many">Запись остановлена. Достигнута максимальная длительность (%s мин.)</item>
+    </plurals>
+    <plurals name="me_long_file_n_duration_limit_warning">
+        <item quantity="other">Импортируемый файл слишком длинный. Максимальная длительность — %s мин.</item>
+        <item quantity="one">Импортируемый файл слишком длинный. Максимальная длительность — %s минута.</item>
+        <item quantity="few">Импортируемый файл слишком длинный. Максимальная длительность — %s мин.</item>
+        <item quantity="many">Импортируемый файл слишком длинный. Максимальная длительность — %s мин.</item>
+    </plurals>
+    <plurals name="me_min_n_track_duration_warning">
+        <item quantity="other">Длина видео должна составлять не менее %s секунд.</item>
+        <item quantity="one">Длина видео должна составлять не менее %s секунды.</item>
+        <item quantity="few">Длина видео должна составлять не менее %s секунд.</item>
+        <item quantity="many">Длина видео должна составлять не менее %s секунд.</item>
+    </plurals>
+    <plurals name="me_n_instruments">
+        <item quantity="other">%s инструментов</item>
+        <item quantity="one">%s инструмент</item>
+        <item quantity="few">%s инструмента</item>
+        <item quantity="many">%s инструментов</item>
+    </plurals>
+    <plurals name="me_n_packs">
+        <item quantity="other">%s пакетов</item>
+        <item quantity="one">%s пакет</item>
+        <item quantity="few">%s пакета</item>
+        <item quantity="many">%s пакетов</item>
+    </plurals>
+    <plurals name="me_n_regions_selected">
+        <item quantity="other">Выбрано %s регионов</item>
+        <item quantity="one">Выбрано %s регион</item>
+        <item quantity="few">Выбрано %s регионов</item>
+        <item quantity="many">Выбрано %s регионов</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d нового уведомления</item>
+        <item quantity="one">%d новое уведомление</item>
+        <item quantity="few">%d новых уведомления</item>
+        <item quantity="many">%d новых уведомлений</item>
+    </plurals>
+    <plurals name="n_available_free_beats">
+        <item quantity="other">У вас %s бесплатных битов</item>
+        <item quantity="one">У вас %s бесплатных битов</item>
+        <item quantity="few">У вас %s бесплатных битов</item>
+        <item quantity="many">У вас %s бесплатных битов</item>
+    </plurals>
+    <plurals name="n_bars">
+        <item quantity="other">%s тактов</item>
+        <item quantity="one">%s такт</item>
+        <item quantity="few">%s такта</item>
+        <item quantity="many">%s тактов</item>
+    </plurals>
+    <plurals name="n_beats">
+        <item quantity="other">%s битов</item>
+        <item quantity="one">%s бит</item>
+        <item quantity="few">%s бита</item>
+        <item quantity="many">%s битов</item>
+    </plurals>
+    <plurals name="n_beats_free_left">
+        <item quantity="other">Бесплатные биты BandLab остались</item>
+        <item quantity="one">Бесплатный бит BandLab остался</item>
+        <item quantity="few">Бесплатные биты BandLab остались</item>
+        <item quantity="many">Бесплатные биты BandLab остались</item>
+    </plurals>
+    <plurals name="n_collaborators">
+        <item quantity="other">Ещё %s</item>
+        <item quantity="one">Ещё %s</item>
+        <item quantity="few">Ещё %s</item>
+        <item quantity="many">Ещё %s</item>
+    </plurals>
+    <plurals name="n_collections">
+        <item quantity="other">%s коллекций</item>
+        <item quantity="one">%s коллекция</item>
+        <item quantity="few">%s коллекции</item>
+        <item quantity="many">%s коллекций</item>
+    </plurals>
+    <plurals name="n_comments">
+        <item quantity="other">%s комментариев</item>
+        <item quantity="one">%s комментарий</item>
+        <item quantity="few">%s комментария</item>
+        <item quantity="many">%s комментариев</item>
+    </plurals>
+    <plurals name="n_days">
+        <item quantity="other">%s дней</item>
+        <item quantity="one">%s день</item>
+        <item quantity="few">%s дня</item>
+        <item quantity="many">%s дней</item>
+    </plurals>
+    <plurals name="n_days_after_submission">
+        <item quantity="other">не менее %s дней после отправки</item>
+        <item quantity="one">не менее %s дней после отправки</item>
+        <item quantity="few">не менее %s дней после отправки</item>
+        <item quantity="many">не менее %s дней после отправки</item>
+    </plurals>
+    <plurals name="n_days_free_trial">
+        <item quantity="other">%s дней бесплатного пробного периода</item>
+        <item quantity="one">%s день бесплатного пробного периода</item>
+        <item quantity="few">%s дня бесплатного пробного периода</item>
+        <item quantity="many">%s дней бесплатного пробного периода</item>
+    </plurals>
+    <plurals name="n_deducted_over_n_days">
+        <item quantity="other">%1$s за %2$s дней</item>
+        <item quantity="one">%1$s за %2$s день</item>
+        <item quantity="few">%1$s за %2$s дня</item>
+        <item quantity="many">%1$s за %2$s дней</item>
+    </plurals>
+    <plurals name="n_engagements">
+        <item quantity="other">%s взаимодействий</item>
+        <item quantity="one">%s взаимодействие</item>
+        <item quantity="few">%s взаимодействия</item>
+        <item quantity="many">%s взаимодействий</item>
+    </plurals>
+    <plurals name="n_files_added">
+        <item quantity="other">Добавлено %s файлов</item>
+        <item quantity="one">Добавлен %s файл</item>
+        <item quantity="few">Добавлено %s файла</item>
+        <item quantity="many">Добавлено %s файлов</item>
+    </plurals>
+    <plurals name="n_files_remaining">
+        <item quantity="other">Осталось %s файлов</item>
+        <item quantity="one">Остался %s файл</item>
+        <item quantity="few">Осталось %s файла</item>
+        <item quantity="many">Осталось %s файлов</item>
+    </plurals>
+    <plurals name="n_followers">
+        <item quantity="other">%s подписчиков</item>
+        <item quantity="one">%s подписчик</item>
+        <item quantity="few">%s подписчика</item>
+        <item quantity="many">%s подписчиков</item>
+    </plurals>
+    <plurals name="n_following">
+        <item quantity="other">%s подписок</item>
+        <item quantity="one">%s подписка</item>
+        <item quantity="few">%s подписки</item>
+        <item quantity="many">%s подписок</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_member">
+        <item quantity="other">Теперь, с подпиской, вы можете получать %s бесплатный бит BandLab каждую неделю!</item>
+        <item quantity="one">Теперь, с подпиской, вы можете получать %s бесплатный бит BandLab каждую неделю!</item>
+        <item quantity="few">Теперь, с подпиской, вы можете получать %s бесплатных бита BandLab каждую неделю!</item>
+        <item quantity="many">Теперь, с подпиской, вы можете получать %s бесплатных битов BandLab каждую неделю!</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial">
+        <item quantity="other">Вы разблокировали %s бесплатный бит BandLab в рамках пробного периода. Получите их сейчас!</item>
+        <item quantity="one">Вы разблокировали %s бесплатный бит BandLab в рамках пробного периода. Получите его сейчас!</item>
+        <item quantity="few">Вы разблокировали %s бесплатных бита BandLab в рамках пробного периода. Получите их сейчас!</item>
+        <item quantity="many">Вы разблокировали %s бесплатных битов BandLab в рамках пробного периода. Получите их сейчас!</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial_upgrade">
+        <item quantity="other">Оформите ежемесячную или годовую подписку, чтобы получать %s бесплатный бит каждую неделю.</item>
+        <item quantity="one">Оформите ежемесячную или годовую подписку, чтобы получать %s бесплатный бит каждую неделю.</item>
+        <item quantity="few">Оформите ежемесячную или годовую подписку, чтобы получать %s бесплатных бита каждую неделю.</item>
+        <item quantity="many">Оформите ежемесячную или годовую подписку, чтобы получать %s бесплатных битов каждую неделю.</item>
+    </plurals>
+    <plurals name="n_free_beats_with_membership_next_date">
+        <item quantity="other">Получите следующий %1$s бит %2$s</item>
+        <item quantity="one">Получите следующий %1$s бит %2$s</item>
+        <item quantity="few">Получите следующие %1$s бита %2$s</item>
+        <item quantity="many">Получите следующие %1$s битов %2$s</item>
+    </plurals>
+    <plurals name="n_free_beats_without_membership_description">
+        <item quantity="other">Ускорьте путь к своему следующему хиту с %s бесплатным битом на выбор каждую неделю! Хотите больше?</item>
+        <item quantity="one">Ускорьте путь к своему следующему хиту с %s бесплатным битом на выбор каждую неделю! Хотите больше?</item>
+        <item quantity="few">Ускорьте путь к своему следующему хиту с %s бесплатными битами на выбор каждую неделю! Хотите больше?</item>
+        <item quantity="many">Ускорьте путь к своему следующему хиту с %s бесплатными битами на выбор каждую неделю! Хотите больше?</item>
+    </plurals>
+    <plurals name="n_free_daily_splits_left">
+        <item quantity="other">Сегодня осталось %s бесплатных сплитов</item>
+        <item quantity="one">Сегодня осталось %s бесплатных сплитов</item>
+        <item quantity="few">Сегодня осталось %s бесплатных сплитов</item>
+        <item quantity="many">Сегодня осталось %s бесплатных сплитов</item>
+    </plurals>
+    <plurals name="n_free_splits_left">
+        <item quantity="other">Осталось %s бесплатных разделений в этом месяце</item>
+        <item quantity="one">Осталось %s бесплатных разделений в этом месяце</item>
+        <item quantity="few">Осталось %s бесплатных разделений в этом месяце</item>
+        <item quantity="many">Осталось %s бесплатных разделений в этом месяце</item>
+    </plurals>
+    <plurals name="n_genres">
+        <item quantity="other">%s жанров</item>
+        <item quantity="one">%s жанр</item>
+        <item quantity="few">%s жанра</item>
+        <item quantity="many">%s жанров</item>
+    </plurals>
+    <plurals name="n_hours">
+        <item quantity="other">%s ч.</item>
+        <item quantity="one">%s час</item>
+        <item quantity="few">%s ч.</item>
+        <item quantity="many">%s ч.</item>
+    </plurals>
+    <plurals name="n_impressions">
+        <item quantity="other">%s впечатлений</item>
+        <item quantity="one">%s впечатление</item>
+        <item quantity="few">%s впечатления</item>
+        <item quantity="many">%s впечатлений</item>
+    </plurals>
+    <plurals name="n_inspired_songs">
+        <item quantity="other">Вдохновила на создание %s дорожек</item>
+        <item quantity="one">Вдохновила на создание %s дорожки</item>
+        <item quantity="few">Вдохновила на создание %s дорожек</item>
+        <item quantity="many">Вдохновила на создание %s дорожек</item>
+    </plurals>
+    <plurals name="n_latency_manual">
+        <item quantity="other">Вы установили задержку: %s мс</item>
+        <item quantity="one">Вы установили задержку: %s мс</item>
+        <item quantity="few">Вы установили задержку: %s мс</item>
+        <item quantity="many">Вы установили задержку: %s мс</item>
+    </plurals>
+    <plurals name="n_latency_test_result">
+        <item quantity="other">Результат теста: задержка %s мс</item>
+        <item quantity="one">Результат теста: задержка %s мс</item>
+        <item quantity="few">Результат теста: задержка %s мс</item>
+        <item quantity="many">Результат теста: задержка %s мс</item>
+    </plurals>
+    <plurals name="n_likes">
+        <item quantity="other">%s лайков</item>
+        <item quantity="one">%s лайк</item>
+        <item quantity="few">%s лайка</item>
+        <item quantity="many">%s лайков</item>
+    </plurals>
+    <plurals name="n_members">
+        <item quantity="other">%s участников</item>
+        <item quantity="one">%s участник</item>
+        <item quantity="few">%s участника</item>
+        <item quantity="many">%s участников</item>
+    </plurals>
+    <plurals name="n_message_requests">
+        <item quantity="other">%s запросов на сообщение</item>
+        <item quantity="one">%s запрос на сообщение</item>
+        <item quantity="few">%s запроса на сообщение</item>
+        <item quantity="many">%s запросов на сообщение</item>
+    </plurals>
+    <plurals name="n_milliseconds">
+        <item quantity="other">%s мс</item>
+        <item quantity="one">%s мс</item>
+        <item quantity="few">%s мс</item>
+        <item quantity="many">%s мс</item>
+    </plurals>
+    <plurals name="n_min">
+        <item quantity="other">%s м</item>
+        <item quantity="one">%s м</item>
+        <item quantity="few">%s м</item>
+        <item quantity="many">%s м</item>
+    </plurals>
+    <plurals name="n_months">
+        <item quantity="other">%s месяцев</item>
+        <item quantity="one">%s месяц</item>
+        <item quantity="few">%s месяца</item>
+        <item quantity="many">%s месяцев</item>
+    </plurals>
+    <plurals name="n_mutuals">
+        <item quantity="other">%s Взаимные подписчики</item>
+        <item quantity="one">%s Взаимные подписчики</item>
+        <item quantity="few">%s Взаимные подписчики</item>
+        <item quantity="many">%s Взаимные подписчики</item>
+    </plurals>
+    <plurals name="n_new_notifications">
+        <item quantity="other">%s новое уведомлений</item>
+        <item quantity="one">%s новое уведомление</item>
+        <item quantity="few">%s новых уведомления</item>
+        <item quantity="many">%s новое уведомлений</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="other">%s проигрываний</item>
+        <item quantity="one">%s проигрывание</item>
+        <item quantity="few">%s проигрывания</item>
+        <item quantity="many">%s проигрываний</item>
+    </plurals>
+    <plurals name="n_posts">
+        <item quantity="other">%s публикаций</item>
+        <item quantity="one">%s публикация</item>
+        <item quantity="few">%s публикации</item>
+        <item quantity="many">%s публикаций</item>
+    </plurals>
+    <plurals name="n_requests_invites">
+        <item quantity="other">%s запросов/приглашений</item>
+        <item quantity="one">%s запрос/приглашение</item>
+        <item quantity="few">%s запроса/приглашения</item>
+        <item quantity="many">%s запросов/приглашений</item>
+    </plurals>
+    <plurals name="n_samples">
+        <item quantity="other">%s сэмплов</item>
+        <item quantity="one">%s сэмпл</item>
+        <item quantity="few">%s сэмпла</item>
+        <item quantity="many">%s сэмплов</item>
+    </plurals>
+    <plurals name="n_seconds">
+        <item quantity="other">%s сек</item>
+        <item quantity="one">%s сек</item>
+        <item quantity="few">%s сек</item>
+        <item quantity="many">%s сек</item>
+    </plurals>
+    <plurals name="n_semitones">
+        <item quantity="other">%s полутонов</item>
+        <item quantity="one">%s полутон</item>
+        <item quantity="few">%s полутона</item>
+        <item quantity="many">%s полутонов</item>
+    </plurals>
+    <plurals name="n_tracks">
+        <item quantity="other">%s дорожек</item>
+        <item quantity="one">%s дорожка</item>
+        <item quantity="few">%s дорожки</item>
+        <item quantity="many">%s дорожек</item>
+    </plurals>
+    <plurals name="n_unlock_free_beats_with_membership">
+        <item quantity="other">Разблокируйте %s бесплатный бит каждую неделю</item>
+        <item quantity="one">Разблокируйте %s бесплатный бит каждую неделю</item>
+        <item quantity="few">Разблокируйте %s бесплатных бита каждую неделю</item>
+        <item quantity="many">Разблокируйте %s бесплатных битов каждую неделю</item>
+    </plurals>
+    <plurals name="n_view">
+        <item quantity="other">%s просмотров</item>
+        <item quantity="one">%s просмотр</item>
+        <item quantity="few">%s просмотра</item>
+        <item quantity="many">%s просмотров</item>
+    </plurals>
+    <plurals name="n_weeks">
+        <item quantity="other">%s недель</item>
+        <item quantity="one">%s неделя</item>
+        <item quantity="few">%s недель</item>
+        <item quantity="many">%s недель</item>
+    </plurals>
+    <plurals name="n_zero_free_beats_without_membership_description">
+        <item quantity="other">Желаете большего? Оформите подписку, чтобы разблокировать %s бесплатный бит каждую неделю.</item>
+        <item quantity="one">Желаете большего? Оформите подписку, чтобы разблокировать %s бесплатный бит каждую неделю.</item>
+        <item quantity="few">Желаете большего? Оформите подписку, чтобы разблокировать %s бесплатных бита каждую неделю</item>
+        <item quantity="many">Желаете большего? Оформите подписку, чтобы разблокировать %s бесплатных битов каждую неделю.</item>
+    </plurals>
+    <plurals name="plural_followers_without_placeholder">
+        <item quantity="other">Подписчиков</item>
+        <item quantity="one">Подписчик</item>
+        <item quantity="few">Подписчика</item>
+        <item quantity="many">Подписчиков</item>
+    </plurals>
+    <plurals name="plural_following_without_placeholder">
+        <item quantity="other">Подписок</item>
+        <item quantity="one">Подписка</item>
+        <item quantity="few">Подписки</item>
+        <item quantity="many">Подписок</item>
+    </plurals>
+    <plurals name="plural_play_without_placeholder">
+        <item quantity="other">Проигрываний</item>
+        <item quantity="one">Проигрывание</item>
+        <item quantity="few">Проигрывания</item>
+        <item quantity="many">Проигрываний</item>
+    </plurals>
+    <plurals name="relative_time_days">
+        <item quantity="other">%s дней назад</item>
+        <item quantity="one">%s день назад</item>
+        <item quantity="few">%s дня назад</item>
+        <item quantity="many">%s дней назад</item>
+    </plurals>
+    <plurals name="relative_time_hours">
+        <item quantity="other">%s часов назад</item>
+        <item quantity="one">%s час назад</item>
+        <item quantity="few">%s часа назад</item>
+        <item quantity="many">%s часов назад</item>
+    </plurals>
+    <plurals name="relative_time_minutes">
+        <item quantity="other">%s минут назад</item>
+        <item quantity="one">%s минута назад</item>
+        <item quantity="few">%s минуты назад</item>
+        <item quantity="many">%s минут назад</item>
+    </plurals>
+    <plurals name="show_n_more_tracks">
+        <item quantity="other">Показать ещё %s трек</item>
+        <item quantity="one">Показать ещё %s трек</item>
+        <item quantity="few">Показать ещё %s трека</item>
+        <item quantity="many">Показать ещё %s треков</item>
+    </plurals>
+    <plurals name="show_n_results">
+        <item quantity="other">Показать %s результатов</item>
+        <item quantity="one">Показать %s результат</item>
+        <item quantity="few">Показать %s результата</item>
+        <item quantity="many">Показать %s результатов</item>
+    </plurals>
+    <plurals name="try_free_for_n_days">
+        <item quantity="other">Попробовать бесплатно в течение %s дней</item>
+        <item quantity="one">Попробовать бесплатно в течение %s дня</item>
+        <item quantity="few">Попробовать бесплатно в течение %s дней</item>
+        <item quantity="many">Попробовать бесплатно в течение %s дней</item>
+    </plurals>
+    <plurals name="unit_n_bytes">
+        <item quantity="other">%s байт</item>
+        <item quantity="one">%s байт</item>
+        <item quantity="few">%s байт</item>
+        <item quantity="many">%s байт</item>
+    </plurals>
+    <plurals name="x_and_n_mutual_connections">
+        <item quantity="other">%1$s и ещё %2$s общий контакт</item>
+        <item quantity="one">%1$s и ещё %2$s общий контакт</item>
+        <item quantity="few">%1$s и ещё %2$s общих контакта</item>
+        <item quantity="many">%1$s и ещё %2$s общих контактов</item>
+    </plurals>
+</resources>

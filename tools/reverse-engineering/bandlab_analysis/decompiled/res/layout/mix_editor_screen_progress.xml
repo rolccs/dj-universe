@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/mix_editor_screen_progress_0" android:background="@color/surface_inactive_screen" android:visibility="visible" android:layout_width="0.0dip" android:layout_height="0.0dip" android:elevation="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <ProgressBar android:layout_gravity="center" android:id="@id/pb_loader" android:tag="binding_1" android:layout_width="@dimen/grid_size_x19" android:layout_height="@dimen/grid_size_x2" android:layout_marginTop="@dimen/grid_size_x1_5" android:progressTint="@color/glyphs_primary" android:indeterminateTint="@color/glyphs_primary" android:indeterminateTintMode="src_in" style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+    <TextView android:textSize="@dimen/text_xlarge" android:textColor="@color/glyphs_primary" android:layout_gravity="center" android:id="@id/mixeditor_loading" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/grid_size_x2" style="@style/MediumText" />
+</FrameLayout>

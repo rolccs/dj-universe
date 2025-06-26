@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:tag="layout/looper_effects_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/looper_effect_filter" android:layout_width="0.0dip" android:layout_height="0.0dip" layout="@layout/looper_effect" style="@style/LooperEffectFilter" />
+    <include android:id="@id/looper_effect_gater" android:layout_width="0.0dip" android:layout_height="0.0dip" layout="@layout/looper_effect" style="@style/LooperEffectGater" />
+    <include layout="@layout/looper_effect_quantization" />
+</androidx.constraintlayout.widget.ConstraintLayout>

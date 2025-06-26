@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/looper_edit_controls_quantization_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:tag="binding_1" android:layout_height="@dimen/grid_size_x5" android:text="@string/zero" android:layout_weight="1.0" style="@style/MeToolRowButton.Left" />
+    <TextView android:tag="binding_2" android:layout_height="@dimen/grid_size_x5" android:text="@string/sixteenth" android:layout_weight="1.0" style="@style/MeToolRowButton.Middle" />
+    <TextView android:tag="binding_3" android:layout_height="@dimen/grid_size_x5" android:text="@string/eighth" android:layout_weight="1.0" style="@style/MeToolRowButton.Middle" />
+    <TextView android:tag="binding_4" android:layout_height="@dimen/grid_size_x5" android:text="@string/quarter" android:layout_weight="1.0" style="@style/MeToolRowButton.Middle" />
+    <TextView android:tag="binding_5" android:layout_height="@dimen/grid_size_x5" android:text="@string/one" android:layout_weight="1.0" style="@style/MeToolRowButton.Right" />
+</LinearLayout>

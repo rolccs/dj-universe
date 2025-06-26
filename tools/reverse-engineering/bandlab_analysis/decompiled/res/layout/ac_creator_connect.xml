@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/container" android:tag="layout/ac_creator_connect_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <com.bandlab.common.views.layout.AutoSizeToolbar android:theme="@style/DarkControlsToolbar" android:id="@id/toolbar" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height" bind:title="@string/search_collaborator_feature_title" />
+    <com.bandlab.common.views.layout.MaxWidthFrameLayout style="@style/ScreenContent">
+        <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/toolbar_height">
+            <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/grid_size_x2" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView android:tag="binding_2" android:background="@color/surface_inactive_screen" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x1_5" android:overScrollMode="never" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" android:nestedScrollingEnabled="false" bind:layoutManager="@string/linear_layout_manager" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x4" android:text="@string/by_talent" android:layout_marginStart="@dimen/grid_size_x2" style="@style/MediumText.Title" />
+                <androidx.recyclerview.widget.RecyclerView android:tag="binding_3" android:background="@color/surface_inactive_screen" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_half" android:overScrollMode="never" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" android:nestedScrollingEnabled="false" bind:layoutManager="@string/linear_layout_manager" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.bandlab.common.views.layout.MaxWidthFrameLayout>
+</FrameLayout>

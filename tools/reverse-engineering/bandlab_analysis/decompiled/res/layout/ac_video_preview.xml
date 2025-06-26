@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/ac_video_preview_0" android:background="@color/technical_black_mask" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/video_view" />
+    <androidx.appcompat.widget.Toolbar android:tag="binding_1" android:background="@color/technical_unspecified" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height" />
+</FrameLayout>

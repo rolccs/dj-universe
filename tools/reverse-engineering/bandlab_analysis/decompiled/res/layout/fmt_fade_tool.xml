@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/fmt_fade_tool_0" android:splitMotionEvents="false" style="@style/METoolLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <View style="@style/METoolBorder" />
+    <com.bandlab.mixeditor.tool.fade.RangeSeekbar android:id="@id/fade_slider" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x6" android:paddingStart="@dimen/grid_size_x2_5" android:paddingEnd="@dimen/grid_size_x2_5" bind:thumb="@drawable/ic_me_thumb" />
+    <include layout="@layout/tool_transport_controls" />
+</LinearLayout>

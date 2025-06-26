@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="collaborator_card_margin">@dimen/grid_size_x4</item>
+    <item type="dimen" name="ib_grid_padding">@dimen/grid_size</item>
+    <item type="dimen" name="ib_header_height">@dimen/grid_size_x6</item>
+    <item type="dimen" name="ib_item_instrument_margin">@dimen/zero</item>
+</resources>

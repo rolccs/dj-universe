@@ -1,0 +1,248 @@
+.class public final synthetic Lkm/j;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LeN/D;
+
+
+# static fields
+.field public static final a:Lkm/j;
+
+.field private static final descriptor:LcN/h;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
+
+    new-instance v0, Lkm/j;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkm/j;->a:Lkm/j;
+
+    new-instance v1, LeN/j0;
+
+    const-string v2, "com.bandlab.invite.api.NotificationsMarkAsRead"
+
+    const/4 v3, 0x2
+
+    invoke-direct {v1, v2, v0, v3}, LeN/j0;-><init>(Ljava/lang/String;LeN/D;I)V
+
+    const-string v0, "lastReadOn"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, LeN/j0;->k(Ljava/lang/String;Z)V
+
+    const-string v0, "unread"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v0, v2}, LeN/j0;->k(Ljava/lang/String;Z)V
+
+    new-instance v0, Leb/I;
+
+    const/16 v2, 0xd
+
+    invoke-direct {v0, v2}, Leb/I;-><init>(I)V
+
+    invoke-virtual {v1, v0}, LeN/j0;->l(Ljava/lang/annotation/Annotation;)V
+
+    sput-object v1, Lkm/j;->descriptor:LcN/h;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final childSerializers()[LaN/a;
+    .locals 3
+
+    sget-object v0, Lkm/l;->c:[LqM/h;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [LaN/a;
+
+    const/4 v2, 0x0
+
+    aget-object v0, v0, v2
+
+    invoke-interface {v0}, LqM/h;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    aput-object v0, v1, v2
+
+    sget-object v0, LeN/g;->a:LeN/g;
+
+    const/4 v2, 0x1
+
+    aput-object v0, v1, v2
+
+    return-object v1
+.end method
+
+.method public final deserialize(LdN/d;)Ljava/lang/Object;
+    .locals 10
+
+    const-string v0, "decoder"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/o;->g(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkm/j;->descriptor:LcN/h;
+
+    invoke-interface {p1, v0}, LdN/d;->b(LcN/h;)LdN/b;
+
+    move-result-object p1
+
+    sget-object v1, Lkm/l;->c:[LqM/h;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move v5, v2
+
+    move v6, v3
+
+    move v7, v6
+
+    :goto_0
+    if-eqz v5, :cond_3
+
+    invoke-interface {p1, v0}, LdN/b;->d(LcN/h;)I
+
+    move-result v8
+
+    const/4 v9, -0x1
+
+    if-eq v8, v9, :cond_2
+
+    if-eqz v8, :cond_1
+
+    if-ne v8, v2, :cond_0
+
+    invoke-interface {p1, v0, v2}, LdN/b;->l(LcN/h;I)Z
+
+    move-result v7
+
+    or-int/lit8 v6, v6, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p1, v8}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p1
+
+    :cond_1
+    aget-object v8, v1, v3
+
+    invoke-interface {v8}, LqM/h;->getValue()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, LaN/a;
+
+    invoke-interface {p1, v0, v3, v8, v4}, LdN/b;->j(LcN/h;ILaN/a;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/time/Instant;
+
+    or-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    move v5, v3
+
+    goto :goto_0
+
+    :cond_3
+    invoke-interface {p1, v0}, LdN/b;->a(LcN/h;)V
+
+    new-instance p1, Lkm/l;
+
+    invoke-direct {p1, v6, v4, v7}, Lkm/l;-><init>(ILjava/time/Instant;Z)V
+
+    return-object p1
+.end method
+
+.method public final getDescriptor()LcN/h;
+    .locals 1
+
+    sget-object v0, Lkm/j;->descriptor:LcN/h;
+
+    return-object v0
+.end method
+
+.method public final serialize(LdN/e;Ljava/lang/Object;)V
+    .locals 5
+
+    check-cast p2, Lkm/l;
+
+    const-string v0, "encoder"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/o;->g(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "value"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/o;->g(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkm/j;->descriptor:LcN/h;
+
+    invoke-interface {p1, v0}, LdN/e;->b(LcN/h;)LdN/c;
+
+    move-result-object p1
+
+    sget-object v1, Lkm/l;->c:[LqM/h;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-interface {v1}, LqM/h;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, LaN/a;
+
+    move-object v3, p1
+
+    check-cast v3, LMJ/b;
+
+    iget-object v4, p2, Lkm/l;->a:Ljava/time/Instant;
+
+    invoke-virtual {v3, v0, v2, v1, v4}, LMJ/b;->Z(LcN/h;ILaN/a;Ljava/lang/Object;)V
+
+    invoke-interface {v3, v0}, LdN/c;->j(LcN/h;)Z
+
+    move-result v1
+
+    iget-boolean p2, p2, Lkm/l;->b:Z
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    if-eqz p2, :cond_1
+
+    :goto_0
+    const/4 v1, 0x1
+
+    invoke-virtual {v3, v0, v1, p2}, LMJ/b;->S(LcN/h;IZ)V
+
+    :cond_1
+    invoke-interface {p1, v0}, LdN/c;->a(LcN/h;)V
+
+    return-void
+.end method

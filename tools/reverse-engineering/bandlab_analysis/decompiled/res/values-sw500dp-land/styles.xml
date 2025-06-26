@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LooperEffectQuantDivider">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">1.0dip</item>
+        <item name="layout_constraintBottom_toTopOf">@id/looper_effect_stopper</item>
+        <item name="layout_constraintEnd_toEndOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintStart_toStartOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintTop_toBottomOf">@id/looper_effect_stutter</item>
+    </style>
+    <style name="LooperEffectStopper" parent="@style/LooperEffectStopperDefault">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintStart_toStartOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintTop_toBottomOf">@id/divider</item>
+        <item name="layout_constraintVertical_weight">1.0</item>
+    </style>
+    <style name="LooperEffectStutter16" parent="@style/LooperEffectStutter">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="layout_constraintBottom_toTopOf">@id/looper_effect_stutter_32</item>
+        <item name="layout_constraintTop_toBottomOf">@id/looper_effect_stutter_8</item>
+        <item name="layout_constraintVertical_weight">1.0</item>
+    </style>
+    <style name="LooperEffectStutter32" parent="@style/LooperEffectStutter">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintTop_toBottomOf">@id/looper_effect_stutter_16</item>
+        <item name="layout_constraintVertical_weight">1.0</item>
+    </style>
+    <style name="LooperEffectStutter4" parent="@style/LooperEffectStutter">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="layout_constraintBottom_toTopOf">@id/looper_effect_stutter_8</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintVertical_chainStyle">packed</item>
+        <item name="layout_constraintVertical_weight">1.0</item>
+    </style>
+    <style name="LooperEffectStutter8" parent="@style/LooperEffectStutter">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="layout_constraintBottom_toTopOf">@id/looper_effect_stutter_16</item>
+        <item name="layout_constraintTop_toBottomOf">@id/looper_effect_stutter_4</item>
+        <item name="layout_constraintVertical_weight">1.0</item>
+    </style>
+    <style name="LooperEffectStutterLayout">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="layout_constraintBottom_toTopOf">@id/divider</item>
+        <item name="layout_constraintEnd_toEndOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintStart_toStartOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintTop_toTopOf">@id/looper_effect_quant_bg</item>
+        <item name="layout_constraintVertical_weight">4.0</item>
+    </style>
+</resources>

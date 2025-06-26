@@ -1,0 +1,58 @@
+.class public final LfF/z;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LfF/C;
+
+
+# instance fields
+.field public final a:J
+
+.field public final b:J
+
+
+# direct methods
+.method public constructor <init>(JJ)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, LfF/z;->a:J
+
+    iput-wide p3, p0, LfF/z;->b:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lwh/s;
+    .locals 3
+
+    sget-object v0, Lwh/t;->Companion:Lwh/a;
+
+    iget-wide v1, p0, LfF/z;->b:J
+
+    invoke-static {v1, v2}, LxD/h;->b(J)J
+
+    move-result-wide v1
+
+    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v1
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const v0, 0x7f140cc1
+
+    invoke-static {v1, v0}, Lwh/a;->g([Ljava/lang/String;I)Lwh/s;
+
+    move-result-object v0
+
+    return-object v0
+.end method

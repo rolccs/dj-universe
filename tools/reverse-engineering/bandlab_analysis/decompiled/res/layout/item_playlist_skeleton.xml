@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x8"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/grid_size_x5" android:layout_height="@dimen/grid_size_x5" android:layout_marginStart="@dimen/grid_size_x2" app:srcCompat="@drawable/bg_skeleton_cover_light" />
+    <ImageView android:layout_width="@dimen/grid_size_x14" android:layout_height="@dimen/grid_size_x1_75" android:layout_marginTop="@dimen/grid_size_x2" android:layout_marginStart="@dimen/grid_size_x9" app:srcCompat="@drawable/bg_skeleton_title" />
+    <ImageView android:layout_width="@dimen/grid_size_x9_5" android:layout_height="@dimen/grid_size_x1_5" android:layout_marginTop="@dimen/grid_size_x4_75" android:layout_marginStart="@dimen/grid_size_x9" app:srcCompat="@drawable/bg_skeleton_description" />
+</FrameLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="abc_action_bar_embed_tabs">true</bool>
+    <bool name="abc_config_actionMenuItemAllCaps">true</bool>
+    <bool name="as_adjustShowTitle">false</bool>
+    <bool name="as_show_notifications">false</bool>
+    <bool name="com.crashlytics.RequireBuildId">false</bool>
+    <bool name="com_braze_handle_push_deep_links_automatically">true</bool>
+    <bool name="config_materialPreferenceIconSpaceReserved">false</bool>
+    <bool name="enable_predictive_back">false</bool>
+    <bool name="enable_system_alarm_service_default">false</bool>
+    <bool name="enable_system_foreground_service_default">true</bool>
+    <bool name="enable_system_job_service_default">true</bool>
+    <bool name="ib_carousel_viewpager">true</bool>
+    <bool name="ib_use_linear_layout_manager">true</bool>
+    <bool name="is_tablet">false</bool>
+    <bool name="leak_canary_plumber_auto_install">true</bool>
+    <bool name="ll_listOrientationVertical">true</bool>
+    <bool name="mtrl_btn_textappearance_all_caps">true</bool>
+    <bool name="ply_isTablet">false</bool>
+    <bool name="show_offset_spacing">false</bool>
+    <bool name="use_large_picture">false</bool>
+    <bool name="window_light_system_bar">true</bool>
+    <bool name="workmanager_test_configuration">false</bool>
+</resources>

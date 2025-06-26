@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:tag="layout/quick_upload_progress_0" android:padding="@dimen/grid_size_x2" android:layout_width="300.0dip" android:layout_height="wrap_content" style="@style/AppAlertDialog"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/import_track" style="@style/AppAlertDialogTitle" />
+    <TextView android:textColor="@color/glyphs_secondary" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ProgressBar android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="100" style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+    <TextView android:textColor="@color/glyphs_inverted" android:tag="binding_3" android:background="@drawable/btn_cancel_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x2" android:text="@string/cancel" style="@style/Button.Action" />
+</LinearLayout>

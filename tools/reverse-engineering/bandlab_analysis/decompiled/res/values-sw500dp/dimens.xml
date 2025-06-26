@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bar_height">6.0dip</dimen>
+    <dimen name="cb_icon_height">44.0dip</dimen>
+    <dimen name="cb_icon_width">44.0dip</dimen>
+    <item type="dimen" name="cb_icon_with_text_height">@dimen/cb_icon_height</item>
+    <item type="dimen" name="cb_icon_with_text_width">@dimen/cb_icon_width</item>
+    <dimen name="cb_text_with_icon">18.0sp</dimen>
+    <dimen name="cb_text_without_icon">18.0sp</dimen>
+    <item type="dimen" name="cb_txt_top_margin">@dimen/grid_size</item>
+    <item type="dimen" name="looper_effect_label">@dimen/text_large</item>
+    <item type="dimen" name="looper_effect_margin_hor">@dimen/grid_size_x2</item>
+    <item type="dimen" name="looper_effect_margin_vert">@dimen/grid_size</item>
+    <item type="dimen" name="looper_effect_stutter_height">@dimen/grid_size_x12_5</item>
+    <item type="dimen" name="looper_effect_stutter_margin">@dimen/grid_size</item>
+    <item type="dimen" name="looper_effect_stutter_text">@dimen/text_header</item>
+    <item type="dimen" name="looper_effect_title">@dimen/text_xlarge</item>
+</resources>

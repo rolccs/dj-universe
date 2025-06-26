@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/v_inspired_artist_0" android:background="@drawable/bg_inspired_artist" android:paddingTop="@dimen/grid_size_half" android:paddingBottom="@dimen/grid_size_half" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/grid_size_half" android:paddingEnd="@dimen/grid_size"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.bandlab.uikit.view.placeholder.PlaceholderImageView android:layout_gravity="center_vertical" android:tag="binding_1" android:layout_width="@dimen/grid_size_x3" android:layout_height="@dimen/grid_size_x3" app:entity="user" app:placeholderCircle="true" />
+    <TextView android:textColor="@color/glyphs_primary" android:layout_gravity="center_vertical" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/grid_size" android:layout_marginEnd="@dimen/grid_size" style="@style/MediumText" />
+    <ImageView android:layout_gravity="center_vertical" android:tag="binding_3" android:padding="@dimen/grid_size_quarter" android:layout_width="@dimen/grid_size_x2" android:layout_height="@dimen/grid_size_x2" app:srcCompat="@drawable/ic_x" app:tint="@color/glyphs_secondary" />
+</LinearLayout>

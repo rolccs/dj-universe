@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="about_n_minutes_remaining">
+        <item quantity="other">Environ %s minutes restantes</item>
+        <item quantity="one">Environ %s minute restante</item>
+    </plurals>
+    <plurals name="add_n_tracks">
+        <item quantity="other">Ajouter %s pistes</item>
+        <item quantity="one">Ajouter %s piste</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days">
+        <item quantity="other">Cette campagne sera terminée dans &lt;b>%s jours&lt;/b>.</item>
+        <item quantity="one">Cette campagne sera terminée dans &lt;b>%s jour&lt;/b>.</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days_short">
+        <item quantity="other">Se termine dans %s jours</item>
+        <item quantity="one">Se termine dans %s jour</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">Avancer de %d secondes</item>
+        <item quantity="one">Avancer de %d seconde</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">Revenir en arrière de %d secondes</item>
+        <item quantity="one">Revenir en arrière de %d seconde</item>
+    </plurals>
+    <plurals name="in_the_last_n_days">
+        <item quantity="other">les %s derniers jours</item>
+        <item quantity="one">le dernier %s jour</item>
+    </plurals>
+    <plurals name="last_n_days">
+        <item quantity="other">Les %s derniers jours</item>
+        <item quantity="one">Le dernier %s jour</item>
+    </plurals>
+    <plurals name="long_record_length_warning">
+        <item quantity="other">Enregistrement arrêté. Durée maximale atteinte (%s minutes)</item>
+        <item quantity="one">Enregistrement arrêté. Durée maximale atteinte (%s minute)</item>
+    </plurals>
+    <plurals name="me_long_file_n_duration_limit_warning">
+        <item quantity="other">"Le fichier que vous tentez d'importer est trop long. La longueur maximale est de %s minutes."</item>
+        <item quantity="one">"Le fichier que vous tentez d'importer est trop long. La longueur maximale est de %s minute."</item>
+    </plurals>
+    <plurals name="me_min_n_track_duration_warning">
+        <item quantity="other">"La durée de la piste doit être d'au moins %s secondes."</item>
+        <item quantity="one">"La durée de la piste doit être d'au moins %s seconde."</item>
+    </plurals>
+    <plurals name="me_n_instruments">
+        <item quantity="other">%s instruments</item>
+        <item quantity="one">%s instrument</item>
+    </plurals>
+    <plurals name="me_n_packs">
+        <item quantity="other">%s packs</item>
+        <item quantity="one">%s pack</item>
+    </plurals>
+    <plurals name="me_n_regions_selected">
+        <item quantity="other">%s régions sélectionnées</item>
+        <item quantity="one">%s région sélectionnée</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d nouvelles notifications</item>
+        <item quantity="one">%d nouvelle notification</item>
+    </plurals>
+    <plurals name="n_available_free_beats">
+        <item quantity="other">Vous avez %s battements gratuits</item>
+        <item quantity="one">Vous avez %s battements gratuits</item>
+    </plurals>
+    <plurals name="n_bars">
+        <item quantity="other">%s mesures</item>
+        <item quantity="one">%s mesure</item>
+    </plurals>
+    <plurals name="n_beats">
+        <item quantity="other">%s battements</item>
+        <item quantity="one">%s battement</item>
+    </plurals>
+    <plurals name="n_beats_free_left">
+        <item quantity="other">Battements BandLab gratuits restants</item>
+        <item quantity="one">Battement BandLab gratuit restant</item>
+    </plurals>
+    <plurals name="n_collaborators">
+        <item quantity="other">%s autres</item>
+        <item quantity="one">%s autre</item>
+    </plurals>
+    <plurals name="n_collections">
+        <item quantity="other">%s collections</item>
+        <item quantity="one">%s collection</item>
+    </plurals>
+    <plurals name="n_comments">
+        <item quantity="other">%s commentaires</item>
+        <item quantity="one">%s commentaire</item>
+    </plurals>
+    <plurals name="n_days">
+        <item quantity="other">%s jours</item>
+        <item quantity="one">%s jour</item>
+    </plurals>
+    <plurals name="n_days_after_submission">
+        <item quantity="other">"min. %s jours après l'envoi"</item>
+        <item quantity="one">"min. %s jours après l'envoi"</item>
+    </plurals>
+    <plurals name="n_days_free_trial">
+        <item quantity="other">Essai gratuit de %s jours</item>
+        <item quantity="one">Essai gratuit de %s jour</item>
+    </plurals>
+    <plurals name="n_deducted_over_n_days">
+        <item quantity="other">%1$s sur %2$s jours</item>
+        <item quantity="one">%1$s sur %2$s jour</item>
+    </plurals>
+    <plurals name="n_engagements">
+        <item quantity="other">%s engagements</item>
+        <item quantity="one">%s engagement</item>
+    </plurals>
+    <plurals name="n_files_added">
+        <item quantity="other">%s fichiers ajoutés</item>
+        <item quantity="one">%s fichier ajouté</item>
+    </plurals>
+    <plurals name="n_files_remaining">
+        <item quantity="other">%s fichiers restants</item>
+        <item quantity="one">%s fichier restant</item>
+    </plurals>
+    <plurals name="n_followers">
+        <item quantity="other">%s abonnés</item>
+        <item quantity="one">%s abonné</item>
+    </plurals>
+    <plurals name="n_following">
+        <item quantity="other">%s suivis</item>
+        <item quantity="one">%s suivi</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_member">
+        <item quantity="other">"En tant que membre, vous pouvez désormais profiter de l'avantage de %s BandLab Beats gratuits par semaine !"</item>
+        <item quantity="one">"En tant que membre, vous pouvez désormais profiter de l'avantage de %s BandLab Beat gratuit par semaine !"</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial">
+        <item quantity="other">Vous avez débloqué %s BandLab Beats gratuits dans le cadre de votre essai. Réclamez-les dès maintenant !</item>
+        <item quantity="one">Vous avez débloqué %s BandLab Beat gratuits dans le cadre de votre essai. Réclamez-les dès maintenant !</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial_upgrade">
+        <item quantity="other">Passez à un plan mensuel ou annuel pour recevoir %s beats gratuits chaque semaine</item>
+        <item quantity="one">Passez à un plan mensuel ou annuel pour recevoir %s beat gratuit chaque semaine</item>
+    </plurals>
+    <plurals name="n_free_beats_with_membership_next_date">
+        <item quantity="other">Réclamez vos prochains %1$s battements sur : %2$s</item>
+        <item quantity="one">Réclamez votre prochain %1$s battement sur : %2$s</item>
+    </plurals>
+    <plurals name="n_free_beats_without_membership_description">
+        <item quantity="other">Accélérez votre prochain tube grâce à %s beats gratuits de votre choix chaque semaine ! Vous en voulez davantage ?</item>
+        <item quantity="one">Accélérez votre prochain tube grâce à %s beat gratuit de votre choix chaque semaine ! Vous en voulez davantage ?</item>
+    </plurals>
+    <plurals name="n_free_daily_splits_left">
+        <item quantity="other">"Il vous reste %s split gratuit aujourd'hui"</item>
+        <item quantity="one">"Il vous reste %s split gratuit aujourd'hui"</item>
+    </plurals>
+    <plurals name="n_free_splits_left">
+        <item quantity="other">%s splits gratuits restants ce mois-ci</item>
+        <item quantity="one">%s split gratuit restant ce mois-ci</item>
+    </plurals>
+    <plurals name="n_genres">
+        <item quantity="other">%s genres</item>
+        <item quantity="one">%s genre</item>
+    </plurals>
+    <plurals name="n_hours">
+        <item quantity="other">%s heures</item>
+        <item quantity="one">%s heure</item>
+    </plurals>
+    <plurals name="n_impressions">
+        <item quantity="other">%s impressions</item>
+        <item quantity="one">%s impression</item>
+    </plurals>
+    <plurals name="n_inspired_songs">
+        <item quantity="other">a inspiré %s pistes</item>
+        <item quantity="one">a inspiré %s piste</item>
+    </plurals>
+    <plurals name="n_latency_manual">
+        <item quantity="other">Vous avez défini : %s ms de latence</item>
+        <item quantity="one">Vous avez défini : %s ms de latence</item>
+    </plurals>
+    <plurals name="n_latency_test_result">
+        <item quantity="other">Résultat du test : %s ms de latence</item>
+        <item quantity="one">Résultat du test : %s ms de latence</item>
+    </plurals>
+    <plurals name="n_likes">
+        <item quantity="other">"%s j'aime"</item>
+        <item quantity="one">"%s j'aime"</item>
+    </plurals>
+    <plurals name="n_members">
+        <item quantity="other">%s membres</item>
+        <item quantity="one">%s membre</item>
+    </plurals>
+    <plurals name="n_message_requests">
+        <item quantity="other">%s demandes de message en attente</item>
+        <item quantity="one">%s demande de message en attente</item>
+    </plurals>
+    <plurals name="n_milliseconds">
+        <item quantity="other">%s ms</item>
+        <item quantity="one">%s ms</item>
+    </plurals>
+    <plurals name="n_min">
+        <item quantity="other">%sm</item>
+        <item quantity="one">%sm</item>
+    </plurals>
+    <plurals name="n_months">
+        <item quantity="other">%s mois</item>
+        <item quantity="one">%s mois</item>
+    </plurals>
+    <plurals name="n_mutuals">
+        <item quantity="other">%s Mutuels</item>
+        <item quantity="one">%s Mutuels</item>
+    </plurals>
+    <plurals name="n_new_notifications">
+        <item quantity="other">%s nouvelles notifications</item>
+        <item quantity="one">%s nouvelle notification</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="other">%s lectures</item>
+        <item quantity="one">%s lecture</item>
+    </plurals>
+    <plurals name="n_posts">
+        <item quantity="other">%s publications</item>
+        <item quantity="one">%s publication</item>
+    </plurals>
+    <plurals name="n_requests_invites">
+        <item quantity="other">%s demandes/invitations</item>
+        <item quantity="one">%s demande/invitation</item>
+    </plurals>
+    <plurals name="n_samples">
+        <item quantity="other">%s échantillons</item>
+        <item quantity="one">%s échantillon</item>
+    </plurals>
+    <plurals name="n_seconds">
+        <item quantity="other">%ss</item>
+        <item quantity="one">%ss</item>
+    </plurals>
+    <plurals name="n_semitones">
+        <item quantity="other">%s demi-tons</item>
+        <item quantity="one">%s demi-ton</item>
+    </plurals>
+    <plurals name="n_tracks">
+        <item quantity="other">%s pistes</item>
+        <item quantity="one">%s piste</item>
+    </plurals>
+    <plurals name="n_unlock_free_beats_with_membership">
+        <item quantity="other">Débloquez %s beat gratuits par semaine</item>
+        <item quantity="one">Débloquez %s beat gratuits par semaine</item>
+    </plurals>
+    <plurals name="n_view">
+        <item quantity="other">%s vues</item>
+        <item quantity="one">%s vue</item>
+    </plurals>
+    <plurals name="n_weeks">
+        <item quantity="other">Semaines %s</item>
+        <item quantity="one">Semaine %s</item>
+    </plurals>
+    <plurals name="n_zero_free_beats_without_membership_description">
+        <item quantity="other">"Vous voulez en avoir plus ? Passez à l'adhésion pour débloquer %s beats gratuits chaque semaine."</item>
+        <item quantity="one">"Vous voulez en avoir plus ? Passez à l'adhésion pour débloquer %s beat gratuits chaque semaine."</item>
+    </plurals>
+    <plurals name="plural_followers_without_placeholder">
+        <item quantity="other">Abonnés</item>
+        <item quantity="one">Abonné</item>
+    </plurals>
+    <plurals name="plural_following_without_placeholder">
+        <item quantity="other">Suivis</item>
+        <item quantity="one">Suivi</item>
+    </plurals>
+    <plurals name="plural_play_without_placeholder">
+        <item quantity="other">Lectures</item>
+        <item quantity="one">Lecture</item>
+    </plurals>
+    <plurals name="relative_time_days">
+        <item quantity="other">il y a %sj</item>
+        <item quantity="one">il y a %sj</item>
+    </plurals>
+    <plurals name="relative_time_hours">
+        <item quantity="other">il y a %sh</item>
+        <item quantity="one">il y a %sh</item>
+    </plurals>
+    <plurals name="relative_time_minutes">
+        <item quantity="other">il y a %sm</item>
+        <item quantity="one">il y a %sm</item>
+    </plurals>
+    <plurals name="show_n_more_tracks">
+        <item quantity="other">Afficher %s pistes de plus</item>
+        <item quantity="one">Afficher %s piste de plus</item>
+    </plurals>
+    <plurals name="show_n_results">
+        <item quantity="other">Afficher %s résultats</item>
+        <item quantity="one">Afficher %s résultat</item>
+    </plurals>
+    <plurals name="try_free_for_n_days">
+        <item quantity="other">Essai gratuit pendant %s jours</item>
+        <item quantity="one">Essai gratuit pendant %s jour</item>
+    </plurals>
+    <plurals name="unit_n_bytes">
+        <item quantity="other">%s octets</item>
+        <item quantity="one">%s octet</item>
+    </plurals>
+    <plurals name="x_and_n_mutual_connections">
+        <item quantity="other">%1$s et %2$s autres contacts en commun</item>
+        <item quantity="one">%1$s et %2$s autres contacts en commun</item>
+    </plurals>
+</resources>

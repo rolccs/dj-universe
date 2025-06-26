@@ -1,0 +1,40 @@
+
+# INSTRUCCIONES PARA INSTALAR BLENDERKIT EN BLENDER
+
+1. Abrir Blender
+2. Ir a Edit > Preferences > Add-ons
+3. Click "Install..."
+4. Seleccionar: /home/fat32/dj-universe/tools/reverse-engineering/blenderkit
+5. Buscar "BlenderKit" y habilitarlo
+6. Configurar API key (crear cuenta gratis en BlenderKit.com)
+7. Usar el navegador de assets para descargar modelos Pioneer
+
+# MODELOS A DESCARGAR:
+
+# Pioneer DJ CDJ-3000
+# URL: https://www.blenderkit.com/asset-gallery-detail/efda635f-3fe1-4c68-b4c8-d9a0d587d76c/
+# ID: efda635f-3fe1-4c68-b4c8-d9a0d587d76c
+
+# DJ Mix Pioneer XDJ-RX3
+# URL: https://www.blenderkit.com/asset-gallery-detail/95f4a34d-7405-4fe0-bb82-2b4da27e06dd/
+# ID: 95f4a34d-7405-4fe0-bb82-2b4da27e06dd
+
+# DJ Mix DJS-1000
+# URL: https://www.blenderkit.com/asset-gallery-detail/8797eae3-2068-48ac-9c71-f25f8c1a2095/
+# ID: 8797eae3-2068-48ac-9c71-f25f8c1a2095
+
+# DJ Native Instruments Traktor
+# URL: https://www.blenderkit.com/asset-gallery-detail/104940a9-ae64-45d9-ab67-ef645c3fdd37/
+# ID: 104940a9-ae64-45d9-ab67-ef645c3fdd37
+
+# DJ Equipment General
+# URL: https://www.blenderkit.com/asset-gallery-detail/b797014d-2bce-4b1a-9d62-b128dcd8b412/
+# ID: b797014d-2bce-4b1a-9d62-b128dcd8b412
+
+# Pioneer Audio Device
+# URL: https://www.blenderkit.com/asset-gallery-detail/8bba2166-c71b-4592-9034-c3a0b29965e3/
+# ID: 8bba2166-c71b-4592-9034-c3a0b29965e3
+
+# Isometric Studio Music DJ
+# URL: https://www.blenderkit.com/asset-gallery-detail/3adb0906-43ed-491b-838e-8dda693c71d8/
+# ID: 3adb0906-43ed-491b-838e-8dda693c71d8

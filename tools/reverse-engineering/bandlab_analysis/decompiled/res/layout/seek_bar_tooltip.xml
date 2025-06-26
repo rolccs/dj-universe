@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/seek_bar_tooltip_0" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_small" android:textStyle="normal" android:textColor="@color/glyphs_inverted" android:id="@id/tooltip_content" android:tag="binding_1" android:background="@color/surface_inactive_inverted" android:paddingTop="@dimen/grid_size_half" android:paddingBottom="@dimen/grid_size_half" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/grid_size" android:paddingEnd="@dimen/grid_size" />
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" bind:srcCompat="@drawable/ic_tooltip_tail" bind:tint="@color/surface_inactive_inverted" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/looper_effect_quant_bg" android:tag="layout/looper_effect_quantization_0" android:background="@drawable/looper_effect_rounded_bg" android:backgroundTint="@color/tint_red_20" style="@style/LooperEffectQuantization" />
+    <com.bandlab.bandlab.looper.effects.views.LooperStutterLayout android:id="@id/looper_effect_stutter" android:tag="layout/looper_effect_quantization_1" style="@style/LooperEffectStutterLayout">
+        <com.bandlab.bandlab.looper.effects.views.common.PressAwareButton android:id="@id/looper_effect_stutter_4" android:tag="binding_2" android:text="@string/quarter" style="@style/LooperEffectStutter4" />
+        <com.bandlab.bandlab.looper.effects.views.common.PressAwareButton android:id="@id/looper_effect_stutter_8" android:tag="binding_3" android:text="@string/eighth" style="@style/LooperEffectStutter8" />
+        <com.bandlab.bandlab.looper.effects.views.common.PressAwareButton android:id="@id/looper_effect_stutter_16" android:tag="binding_4" android:text="@string/sixteenth" style="@style/LooperEffectStutter16" />
+        <com.bandlab.bandlab.looper.effects.views.common.PressAwareButton android:id="@id/looper_effect_stutter_32" android:tag="binding_5" android:text="@string/thirty_second" style="@style/LooperEffectStutter32" />
+    </com.bandlab.bandlab.looper.effects.views.LooperStutterLayout>
+    <View android:id="@id/divider" android:tag="layout/looper_effect_quantization_6" style="@style/LooperEffectQuantDivider" />
+    <com.bandlab.bandlab.looper.effects.views.common.PressAwareImageButton android:id="@id/looper_effect_stopper" android:tag="layout/looper_effect_quantization_7" bind:tint="@color/looper_effect_dark_quant" style="@style/LooperEffectStopper" />
+</merge>

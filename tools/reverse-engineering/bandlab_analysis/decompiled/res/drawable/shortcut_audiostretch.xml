@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <size android:height="@dimen/grid_size_x4" android:width="@dimen/grid_size_x4" />
+            <solid android:color="#fff3f3f3" />
+        </shape>
+    </item>
+    <item>
+        <inset android:drawable="@drawable/ic_audiostretch_black_color" android:inset="@dimen/grid_size_x1_25" />
+    </item>
+</layer-list>

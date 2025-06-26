@@ -1,0 +1,814 @@
+/*@import "subs.css";*/
+html{
+line-height: 1.3;
+}
+body{
+ background-color: #000000;
+ font-size: 0.9em;
+ margin: 0px;
+ color: #dddddd;
+ text-align: center;
+ font-family:"ＭＳゴシック", Helvetica, Osaka, Arial, sans-serif;
+-webkit-text-size-adjust: none;
+-webkit-text-stroke-width: none;
+}
+
+/*カラムレイアウト-----------------------------------------
+---------------------------------------------------------*/
+#header{
+ background:url(img/header_bg.gif) repeat-x;
+ height: 30px;
+ text-align: center;
+ width: 100%;
+}
+
+#header_contents{
+ margin: 0px;
+ text-align: center;
+}
+
+#header_left{
+ width: 50%;
+ margin-top: 10px;
+ float: left;
+}
+#header_left img{
+ width: 100%;
+}
+
+#header_right{
+ width: 50%;
+ margin-top: 10px;
+ float: right;
+ text-align: right;
+}
+#pankuzu {
+display:none;
+}
+
+#mainContents .top img{
+display:none;
+}
+
+
+#banner{
+ clear: both;
+ position:relative;
+ display:none;
+}
+#banner img{
+ display:none;
+}
+.manual{
+ position: absolute;
+ top: 0px;
+ left: 2px;
+ font-size: 1.2em;
+ font-weight: bolder;
+ text-align: left;
+ color: #dddddd;
+}
+
+.version{
+ position: absolute;
+ top: 1em;
+ left: 2px;
+ font-size: 1.1em;
+ font-weight: bolder;
+ text-align: left;
+ color: #dddddd;
+}
+
+#layoutBody{
+ width: 100%;
+ /*width: 94%;*/
+ margin: 0px 0px 10px 0px;
+ /*margin: 0px 3% 10px 3%;*/
+ text-align: center;
+}
+
+#leftMenu{
+ width: 100%;
+ margin: 0px auto 0px auto;
+ color: #ffffff;
+ float: left;
+ display:none;
+}
+
+#mainContents{
+ /*margin: 0px 0px 20px 30px;/*margin-right 再考*/
+ /*Var.2より追記　グレイ背景用にマージンを変更。パディングを追記*/
+ margin: 0px 0px 0px 0px;
+ padding: 0px;
+ width: auto;
+ text-align: left;
+ line-break:strict; /*Var.2より追記　禁則処理*/
+}
+
+ /*Var.2より追記　セクション本文の文字色をグレイに*/
+.section_a,.section_b,.section_c,.section_d{
+ color:#DDDDDD;
+}
+
+ /*Var.2より追記　cセクションにインデントをつける*/
+.section_d{
+ margin: 0px 0px 0px 15px;
+}
+
+div.section_c{
+ border: 1px solid #666666;
+ margin: 10px 3px 10px 0px;
+ padding: 0px 3px 0px 3px;
+}
+
+div.section_c.open{
+ border: 1px solid #666666;
+}
+ /*Var.2より追記　h3をインデントしたぶん戻す
+h3{
+  margin-left:-10px;
+}*/
+
+#footer{
+ clear:both;
+ background:url(img/footer_bg.gif) repeat-x;
+ height:33px;
+ /* text-align: center; */
+}
+
+#footer_contents{
+ margin: 10px auto 0;
+ height:30px;
+ width: auto;
+ text-align: center;
+}
+
+#footer:after{
+ content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+}
+
+#footer_left{
+ margin: 15px 0px 0px 3px;
+ float: left;
+ color: #ffffff;
+ font-size: 10px;
+ line-height: 15px;
+ text-decoration: none;
+ letter-spacing: 1px;
+ text-align: left;
+}
+
+#footer_right{
+ margin: 5px 0px 0px 0px;
+ float: right;
+ color: #ffffff;
+ font-size: 0.8em;
+ line-height: 15px;
+ text-decoration: none;
+ text-align: right;
+}
+
+/*フッタースタイル-----------------------------------------
+---------------------------------------------------------*/
+#footer ul{
+ list-style-type: none;
+ height: 30px;
+ margin: 0px 0px 0px 5px;
+ padding: 0px;
+ float: left;
+}
+
+#footer ul li{
+ display: inline;
+ margin: 0px;
+ height: 30px;
+ padding: 0px;
+}
+
+#footer a{
+ border: 0;
+ margin: 0;
+ padding: 0;
+ margin-right: 15px;
+ margin-left: 0;
+ display: block;
+ float: left;
+ color: #dddddd;
+ font-size: 10px;
+ line-height: 15px;
+ text-decoration: none;
+}
+
+#footer ul a:hover{
+ display: block;
+ background-repeat: no-repeat;
+ background-position: top left;
+ color: #dddddd;
+ font-size: 20px;
+ line-height: 15px;
+ text-decoration: none;
+}
+
+
+/*プルダウンメニュースタイル-------------------------------
+---------------------------------------------------------*/
+select{
+ /*background: #C0C0C0;*/
+ font-size: 16px;
+}
+
+
+/*レフトメニューコラムスタイル-----------------------------
+---------------------------------------------------------*/
+#leftMenu .titleFirst{
+ background-color:rgba(51,51,51,0.5);
+ margin: 0px 0px 0px 0px;
+}
+
+#leftMenu .titleSecond{
+ background-color:rgba(102,102,102,0.5);
+ margin: 0px 0px 0px 0px;
+ display:none;
+}
+
+#leftMenu .titleFirst p.hover{
+ border-top: 1px dotted #666666;
+ padding: 5px 5px 5px 10px;
+ font-size: 1.3em;
+ font-weight: bold;
+ text-align: left;
+ background: url(img/arrow_open.gif) no-repeat 99% 10px;
+ /*text-shadow: #black 0px -1px, #black 1px 0px, #black 0px 1px, #black -1px 0px;*/
+}
+
+#leftMenu .titleFirst p{
+ border-top: 1px dotted #666666;
+ padding: 7px 5px 7px 10px;
+ font-size: 1.3em;
+ font-weight: bold;
+ text-align: left;
+ background: url(img/arrow_close.gif) no-repeat 99%;
+ /*text-shadow: #black 0px -1px, #black 1px 0px, #black 0px 1px, #black -1px 0px;*/
+}
+
+#leftMenu .titleSecond p{
+ border-top: 1px dotted #999999;
+ padding: 3px 3px 3px 8px;
+ font-size: 0.7em;
+ font-weight: normal;
+ text-align: left;
+ background: none;
+ text-shadow: none;
+ /*background: url(img/arrow_next.gif) no-repeat 99%;*/
+}
+
+#leftMenu .titleSecond:first-child{
+ padding: 0px 0px 0px 0px;
+ margin: 8px 0px 0px 0px;
+}
+
+#leftMenu a{
+ display: block;
+ color: #ffffff;
+ text-decoration: none;
+ padding: 5px 5px 5px 0px;
+ text-align: left;
+ }
+
+#leftMenu a:hover{
+ background: #444444;
+ color: #ffffff;
+}
+
+
+/*タイトルスタイル-----------------------------------------
+---------------------------------------------------------*/
+h1{
+ clear:both;
+ font-size: 1.0em;
+ margin: 0px 0px 0px 0px;
+ color: #ffffff;
+}
+
+h2{
+ font-size: 1.3em;
+ margin: 5px 0px 15px 0px;
+ padding: 3px 0px 3px 5px;
+ border-bottom: 1px solid #666666;
+ border-left: 10px solid #666666;
+ color: #ffffff;
+}
+
+h3{
+ font-size: 1.1em;
+ margin: -1px 0px -1px -4px;
+ /*border-bottom: 1px solid #666666;*/
+ border-left: 5px solid #666666;
+ color: #ffffff;
+ font-weight:bold;
+ padding: 7px 20px 7px 5px;
+ background: url(img/arrow_close.gif) no-repeat 99%;
+ display:block;
+}
+
+/*Ver.2より追記　おりたたみ用open時アイコン指定*/
+h3.open{
+ /*border-bottom: 1px solid #666666;*/
+ /*border-bottom: none;*/
+ /*border-left: none;*/
+ margin: -1px -3px 5px -4px;
+ background: url(img/arrow_open.gif) no-repeat 99%;
+ background-color: #666666;
+}
+
+/*Ver.2より追記　おりたたみ用open時アイコン指定*/
+h3.open_state{
+ margin: 0px;
+ padding: 7px 0px 0px 0px;
+ border: none;
+ background: none;
+}
+
+/*Ver.3より追記　jsに直打ちだったのをCSS化*/
+h3.hover{background-color:#444444;}
+
+/*Ver.3より追記　moderu記号の位置調整など。IE6では適用されないので、そこはjsで*/
+/*読み込みんでから閉じるまでの間にチラッと見えるのが気になるならここをonに
+h3 ~ *{display:none;}
+h3 + p{display:block;margin:0 0 0 -14px;}
+*/
+
+
+h4{
+ font-size: 1.0em;
+ font-weight:bold;
+ margin: 4px 0px 0px 0px;
+ padding: 4px 0px 0px 0px;
+}
+
+h4.close{
+ background: url(img/step_close.gif) no-repeat 99%;
+ padding: 5px 18px 5px 0px;
+ /*border-bottom: 1px dotted #666666;*/
+}
+
+h4.open{
+ background: url(img/step_open.gif) no-repeat 99%;
+ padding: 5px 18px 5px 0px;
+ /*border-bottom: 1px dotted #666666;*/
+}
+
+h4.secttitle{
+ font-size: 1.0em;
+ margin: 5px 0px 0px -15px;
+ padding: 5px 0px 5px 0px;
+ color: #ffffff;
+ background: none;
+}
+
+.title_frame h4.close{
+ margin: 0px 0px -5px 0px;
+ padding: 5px 18px 5px 0px;
+ background: url(img/step_close.gif) no-repeat 99%;
+}
+
+.title_frame h4.open{
+ margin: 0px 0px 0px 0px;
+ padding: 5px 18px 5px 0px;
+ background: url(img/step_open.gif) no-repeat 99%;
+}
+
+.objoprt h4{
+ margin: 0px 0px 0px 15px;
+ padding: 5px 18px 0px 0px;
+}
+
+.objoprt h4.close{
+ margin: 0px 0px 0px 15px;
+ padding: 5px 18px 5px 0px;
+ background: url(img/step_close.gif) no-repeat 99%;
+}
+
+.objoprt h4.open{
+ margin: 0px 0px 0px 15px;
+ padding: 5px 18px 0px 0px;
+ background: url(img/step_open.gif) no-repeat 99%;
+}
+
+.guidname h4{
+ margin: 0px 0px 0px 15px;
+ padding: 5px 18px 5px 0px;
+}
+
+.guidname h4.close{
+ margin: 0px 0px 0px 15px;
+ padding: 5px 18px 5px 0px;
+ background: url(img/step_close.gif) no-repeat 99%;
+}
+
+.guidname h4.open{
+ margin: 0px 0px 0px 15px;
+ padding: 5px 18px 5px 0px;
+ background: url(img/step_open.gif) no-repeat 99%;
+}
+
+
+/*テキストスタイル-----------------------------------------
+---------------------------------------------------------*/
+p{
+ margin: 0px 0px 0px 0px;
+}
+
+.left{
+ text-align: left;
+}
+
+.right{
+ text-align: right;
+}
+
+.center{
+ text-align: center;
+}
+
+li{
+ list-style: none;
+}
+
+.guidname h4 span.title-prefix{
+ margin-left: -15px;
+ margin-right: 2px;
+}
+
+span.title-prefix{
+ margin-left: -15px;
+ margin-right: 7px;
+}
+
+span.d_title-prefix{
+ margin-right: 5px;
+}
+
+span.prefix{
+ margin-left: -15px;
+ margin-right: 5px;
+}
+
+/*.impnote{
+ margin-left: 20px;
+}
+
+.imgguide .ul,
+.imgguide .ol{
+ margin-left: 10px;
+}
+
+.impnote_item{
+ margin: 0px 0px 5px 0px;
+}*/
+
+.instep{
+ margin-left: 20px;
+}
+
+ol,ul,.imp_item_li,.note_item_li{
+ margin: 0px 0px 0px 15px;
+ padding: 0px;
+}
+
+
+/*イメージスタイル-----------------------------------------
+---------------------------------------------------------*/
+img{
+ border: none;
+ padding: 0px 2px;
+}
+
+/*Ver.2より追記　inimg位置調整*/
+span.inimg img{
+ vertical-align: baseline; /*text-bottom ;*/
+}
+/*Ver.2より marginの調整でいけるけど、定数になってしまうので、場所によっては重なり等起きてしまう可能性あり。
+/*これについては要確認!*/
+span.inimg_plus img{
+ margin-top:-5px;
+ vertical-align:top ;
+}
+span.inimg_minus img{
+ margin-top:5px;
+ vertical-align:bottom ;
+}
+
+
+span.prefix img{
+ padding: 0px 0px;
+}
+
+div.imageline,div.comimage{
+ /*text-align: center;*/
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
+
+/*イメージライン-------------------------------------------
+※テーブルの罫線・マージンなどの設定をすること
+---------------------------------------------------------*/
+.imagetable{
+/*ここに罫線・マージンなどの設定*/
+}
+
+.icaption{
+ font-weight:bold;
+}
+
+
+/*テーブルスタイル-----------------------------------------
+---------------------------------------------------------*/
+/*border_horizontalはProSVの為の暫定対応*/
+.border_horizontal{
+ border-top: 1px solid #333333;
+}
+
+.border_horizontal thead tr td{
+ border-bottom: 1px solid #333333;
+}
+
+.border_horizontal tbody tr td{
+ border-bottom: 1px solid #333333;
+}
+
+/*border_vertical*/
+.border_vertical {
+ border-collapse: collapse;
+}
+
+.border_vertical thead tr td,
+.border_vertical tbody tr td{
+ border-left: 1px solid #333333;
+ border-right: 1px solid #333333;
+}
+
+/*border_round*/
+.border_round{
+ border-collapse: collapse;
+ border-top: 1px solid #333333;
+}
+
+.border_round thead,
+.border_round tbody{
+ border-left: 1px solid #333333;
+ border-right: 1px solid #333333;
+}
+.border_round tbody:last-child tr td{
+ border-bottom: 1px solid #333333;
+}
+
+.border_round thead,
+.border_round tbody{
+ border-top: 1px solid #333333;
+}
+.border_round thead + tbody,
+.border_round tbody + tbody{
+ border-top: none;
+}
+
+.border_round tfoot{
+ border: none;
+}
+
+/*border_all*/
+.border_all{
+ border-collapse: collapse;
+}
+
+.border_all thead tr td,
+.border_all tbody tr td{
+ border: 1px solid #333333;
+}
+
+/*border_none*/
+.border_none{
+ border-collapse: collapse;
+}
+
+div.table{
+ margin-top: 10px;
+ margin-bottom: 20px;
+ font-size: 10pt;
+}
+
+caption{
+ font-weight: bold;
+ text-align: left;
+ color: #dddddd;
+}
+
+ /*別窓テーブルのリンクボタン*/
+.out_table_ancer{
+ display:none;
+}
+
+table{
+border-collapse:collapse;
+table-layout: fixed;
+}
+
+table,thead,tbody,tfoot,tr,td,th,col{
+	min-width:6ex;
+	word-break:break-word;
+	/*break-all;*/
+}
+/*
+td:last-child{word-break:break-word;}
+*/
+
+tr.thead td{
+ background-color:#444444;
+}
+
+td{
+ font-size:80%;
+ margin:0;
+ text-indent:0;
+ }
+ 
+
+ 
+table ul{font-size:inherit;}
+table ul a{display:inline;padding:0;margin:0;color: #9090DD;}
+
+
+/*フレームスタイル-----------------------------------------
+---------------------------------------------------------*/
+.frame{
+ border: solid 1px #aaaaaa;
+ padding: 5px 5px 5px 5px;
+ margin: 10px 3px 10px 0px;
+ -webkit-border-radius: 5px;
+}
+
+.title_frame{
+ border: solid 1px #aaaaaa;
+ padding: 0px 5px 5px 5px;
+ margin: 10px 3px 10px 0px;
+ -webkit-border-radius: 5px;
+}
+
+td.frame{
+ border: solid 1px #333333;
+}
+
+
+/*リンクスタイル-------------------------------------------
+---------------------------------------------------------*/
+a{
+ color: #9090DD;
+ /*padding: 5px 5px 5px 5px;*/
+}
+
+/*誤タップを防ぐ為、「span.gotop a」とスタイルを分け
+タップできる領域を狭くなるように変更*/
+span.gotop{
+ display: block;
+ padding: 0px 0px 0px 0px;
+ margin-top: 20px;
+ text-align: right;
+}
+
+/*Ver.2より追記 サポートサイトURLと指定がかぶるのでクラス化*/
+span.gotop a{
+ padding: 0px 5px 0px 0px;
+ margin-top: 0px;
+ color: #9090DD;
+ text-decoration:none;
+}
+
+span.gotop a:hover{
+ color: #C0C0C0;
+ /*Ver.2より追記 誤描画回避折り畳み時のページ上部へのリンクとの重なりでのちらつきを回避*/
+ background-color:transparent;
+}
+
+
+/*js内sclollfit用スタイル--------------------------------
+---------------------------------------------------------*/
+#scrollblank{
+margin:0;
+padding:0;
+clear:both;
+height:0px;
+background-color:transparent;
+display:none;
+}
+
+/*strp以降のインデント*/
+/*.step .oparate{
+margin:0 0 0 15px;
+}*/
+.step .instep{
+margin:0 0 0 15px;
+}
+.step .instep .prefix{margin-left:0;}
+.step .instep{
+	padding-left: 16px;
+	text-indent: -16px;
+}
+
+.description{
+ font-size: 0.8em;
+ margin:0px 0 10px 15px;
+
+
+}
+
+img{
+max-width:300px;
+}
+/*
+@media all and (orientation:portrait){
+	body{
+		width:320px;
+	}
+	img{
+		max-width:270px;
+	}
+}
+@media all and (orientation:landscape){/*横向き
+	body{
+	 width:480px;
+	}
+	img{
+		max-width:430px;
+	}
+}
+*/
+.toolbar {
+    -webkit-box-sizing: border-box;
+    /*border-bottom: 1px solid #000000;*/
+    /*border-bottom: 1px solid #666666;*/
+    padding: 10px;
+    height: 45px;
+    background: url(img/toolbar.png) #000000 repeat-x;
+    position: relative;
+}
+
+
+/*help用スタイル--------------------------------
+---------------------------------------------------------*/
+.toolbar > h1 {
+    /*left: 70px;*/
+    top:10px;
+    line-height: 1;
+    margin: 1px 0 0 0px;
+    height: 1em;
+    font-size: 1.3em;
+    font-weight: bold;
+    /*width: 240px;*/
+}
+
+.back{
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+
+.titleFirst {
+	background-color: rgba(51, 51, 51, 0.5);
+	margin: 0px 0px 0px 0px;
+	}
+	
+
+.a_title {
+	border-top: 1px dotted #666;
+	padding: 7px 5px 7px 10px;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: left;
+	}
+	
+.b_title {
+	border-top: 1px dotted #999;
+	padding: 3px 5px 3px 10px;
+	font-size: 1.1em;
+	font-weight: normal;
+	text-align: left;
+	text-shadow: none;
+	background-color: rgba(102, 102, 102, 0.5);
+	margin: 0px 0px 0px 10px;
+
+	}
+	
+.titleFirst a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 5px 5px 5px 0px;
+	text-align: left;
+	}

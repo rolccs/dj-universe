@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/v_action_velocity_0" style="@style/METoolLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <View style="@style/METoolBorder" />
+    <androidx.appcompat.widget.AppCompatSeekBar android:layout_gravity="center" android:id="@id/seekbar" android:tag="binding_1" android:paddingTop="@dimen/grid_size_x2" android:paddingBottom="@dimen/grid_size_x2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/grid_size_x3" android:paddingEnd="@dimen/grid_size_x3" style="@style/MeSeekBar.Tool" />
+    <include layout="@layout/tool_transport_controls" />
+</LinearLayout>

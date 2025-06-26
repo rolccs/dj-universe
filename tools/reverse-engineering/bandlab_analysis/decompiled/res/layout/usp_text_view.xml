@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:paddingTop="@dimen/grid_size" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/glyphs_primary" android:id="@id/usp_text_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/activate_membership_ads_tip" android:paddingEnd="@dimen/grid_size_half" />
+    <TextView android:textColor="@color/tint_blue_base" android:id="@id/usp_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/activate_membership" />
+</LinearLayout>

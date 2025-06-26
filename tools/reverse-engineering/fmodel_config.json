@@ -1,0 +1,21 @@
+{
+  "game_directory": "/home/fat32/tribe/TribeXR",
+  "output_directory": "/home/fat32/dj-universe/tools/reverse-engineering/tribexr_models/fmodel_output",
+  "target_assets": [
+    "CDJ",
+    "DJM",
+    "DDJ",
+    "Pioneer",
+    "Mixer",
+    "Turntable",
+    "DJ_Equipment",
+    "Controller"
+  ],
+  "export_formats": [
+    ".fbx",
+    ".obj",
+    ".gltf"
+  ],
+  "include_textures": true,
+  "include_materials": true
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/overlay_surfaceModal" />
+            <size android:height="@dimen/grid_size" android:width="@dimen/grid_size" />
+        </shape>
+    </item>
+    <item android:top="@dimen/grid_size_quarter" android:bottom="@dimen/grid_size_quarter" android:start="@dimen/grid_size_quarter" android:end="@dimen/grid_size_quarter">
+        <shape android:shape="oval">
+            <solid android:color="@color/tint_blue_base" />
+        </shape>
+    </item>
+</layer-list>

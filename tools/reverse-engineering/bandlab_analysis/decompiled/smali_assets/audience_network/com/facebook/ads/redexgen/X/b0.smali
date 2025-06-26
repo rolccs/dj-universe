@@ -1,0 +1,62 @@
+.class public final Lcom/facebook/ads/redexgen/X/b0;
+.super Lcom/facebook/ads/redexgen/X/BY;
+.source ""
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/facebook/ads/redexgen/X/ax;->A04(Z)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic A00:Lcom/facebook/ads/redexgen/X/ax;
+
+
+# direct methods
+.method public constructor <init>(Lcom/facebook/ads/redexgen/X/ax;)V
+    .locals 0
+
+    .line 76859
+    iput-object p1, p0, Lcom/facebook/ads/redexgen/X/b0;->A00:Lcom/facebook/ads/redexgen/X/ax;
+
+    invoke-direct {p0}, Lcom/facebook/ads/redexgen/X/BY;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final A05()V
+    .locals 2
+
+    .line 76860
+    iget-object v1, p0, Lcom/facebook/ads/redexgen/X/b0;->A00:Lcom/facebook/ads/redexgen/X/ax;
+
+    sget-object v0, Lcom/facebook/ads/redexgen/X/Ip;->A04:Lcom/facebook/ads/redexgen/X/Ip;
+
+    invoke-static {v1, v0}, Lcom/facebook/ads/redexgen/X/ax;->A03(Lcom/facebook/ads/redexgen/X/ax;Lcom/facebook/ads/redexgen/X/Ip;)Lcom/facebook/ads/redexgen/X/Ip;
+
+    .line 76861
+    iget-object v0, p0, Lcom/facebook/ads/redexgen/X/b0;->A00:Lcom/facebook/ads/redexgen/X/ax;
+
+    invoke-static {v0}, Lcom/facebook/ads/redexgen/X/ax;->A02(Lcom/facebook/ads/redexgen/X/ax;)Landroid/view/View;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lcom/facebook/ads/redexgen/X/b0;->A00:Lcom/facebook/ads/redexgen/X/ax;
+
+    invoke-static {v0}, Lcom/facebook/ads/redexgen/X/ax;->A01(Lcom/facebook/ads/redexgen/X/ax;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcom/facebook/ads/redexgen/X/D3;->A0Q(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+
+    .line 76862
+    return-void
+.end method

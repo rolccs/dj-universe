@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/surface_inactive_inverted" />
+    <corners android:radius="@dimen/grid_size_x2_5" />
+</shape>

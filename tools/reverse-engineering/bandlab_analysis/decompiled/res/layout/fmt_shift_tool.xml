@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/fmt_shift_tool_0" android:splitMotionEvents="false" style="@style/METoolLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View style="@style/METoolBorder" />
+    <TextView android:textColor="@color/glyphs_secondary" android:layout_gravity="center_horizontal" android:id="@id/shift_tool_adjusted_value" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x2" android:layout_marginBottom="@dimen/grid_size" />
+    <com.bandlab.common.views.CenteredSeekbar android:id="@id/shift_tool_seekbar" android:tag="binding_2" android:paddingTop="@dimen/grid_size_x2" android:paddingBottom="@dimen/grid_size_x2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/grid_size_x3_5" android:paddingEnd="@dimen/grid_size_x3_5" app:centerProgress="true" style="@style/MeSeekBar.Tool" />
+    <include layout="@layout/tool_transport_controls" />
+</LinearLayout>

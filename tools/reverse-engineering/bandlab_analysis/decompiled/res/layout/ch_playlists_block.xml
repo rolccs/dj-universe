@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/ch_playlists_block_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:tag="binding_1" android:text="@string/featured_collections" style="@style/Channel.Title" />
+    <com.bandlab.common.views.recycler.SmoothRecyclerView android:tag="binding_2" style="@style/Channel.Recycler" />
+</LinearLayout>

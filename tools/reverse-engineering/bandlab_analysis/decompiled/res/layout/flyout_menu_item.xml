@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/text_medium" android:textColor="@color/glyphs_primary" android:ellipsize="end" android:gravity="center_vertical" android:tag="layout/flyout_menu_item_0" android:background="@drawable/bg_flyout_item" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x5" android:maxLines="1" android:drawablePadding="@dimen/grid_size_x2" bind:drawableTint="@color/glyphs_primary" bind:fontFamily="@font/default_medium"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto" />

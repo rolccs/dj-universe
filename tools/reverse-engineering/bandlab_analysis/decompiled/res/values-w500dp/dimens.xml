@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="banner_margin">@dimen/grid_size_quarter</item>
+    <item type="dimen" name="collaborator_card_margin">@dimen/grid_size</item>
+    <item type="dimen" name="collaborator_search_padding">@dimen/zero</item>
+    <item type="dimen" name="location_search_margin_top">@dimen/grid_size_x2</item>
+    <dimen name="looper_edit_mode_bottom_margin">0.0dip</dimen>
+    <item type="dimen" name="me_player_height">@dimen/grid_size_x5</item>
+    <item type="dimen" name="me_scale_button_max_width">@dimen/grid_size_x20</item>
+    <dimen name="trending_button_flow_width">375.0dip</dimen>
+</resources>

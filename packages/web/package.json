@@ -35,7 +35,6 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/three": "^0.157.0",
-    "@types/webaudio-api": "^0.0.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.0.0",
     "autoprefixer": "^10.0.0",

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:tag="layout/horizontal_image_action_0" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="@dimen/grid_size_x3" android:paddingStart="@dimen/grid_size" android:paddingEnd="@dimen/grid_size"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <ImageView android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="fill_parent" bind:tint="@color/me_popup_menu_text_color" />
+    <TextView android:textColor="@color/me_popup_menu_text_color" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:paddingStart="@dimen/grid_size_half" style="@style/MediumText.Title" />
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ASBottomButton" parent="@style/ASBaseBottomButton">
+        <item name="android:minHeight">32.0dip</item>
+    </style>
+    <style name="ASButtonsFrame" parent="@style/ASBaseButtonsFrame" />
+    <style name="ASPlaybackButton" parent="@style/ASImageButtonStyle">
+        <item name="android:layout_width">40.0dip</item>
+        <item name="android:layout_height">40.0dip</item>
+    </style>
+    <style name="ASPlaybackButton.Play" parent="@style/ASPlaybackButton">
+        <item name="android:layout_marginStart">16.0dip</item>
+        <item name="android:layout_marginEnd">16.0dip</item>
+        <item name="layout_constraintEnd_toStartOf">@id/stForward</item>
+        <item name="layout_constraintStart_toEndOf">@id/stBackward</item>
+        <item name="layout_constraintTop_toTopOf">@id/stSpeed</item>
+    </style>
+    <style name="AdjustView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">16.0dip</item>
+        <item name="android:layout_marginEnd">16.0dip</item>
+    </style>
+    <style name="AdjustView.Pitch" parent="@style/AdjustView">
+        <item name="android:layout_marginStart">32.0dip</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/stSpeed</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintHorizontal_bias">0.0</item>
+        <item name="layout_constraintHorizontal_chainStyle">packed</item>
+        <item name="layout_constraintStart_toEndOf">@id/stForward</item>
+        <item name="layout_constraintTop_toTopOf">@id/stSpeed</item>
+    </style>
+    <style name="AdjustView.Speed" parent="@style/AdjustView">
+        <item name="android:layout_marginBottom">@dimen/as_adjustViewBottomMargin</item>
+        <item name="android:layout_marginEnd">32.0dip</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toStartOf">@id/stBackward</item>
+        <item name="layout_constraintHorizontal_bias">1.0</item>
+        <item name="layout_constraintHorizontal_chainStyle">packed</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+    <style name="CollaboratorCardStyle">
+        <item name="android:layout_width">@dimen/container_max_width</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="DialogCard">
+        <item name="android:background">@drawable/card_rounded_corner</item>
+        <item name="android:layout_width">450.0dip</item>
+    </style>
+    <style name="FilterSection.SectionStyle" parent="@style/FilterSection">
+        <item name="android:background">@drawable/filter_section_rounded_bg</item>
+    </style>
+    <style name="ItemCollectionStyle">
+        <item name="android:layout_width">360.0dip</item>
+    </style>
+    <style name="LibraryContent">
+        <item name="android:layout_width">@dimen/container_max_width</item>
+    </style>
+</resources>

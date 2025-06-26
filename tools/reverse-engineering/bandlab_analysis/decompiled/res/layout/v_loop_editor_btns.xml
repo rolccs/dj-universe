@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/v_loop_editor_btns_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <ImageButton android:id="@id/unloop" android:tag="binding_1" android:contentDescription="@string/unloop" bind:srcCompat="@drawable/ic_audio_loop_slash" style="@style/MeToolRowButton.Left" />
+    <TextView android:id="@id/four_loop" android:tag="binding_2" android:text="@string/four" style="@style/MeToolRowButton.Middle" />
+    <TextView android:id="@id/eight_loop" android:tag="binding_3" android:text="@string/eight" style="@style/MeToolRowButton.Middle" />
+    <TextView android:id="@id/sixteen_loop" android:tag="binding_4" android:text="@string/sixteen" style="@style/MeToolRowButton.Middle" />
+    <ImageButton android:id="@id/until_next_loop" android:tag="binding_5" android:contentDescription="@string/loop_until_next" bind:srcCompat="@drawable/ic_arrow_right_bar" style="@style/MeToolRowButton.Right" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:tag="layout/fmt_filter_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/DialogCard">
+        <View android:layout_gravity="center" android:id="@id/v_top_border" android:tag="binding_1" android:background="@color/border_neutral" android:layout_width="@dimen/grid_size_x4_5" android:layout_height="@dimen/grid_size_half" android:layout_marginTop="@dimen/grid_size_half" />
+        <TextView android:textSize="@dimen/text_mlarge" android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x3_5" android:layout_marginTop="@dimen/grid_size_x2" android:text="@string/filters" style="@style/MediumText.Title" />
+        <ImageView android:background="@color/border_neutral" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_hair" android:layout_marginTop="@dimen/grid_size_x2" android:layout_marginHorizontal="@dimen/grid_size_x2" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/times" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x2_5" bind:layoutManager="@string/linear_layout_manager" />
+        <ImageView android:background="@color/border_neutral" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_hair" android:layout_marginTop="@dimen/grid_size_x3" android:layout_marginHorizontal="@dimen/grid_size_x2" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/labels" android:tag="binding_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x2_5" android:layout_marginStart="@dimen/grid_size_x1_5" android:layout_marginEnd="@dimen/grid_size_x1_5" />
+        <androidx.appcompat.widget.AppCompatButton android:id="@id/submit" android:tag="binding_4" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x6" android:layout_marginTop="@dimen/grid_size_x2_5" android:layout_marginBottom="@dimen/grid_size_x2" android:text="@string/apply_filters" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" style="@style/Button.Action.App" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

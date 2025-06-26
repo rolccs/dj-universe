@@ -1,0 +1,73 @@
+{
+  "pioneer_models": {
+    "cdj3000": {
+      "name": "Pioneer DJ CDJ-3000",
+      "blenderkit_id": "efda635f-3fe1-4c68-b4c8-d9a0d587d76c",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/efda635f-3fe1-4c68-b4c8-d9a0d587d76c/",
+      "author": "Haku Design",
+      "category": "CDJ"
+    },
+    "xdj_rx3": {
+      "name": "DJ Mix Pioneer XDJ-RX3",
+      "blenderkit_id": "95f4a34d-7405-4fe0-bb82-2b4da27e06dd",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/95f4a34d-7405-4fe0-bb82-2b4da27e06dd/",
+      "author": "Haku Design",
+      "category": "Controller"
+    },
+    "djs_1000": {
+      "name": "DJ Mix DJS-1000",
+      "blenderkit_id": "8797eae3-2068-48ac-9c71-f25f8c1a2095",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/8797eae3-2068-48ac-9c71-f25f8c1a2095/",
+      "author": "Haku Design",
+      "category": "Sampler"
+    },
+    "traktor": {
+      "name": "DJ Native Instruments Traktor",
+      "blenderkit_id": "104940a9-ae64-45d9-ab67-ef645c3fdd37",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/104940a9-ae64-45d9-ab67-ef645c3fdd37/",
+      "author": "Haku Design",
+      "category": "Controller"
+    },
+    "dj_equipment": {
+      "name": "DJ Equipment General",
+      "blenderkit_id": "b797014d-2bce-4b1a-9d62-b128dcd8b412",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/b797014d-2bce-4b1a-9d62-b128dcd8b412/",
+      "author": "Felipe de Melo",
+      "category": "General"
+    },
+    "pioneer_audio": {
+      "name": "Pioneer Audio Device",
+      "blenderkit_id": "8bba2166-c71b-4592-9034-c3a0b29965e3",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/8bba2166-c71b-4592-9034-c3a0b29965e3/",
+      "author": "Unknown",
+      "category": "Audio"
+    },
+    "isometric_studio": {
+      "name": "Isometric Studio Music DJ",
+      "blenderkit_id": "3adb0906-43ed-491b-838e-8dda693c71d8",
+      "url": "https://www.blenderkit.com/asset-gallery-detail/3adb0906-43ed-491b-838e-8dda693c71d8/",
+      "author": "Haku Design",
+      "category": "Scene"
+    }
+  },
+  "download_instructions": {
+    "method": "manual_blenderkit",
+    "steps": [
+      "1. Abrir Blender",
+      "2. Instalar addon BlenderKit desde tools/reverse-engineering/blenderkit/",
+      "3. Crear cuenta en BlenderKit.com (gratis)",
+      "4. Buscar cada modelo por ID en BlenderKit",
+      "5. Descargar y guardar en pioneer_3d_models/",
+      "6. Exportar cada modelo como .glb o .fbx"
+    ]
+  },
+  "blenderkit_urls": [
+    "https://www.blenderkit.com/asset-gallery-detail/efda635f-3fe1-4c68-b4c8-d9a0d587d76c/",
+    "https://www.blenderkit.com/asset-gallery-detail/95f4a34d-7405-4fe0-bb82-2b4da27e06dd/",
+    "https://www.blenderkit.com/asset-gallery-detail/8797eae3-2068-48ac-9c71-f25f8c1a2095/",
+    "https://www.blenderkit.com/asset-gallery-detail/104940a9-ae64-45d9-ab67-ef645c3fdd37/",
+    "https://www.blenderkit.com/asset-gallery-detail/b797014d-2bce-4b1a-9d62-b128dcd8b412/",
+    "https://www.blenderkit.com/asset-gallery-detail/8bba2166-c71b-4592-9034-c3a0b29965e3/",
+    "https://www.blenderkit.com/asset-gallery-detail/3adb0906-43ed-491b-838e-8dda693c71d8/"
+  ]
+}

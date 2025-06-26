@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/ll_user_container" android:tag="layout/item_user_0" android:background="@color/surface_inactive_screen" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x8" android:foreground="?selectableItemBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <Space android:id="@id/space" android:layout_width="0.0dip" android:layout_height="wrap_content" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" bind:layout_constraintWidth_max="@dimen/container_max_width" />
+    <ImageView android:id="@id/follow_btn" android:tag="binding_1" android:layout_marginEnd="@dimen/grid_size_x2" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toEndOf="@id/space" bind:layout_constraintTop_toTopOf="parent" style="@style/FollowButton.Small" />
+    <include android:layout_width="0.0dip" android:layout_height="0.0dip" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toStartOf="@id/follow_btn" bind:layout_constraintStart_toStartOf="@id/space" bind:layout_constraintTop_toTopOf="parent" layout="@layout/user_item_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>

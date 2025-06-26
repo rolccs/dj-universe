@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="looper_effect_touch_radius">@dimen/grid_size_x2_5</item>
+</resources>

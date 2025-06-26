@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/fmt_loop_tool_0" style="@style/METoolLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <View style="@style/METoolBorder" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size" android:layout_marginStart="@dimen/grid_size" android:layout_marginEnd="@dimen/grid_size" layout="@layout/v_loop_editor_btns" />
+    <include layout="@layout/tool_transport_controls" />
+</LinearLayout>

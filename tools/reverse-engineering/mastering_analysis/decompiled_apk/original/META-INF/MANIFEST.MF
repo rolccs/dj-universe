@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: res/drawable/icon_small.png
+SHA1-Digest: wBREuPsOPEzp156VatZScWW4r2o=
+
+Name: resources.arsc
+SHA1-Digest: C08PKcW3o06ptNdmpj4iwV+8ajI=
+
+Name: res/drawable/main.fnt
+SHA1-Digest: 0VZtYXkOC7b+Ic/WYMZhZBJ72ms=
+
+Name: classes.dex
+SHA1-Digest: gEz5rpz6SFwGPrWbblduDSpzGa0=
+
+Name: lib/armeabi-v7a/libmastering.so
+SHA1-Digest: pvo86f0VDBzykhaj1anBG+1rQ48=
+
+Name: res/layout/main.xml
+SHA1-Digest: 0j9BoK5YAJnpASe/yHy6jFONOhc=
+
+Name: AndroidManifest.xml
+SHA1-Digest: hZqHb9p/BTir0kiFY54PYeMtdWE=
+
+Name: res/drawable-xhdpi/icon_small.png
+SHA1-Digest: kbtxkIv+KYyiqcNMK/poSpAEhEM=
+
+Name: res/drawable/shareicons.tga
+SHA1-Digest: gGB2ZbulhBNFKg/v7HYSTlfs1/E=
+
+Name: res/drawable-xxhdpi/icon_small.png
+SHA1-Digest: oxFK5QO8qR5MLqZK1WJwuG8mrt8=
+
+Name: res/drawable/main_0.tga
+SHA1-Digest: dWPU4SHnQsBywXp/AdRDd/ysHGE=
+
+Name: res/drawable/controls.tga
+SHA1-Digest: Ue/KUaVBZlKlapwFjcP8J9chpCE=
+
+Name: res/drawable/displays.tga
+SHA1-Digest: OcCk6yIyGI5vcOB32GiWxvbd94Q=
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mastering</string>
+    <string name="app_label">Mastering</string>
+    <string name="app_description">Mastering</string>
+    <string name="exit">Exit</string>
+    <string name="nosdcard">"No external storage found.
+Please mount external storage to use Mastering"</string>
+    <string name="ok">OK</string>
+</resources>

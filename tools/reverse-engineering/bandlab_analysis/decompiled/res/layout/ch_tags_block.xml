@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/ch_tags_block_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:tag="binding_1" android:text="@string/trending_tags" style="@style/Channel.Title" />
+    <androidx.recyclerview.widget.RecyclerView android:tag="binding_2" android:paddingLeft="@dimen/grid_size_x1_5" android:paddingRight="@dimen/grid_size_x1_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/minus_grid_size_half" android:overScrollMode="never" />
+</LinearLayout>

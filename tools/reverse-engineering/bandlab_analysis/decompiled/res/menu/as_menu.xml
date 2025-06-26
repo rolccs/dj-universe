@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_download" android:id="@id/as_menuShare" android:title="@string/share" android:showAsAction="ifRoom" android:iconTint="@color/as_icon_tint_selector" />
+    <item android:icon="@drawable/ic_product_studio" android:id="@id/as_menuOpenStudio" android:title="@string/me_open_in_studio" android:showAsAction="ifRoom" android:iconTint="@color/as_icon_tint_selector" />
+</menu>

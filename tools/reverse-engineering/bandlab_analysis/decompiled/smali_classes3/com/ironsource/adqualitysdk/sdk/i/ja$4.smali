@@ -1,0 +1,64 @@
+.class final Lcom/ironsource/adqualitysdk/sdk/i/ja$4;
+.super Lcom/ironsource/adqualitysdk/sdk/i/ir;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/ironsource/adqualitysdk/sdk/i/ja;->ｋ(Ljava/lang/String;Ljava/lang/String;Lcom/ironsource/adqualitysdk/sdk/i/ja$b;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field private synthetic ﻐ:Ljava/lang/String;
+
+.field private synthetic ｋ:Lcom/ironsource/adqualitysdk/sdk/i/ja$b;
+
+.field private synthetic ﾇ:Ljava/lang/String;
+
+.field private synthetic ﾒ:Lcom/ironsource/adqualitysdk/sdk/i/ja;
+
+
+# direct methods
+.method public constructor <init>(Lcom/ironsource/adqualitysdk/sdk/i/ja;Ljava/lang/String;Ljava/lang/String;Lcom/ironsource/adqualitysdk/sdk/i/ja$b;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﾒ:Lcom/ironsource/adqualitysdk/sdk/i/ja;
+
+    iput-object p2, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﻐ:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﾇ:Ljava/lang/String;
+
+    iput-object p4, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ｋ:Lcom/ironsource/adqualitysdk/sdk/i/ja$b;
+
+    invoke-direct {p0}, Lcom/ironsource/adqualitysdk/sdk/i/ir;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final ﻐ()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﾒ:Lcom/ironsource/adqualitysdk/sdk/i/ja;
+
+    iget-object v1, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﻐ:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﾇ:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lcom/ironsource/adqualitysdk/sdk/i/ja;->ﻛ(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ﾒ:Lcom/ironsource/adqualitysdk/sdk/i/ja;
+
+    iget-object v1, p0, Lcom/ironsource/adqualitysdk/sdk/i/ja$4;->ｋ:Lcom/ironsource/adqualitysdk/sdk/i/ja$b;
+
+    invoke-static {v0, v1}, Lcom/ironsource/adqualitysdk/sdk/i/ja;->ｋ(Lcom/ironsource/adqualitysdk/sdk/i/ja;Lcom/ironsource/adqualitysdk/sdk/i/ja$b;)V
+
+    return-void
+.end method

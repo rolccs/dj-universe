@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="about_n_minutes_remaining">
+        <item quantity="other">About %s minutes remaining</item>
+        <item quantity="one">About %s minute remaining</item>
+    </plurals>
+    <plurals name="add_n_tracks">
+        <item quantity="other">Add %s tracks</item>
+        <item quantity="one">Add %s track</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days">
+        <item quantity="other">This campaign will be completed in &lt;b>%s days&lt;/b>.</item>
+        <item quantity="one">This campaign will be completed in &lt;b>%s day&lt;/b>.</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days_short">
+        <item quantity="other">Ends in %s days</item>
+        <item quantity="one">Ends in %s day</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">Fast forward %d seconds</item>
+        <item quantity="one">Fast forward %d second</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">Rewind %d seconds</item>
+        <item quantity="one">Rewind %d second</item>
+    </plurals>
+    <plurals name="in_the_last_n_days">
+        <item quantity="other">in the last %s days</item>
+        <item quantity="one">in the last %s day</item>
+    </plurals>
+    <plurals name="last_n_days">
+        <item quantity="other">Last %s days</item>
+        <item quantity="one">Last %s day</item>
+    </plurals>
+    <plurals name="long_record_length_warning">
+        <item quantity="other">Recording stopped. Reached maximum duration (%s minutes)</item>
+        <item quantity="one">Recording stopped. Reached maximum duration (%s minute)</item>
+    </plurals>
+    <plurals name="me_long_file_n_duration_limit_warning">
+        <item quantity="other">The file you are trying to import is too long. The maximum is %s minutes.</item>
+        <item quantity="one">The file you are trying to import is too long. The maximum is %s minute.</item>
+    </plurals>
+    <plurals name="me_min_n_track_duration_warning">
+        <item quantity="other">Video duration must be at least %s seconds.</item>
+        <item quantity="one">Video duration must be at least %s second.</item>
+    </plurals>
+    <plurals name="me_n_instruments">
+        <item quantity="other">%s Instruments</item>
+        <item quantity="one">%s Instrument</item>
+    </plurals>
+    <plurals name="me_n_packs">
+        <item quantity="other">%s Packs</item>
+        <item quantity="one">%s Pack</item>
+    </plurals>
+    <plurals name="me_n_regions_selected">
+        <item quantity="other">%s regions selected</item>
+        <item quantity="one">%s region selected</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d new notifications</item>
+        <item quantity="one">%d new notification</item>
+    </plurals>
+    <plurals name="n_available_free_beats">
+        <item quantity="other">You have %s free Beats</item>
+        <item quantity="one">You have %s free Beat</item>
+    </plurals>
+    <plurals name="n_bars">
+        <item quantity="other">%s bars</item>
+        <item quantity="one">%s bar</item>
+    </plurals>
+    <plurals name="n_beats">
+        <item quantity="other">%s beats</item>
+        <item quantity="one">%s beat</item>
+    </plurals>
+    <plurals name="n_beats_free_left">
+        <item quantity="other">Free BandLab Beats left</item>
+        <item quantity="one">Free BandLab Beat left</item>
+    </plurals>
+    <plurals name="n_collaborators">
+        <item quantity="other">%s others</item>
+        <item quantity="one">%s other</item>
+    </plurals>
+    <plurals name="n_collections">
+        <item quantity="other">%s collections</item>
+        <item quantity="one">%s collection</item>
+    </plurals>
+    <plurals name="n_comments">
+        <item quantity="other">%s Comments</item>
+        <item quantity="one">%s Comment</item>
+    </plurals>
+    <plurals name="n_days">
+        <item quantity="other">%s Days</item>
+        <item quantity="one">%s Day</item>
+    </plurals>
+    <plurals name="n_days_after_submission">
+        <item quantity="other">min. %s days after submission</item>
+        <item quantity="one">min. %s day after submission</item>
+    </plurals>
+    <plurals name="n_days_free_trial">
+        <item quantity="other">%s days free trial</item>
+        <item quantity="one">%s day free trial</item>
+    </plurals>
+    <plurals name="n_deducted_over_n_days">
+        <item quantity="other">%1$s over %2$s days</item>
+        <item quantity="one">%1$s over %2$s day</item>
+    </plurals>
+    <plurals name="n_engagements">
+        <item quantity="other">%s Engagements</item>
+        <item quantity="one">%s Engagement</item>
+    </plurals>
+    <plurals name="n_files_added">
+        <item quantity="other">%s files added</item>
+        <item quantity="one">%s file added</item>
+    </plurals>
+    <plurals name="n_files_remaining">
+        <item quantity="other">%s files remaining</item>
+        <item quantity="one">%s file remaining</item>
+    </plurals>
+    <plurals name="n_followers">
+        <item quantity="other">%s Followers</item>
+        <item quantity="one">%s Follower</item>
+    </plurals>
+    <plurals name="n_following">
+        <item quantity="other">%s Following</item>
+        <item quantity="one">%s Following</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_member">
+        <item quantity="other">As a member, you can now enjoy the perk of %s free BandLab Beats per week!</item>
+        <item quantity="one">As a member, you can now enjoy the perk of %s free BandLab Beat per week!</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial">
+        <item quantity="other">You’ve unlocked %s free BandLab Beats as part of your trial. Claim it now!</item>
+        <item quantity="one">You’ve unlocked %s free BandLab Beat as part of your trial. Claim it now!</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial_upgrade">
+        <item quantity="other">Upgrade to a monthly or annual plan to receive %s free beats every week.</item>
+        <item quantity="one">Upgrade to a monthly or annual plan to receive %s free beat every week.</item>
+    </plurals>
+    <plurals name="n_free_beats_with_membership_next_date">
+        <item quantity="other">Claim your next %1$s beats on: %2$s</item>
+        <item quantity="one">Claim your next %1$s beat on: %2$s</item>
+    </plurals>
+    <plurals name="n_free_beats_without_membership_description">
+        <item quantity="other">Fast-track your next hit with %s free beats of your choice every week! Want more?</item>
+        <item quantity="one">Fast-track your next hit with %s free beat of your choice every week! Want more?</item>
+    </plurals>
+    <plurals name="n_free_daily_splits_left">
+        <item quantity="other">%s free splits left today</item>
+        <item quantity="one">%s free split left today</item>
+    </plurals>
+    <plurals name="n_free_splits_left">
+        <item quantity="other">%s free splits left this month</item>
+        <item quantity="one">%s free split left this month</item>
+    </plurals>
+    <plurals name="n_genres">
+        <item quantity="other">%s Genres</item>
+        <item quantity="one">%s Genre</item>
+    </plurals>
+    <plurals name="n_hours">
+        <item quantity="other">%s hours</item>
+        <item quantity="one">%s hour</item>
+    </plurals>
+    <plurals name="n_impressions">
+        <item quantity="other">%s Impressions</item>
+        <item quantity="one">%s Impression</item>
+    </plurals>
+    <plurals name="n_inspired_songs">
+        <item quantity="other">Inspired %s tracks</item>
+        <item quantity="one">Inspired %s track</item>
+    </plurals>
+    <plurals name="n_latency_manual">
+        <item quantity="other">You’ve set: %s ms latency</item>
+        <item quantity="one">You’ve set: %s ms latency</item>
+    </plurals>
+    <plurals name="n_latency_test_result">
+        <item quantity="other">Test result: %s ms latency</item>
+        <item quantity="one">Test result: %s ms latency</item>
+    </plurals>
+    <plurals name="n_likes">
+        <item quantity="other">%s Likes</item>
+        <item quantity="one">%s Like</item>
+    </plurals>
+    <plurals name="n_members">
+        <item quantity="other">%s Members</item>
+        <item quantity="one">%s Member</item>
+    </plurals>
+    <plurals name="n_message_requests">
+        <item quantity="other">%s message requests</item>
+        <item quantity="one">%s message request</item>
+    </plurals>
+    <plurals name="n_milliseconds">
+        <item quantity="other">%s ms</item>
+        <item quantity="one">%s ms</item>
+    </plurals>
+    <plurals name="n_min">
+        <item quantity="other">%s mins</item>
+        <item quantity="one">%s min</item>
+    </plurals>
+    <plurals name="n_months">
+        <item quantity="other">%s months</item>
+        <item quantity="one">%s month</item>
+    </plurals>
+    <plurals name="n_mutuals">
+        <item quantity="other">%s Mutuals</item>
+        <item quantity="one">%s Mutuals</item>
+    </plurals>
+    <plurals name="n_new_notifications">
+        <item quantity="other">%s new notifications</item>
+        <item quantity="one">%s new notification</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="other">%s Plays</item>
+        <item quantity="one">%s Play</item>
+    </plurals>
+    <plurals name="n_posts">
+        <item quantity="other">%s Posts</item>
+        <item quantity="one">%s Post</item>
+    </plurals>
+    <plurals name="n_requests_invites">
+        <item quantity="other">%s requests/invites</item>
+        <item quantity="one">%s request/invite</item>
+    </plurals>
+    <plurals name="n_samples">
+        <item quantity="other">%s samples</item>
+        <item quantity="one">%s sample</item>
+    </plurals>
+    <plurals name="n_seconds">
+        <item quantity="other">%s secs</item>
+        <item quantity="one">%s sec</item>
+    </plurals>
+    <plurals name="n_semitones">
+        <item quantity="other">%s Semitones</item>
+        <item quantity="one">%s Semitone</item>
+    </plurals>
+    <plurals name="n_tracks">
+        <item quantity="other">%s Tracks</item>
+        <item quantity="one">%s Track</item>
+    </plurals>
+    <plurals name="n_unlock_free_beats_with_membership">
+        <item quantity="other">Unlock %s free beats a week</item>
+        <item quantity="one">Unlock %s free beat a week</item>
+    </plurals>
+    <plurals name="n_view">
+        <item quantity="other">%s views</item>
+        <item quantity="one">%s view</item>
+    </plurals>
+    <plurals name="n_weeks">
+        <item quantity="other">%s Weeks</item>
+        <item quantity="one">%s Week</item>
+    </plurals>
+    <plurals name="n_zero_free_beats_without_membership_description">
+        <item quantity="other">Want more? Upgrade to Membership to unlock %s free beats every week.</item>
+        <item quantity="one">Want more? Upgrade to Membership to unlock %s free beat every week.</item>
+    </plurals>
+    <plurals name="plural_followers_without_placeholder">
+        <item quantity="other">Followers</item>
+        <item quantity="one">Follower</item>
+    </plurals>
+    <plurals name="plural_following_without_placeholder">
+        <item quantity="other">Following</item>
+        <item quantity="one">Following</item>
+    </plurals>
+    <plurals name="plural_play_without_placeholder">
+        <item quantity="other">Plays</item>
+        <item quantity="one">Play</item>
+    </plurals>
+    <plurals name="relative_time_days">
+        <item quantity="other">%sd ago</item>
+        <item quantity="one">%sd ago</item>
+    </plurals>
+    <plurals name="relative_time_hours">
+        <item quantity="other">%sh ago</item>
+        <item quantity="one">%sh ago</item>
+    </plurals>
+    <plurals name="relative_time_minutes">
+        <item quantity="other">%sm ago</item>
+        <item quantity="one">%sm ago</item>
+    </plurals>
+    <plurals name="show_n_more_tracks">
+        <item quantity="other">Show %s more tracks</item>
+        <item quantity="one">Show %s more track</item>
+    </plurals>
+    <plurals name="show_n_results">
+        <item quantity="other">Show %s results</item>
+        <item quantity="one">Show %s result</item>
+    </plurals>
+    <plurals name="try_free_for_n_days">
+        <item quantity="other">Try Free for %s Days</item>
+        <item quantity="one">Try Free for %s Day</item>
+    </plurals>
+    <plurals name="unit_n_bytes">
+        <item quantity="other">%s bytes</item>
+        <item quantity="one">%s byte</item>
+    </plurals>
+    <plurals name="x_and_n_mutual_connections">
+        <item quantity="other">%1$s and %2$s other mutual connections</item>
+        <item quantity="one">%1$s and %2$s other mutual connection</item>
+    </plurals>
+</resources>

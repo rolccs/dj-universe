@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="me_scale_button_max_width">@dimen/grid_size_x12</item>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:tag="layout/vertical_action_0" android:background="?selectableItemBackground" android:layout_width="@dimen/grid_size_x27_75" android:layout_height="@dimen/grid_size_x5" android:paddingStart="@dimen/grid_size"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="@dimen/grid_size_x3" android:layout_height="@dimen/grid_size_x3">
+        <ImageView android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no" bind:tint="@color/me_popup_menu_text_color" />
+        <ImageView android:layout_gravity="center|right|top" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" bind:srcCompat="@drawable/blue_dot" />
+    </FrameLayout>
+    <TextView android:textSize="@dimen/text_medium" android:textColor="@color/me_popup_menu_text_color" android:ellipsize="end" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:textAllCaps="false" android:layout_marginStart="@dimen/grid_size" android:layout_marginEnd="@dimen/grid_size_x1_5" />
+    <com.bandlab.uikit.compose.badge.AiBadgeView android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/grid_size" />
+    <ImageView android:tag="binding_5" android:layout_width="@dimen/grid_size_x2" android:layout_height="@dimen/grid_size_x2" bind:srcCompat="@drawable/ic_product_membership" bind:tint="@color/tint_yellow_base" />
+    <View android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <ImageView android:id="@id/endIcon" android:tag="binding_6" android:padding="@dimen/grid_size" android:layout_width="@dimen/grid_size_x4" android:layout_height="fill_parent" bind:tint="@color/glyphs_primary" />
+</LinearLayout>

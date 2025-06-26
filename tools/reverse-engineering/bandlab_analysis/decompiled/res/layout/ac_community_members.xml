@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/ac_community_members_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <com.bandlab.common.views.layout.AutoSizeToolbar android:theme="@style/DarkControlsToolbar" android:id="@id/community_members_toolbar" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height">
+        <androidx.appcompat.widget.AppCompatSpinner android:tag="binding_2" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/grid_size_x5" bind:popupTheme="@style/PopupMenuStyle.Light" bind:theme="@style/NavigationSpinnerTheme" />
+    </com.bandlab.common.views.layout.AutoSizeToolbar>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipe_refresh_layout" android:tag="binding_3" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/toolbar_height" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintWidth_max="@dimen/container_max_width">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/members_recycler" android:tag="binding_4" android:layout_width="fill_parent" android:layout_height="fill_parent" bind:layoutManager="@string/linear_layout_manager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipe_refresh_layout_invites" android:tag="binding_5" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/toolbar_height" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintWidth_max="@dimen/container_max_width">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/pending_invites_recycler" android:tag="binding_6" android:layout_width="fill_parent" android:layout_height="fill_parent" bind:layoutManager="@string/linear_layout_manager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

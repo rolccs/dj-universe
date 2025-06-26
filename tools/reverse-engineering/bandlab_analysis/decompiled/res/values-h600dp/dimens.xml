@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="as_adjustViewBottomMargin">16.0dip</dimen>
+    <dimen name="as_timeline_large_stroke_height">15.0dip</dimen>
+    <dimen name="as_timeline_stroke_height">11.0dip</dimen>
+    <dimen name="as_videoViewCornerRadius">8.0dip</dimen>
+    <dimen name="as_videoViewHeight">120.0dip</dimen>
+    <dimen name="as_videoViewMargin">8.0dip</dimen>
+    <dimen name="as_videoViewWidth">180.0dip</dimen>
+</resources>

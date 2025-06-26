@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/packs_filters_layout_0" android:background="@color/surface_inactive_screen" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <com.bandlab.common.views.layout.AutoSizeToolbar android:theme="@style/InstrumentsBrowserSearch" android:tag="binding_1" android:background="@color/surface_inactive_screen" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height" bind:fontFamily="@font/default_medium" bind:titleTextColor="@color/glyphs_primary" />
+    <com.bandlab.common.views.NestedScrollableHost android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/filterRecycler" android:tag="binding_3" android:clipToPadding="false" android:layout_height="@dimen/grid_size_x5" android:paddingStart="@dimen/grid_size" android:paddingEnd="@dimen/grid_size_x2" android:layout_marginVertical="@dimen/grid_size" bind:layoutManager="@string/linear_layout_manager" style="@style/LibraryContent" />
+    </com.bandlab.common.views.NestedScrollableHost>
+</LinearLayout>

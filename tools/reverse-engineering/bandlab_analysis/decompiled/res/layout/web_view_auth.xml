@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:tag="layout/web_view_auth_0" android:padding="@dimen/grid_size_x2" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/authTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login" style="@style/TextAppearance.AppCompat.Title" />
+    <TextView android:id="@id/authMessage" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size" android:layout_marginBottom="@dimen/grid_size" android:layout_below="@id/authTitle" style="@style/TextAppearance.AppCompat.Subhead" />
+    <EditText android:id="@id/authUsername" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/username" android:layout_below="@id/authMessage" android:inputType="textNoSuggestions" android:autofillHints="username" />
+    <EditText android:id="@id/authPassword" android:tag="binding_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/password" android:layout_below="@id/authUsername" android:inputType="textPassword" android:autofillHints="password" />
+    <Button android:id="@id/authSignIn" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login" android:layout_below="@id/authPassword" android:layout_alignEnd="@id/authPassword" style="@style/Widget.AppCompat.Button.Colored" />
+    <Button android:id="@id/authCancel" android:tag="binding_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" android:layout_alignTop="@id/authSignIn" android:layout_toStartOf="@id/authSignIn" style="@style/Widget.AppCompat.Button" />
+</RelativeLayout>

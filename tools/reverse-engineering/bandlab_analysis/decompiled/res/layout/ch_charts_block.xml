@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/ch_charts_block_0" android:paddingBottom="@dimen/grid_size_half" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:text="@string/ch_top_charts" style="@style/Channel.Title" />
+    <androidx.recyclerview.widget.RecyclerView android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/minus_grid_size_half" android:overScrollMode="never" android:layout_marginStart="@dimen/grid_size_x1_5" android:layout_marginEnd="@dimen/grid_size_x1_5" style="@style/Channel.ChartRecycler" />
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/menu" android:background="@drawable/bg_actions_popup_menu" android:paddingTop="@dimen/grid_size" android:paddingBottom="@dimen/grid_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/grid_size" android:paddingEnd="@dimen/grid_size" android:elevation="@dimen/actions_menu_elevation" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton android:id="@id/more" android:background="@drawable/bg_actions_popup_menu" android:visibility="gone" android:layout_width="@dimen/grid_size_x5" android:layout_height="@dimen/grid_size_x5" android:contentDescription="@string/me_more" android:elevation="@dimen/actions_menu_elevation" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_dots_horizontal" app:tint="@color/glyphs_primary" />
+    <ScrollView android:id="@id/advanced_menu_container" android:background="@drawable/bg_actions_popup_hidden_menu" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:elevation="@dimen/actions_menu_elevation">
+        <LinearLayout android:orientation="vertical" android:id="@id/advanced_menu" android:paddingTop="@dimen/grid_size" android:paddingBottom="@dimen/grid_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </ScrollView>
+</merge>

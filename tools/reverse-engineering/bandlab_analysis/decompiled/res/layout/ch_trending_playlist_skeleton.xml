@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/ch_trending_playlist_skeleton_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/header" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <View android:background="@drawable/bg_skeleton_cover_dark" android:layout_width="@dimen/grid_size_x17" android:layout_height="@dimen/grid_size_x17" android:layout_marginTop="@dimen/grid_size_x3" />
+        <View android:background="@drawable/bg_skeleton_title" android:layout_width="@dimen/grid_size_x29" android:layout_height="@dimen/grid_size_x1_75" android:layout_marginTop="@dimen/grid_size_x4" />
+        <View android:background="@drawable/bg_skeleton_description" android:layout_width="@dimen/grid_size_x22" android:layout_height="@dimen/grid_size_x1_5" android:layout_marginTop="@dimen/grid_size_x3" />
+        <View android:background="@drawable/bg_skeleton_description" android:layout_width="@dimen/grid_size_x11_5" android:layout_height="@dimen/grid_size_x1_5" android:layout_marginTop="@dimen/grid_size" />
+    </LinearLayout>
+    <androidx.constraintlayout.helper.widget.Flow android:orientation="horizontal" android:id="@id/button_flow" android:layout_width="@dimen/trending_button_flow_width" android:layout_height="@dimen/grid_size_x5" android:layout_marginTop="@dimen/grid_size_x2" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" app:constraint_referenced_ids="skeleton_play,tv_view_all" app:flow_horizontalGap="@dimen/grid_size" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/header" />
+    <View android:id="@id/skeleton_play" android:background="@drawable/bg_skeleton_play_button" android:layout_width="0.0dip" android:layout_height="@dimen/grid_size_x5" />
+    <View android:id="@id/tv_view_all" android:background="@drawable/btn_filled_grey" android:layout_width="0.0dip" android:layout_height="@dimen/grid_size_x5" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/tracks" android:tag="binding_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x2" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/skeleton_play">
+        <include layout="@layout/item_playlist_skeleton" />
+        <include layout="@layout/item_playlist_skeleton" />
+        <include layout="@layout/item_playlist_skeleton" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

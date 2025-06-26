@@ -1,0 +1,203 @@
+# DJ UNIVERSE AUDIO ENGINE - WEBASSEMBLY BUILD CONFIGURATION
+# Lo mejor de dos mundos: JUCE nativo + Web híbrido
+
+cmake_minimum_required(VERSION 3.20)
+project(DJUniverseAudioEngine_WASM VERSION 1.0.0)
+
+# =============================================================================
+# EMSCRIPTEN CONFIGURATION
+# =============================================================================
+
+if(NOT EMSCRIPTEN)
+    message(FATAL_ERROR "Este CMake es solo para Emscripten. Usa: emconfigure cmake ..")
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# =============================================================================
+# EMSCRIPTEN OPTIMIZATION FLAGS
+# =============================================================================
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -flto")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -flto")
+
+# Emscripten-specific optimizations
+set(EMSCRIPTEN_LINK_FLAGS
+    -O3
+    -flto
+    --bind
+    -s WASM=1
+    -s MODULARIZE=1
+    -s EXPORT_NAME="DJUniverseAudioEngine"
+    -s USE_ES6_IMPORT_META=0
+    -s EXPORTED_FUNCTIONS=['_malloc','_free']
+    -s EXPORTED_RUNTIME_METHODS=['ccall','cwrap','setValue','getValue']
+    -s ALLOW_MEMORY_GROWTH=1
+    -s INITIAL_MEMORY=32MB
+    -s MAXIMUM_MEMORY=128MB
+    -s STACK_SIZE=2MB
+    -s USE_PTHREADS=1
+    -s PTHREAD_POOL_SIZE=4
+    -s AUDIO_WORKLET=1
+    -s WEBAUDIO=1
+    --pre-js ${CMAKE_CURRENT_SOURCE_DIR}/wasm/pre.js
+    --post-js ${CMAKE_CURRENT_SOURCE_DIR}/wasm/post.js
+)
+
+string(REPLACE ";" " " EMSCRIPTEN_LINK_FLAGS "${EMSCRIPTEN_LINK_FLAGS}")
+
+# =============================================================================
+# WASM-SPECIFIC SOURCE FILES
+# =============================================================================
+
+set(WASM_SOURCES
+    # Core audio engine (same as native)
+    src/AudioEngine.cpp
+    src/VirtualDeck.cpp
+    src/CrossfaderMixer.cpp
+    src/BeatDetector.cpp
+    src/PitchShifter.cpp
+    src/SpectralAnalyzer.cpp
+    src/RealtimeAudioProcessor.cpp
+    src/AudioFileLoader.cpp
+    src/CueSystem.cpp
+    src/LoopSystem.cpp
+    src/EffectsProcessor.cpp
+    src/BPMDetector.cpp
+    src/KeyDetector.cpp
+    src/HarmonicMixer.cpp
+    src/TransitionEngine.cpp
+    src/DJController.cpp
+    src/MIDIProcessor.cpp
+    src/AudioBuffer.cpp
+    src/FilterBank.cpp
+    src/Compressor.cpp
+    src/Limiter.cpp
+    src/Reverb.cpp
+    src/Delay.cpp
+    src/Chorus.cpp
+    src/Flanger.cpp
+    
+    # WASM-specific bindings
+    wasm/WASMBindings.cpp
+    wasm/WebAudioBridge.cpp
+    wasm/WorkerInterface.cpp
+)
+
+set(WASM_HEADERS
+    include/AudioEngine.h
+    include/VirtualDeck.h
+    include/WASMExports.h
+    wasm/WebAudioBridge.h
+    wasm/WorkerInterface.h
+)
+
+# =============================================================================
+# WASM-COMPATIBLE DEPENDENCIES
+# =============================================================================
+
+# For WASM, we need to implement/replace some dependencies
+
+# FFTW3 replacement with simpler FFT for WASM
+add_library(fftw3_wasm STATIC
+    wasm/deps/SimpleFFT.cpp
+    wasm/deps/SimpleFFT.h
+)
+
+# SoundTouch WASM port (simplified)
+add_library(soundtouch_wasm STATIC
+    wasm/deps/SoundTouchWASM.cpp
+    wasm/deps/SoundTouchWASM.h
+)
+
+# =============================================================================
+# MAIN WASM LIBRARY
+# =============================================================================
+
+add_executable(dj_universe_audio_engine_wasm ${WASM_SOURCES})
+
+target_include_directories(dj_universe_audio_engine_wasm PRIVATE
+    include/
+    wasm/
+    wasm/deps/
+)
+
+target_link_libraries(dj_universe_audio_engine_wasm
+    fftw3_wasm
+    soundtouch_wasm
+)
+
+# Apply Emscripten link flags
+set_target_properties(dj_universe_audio_engine_wasm PROPERTIES
+    LINK_FLAGS "${EMSCRIPTEN_LINK_FLAGS}"
+    OUTPUT_NAME "dj-universe-audio-engine"
+    SUFFIX ".js"
+)
+
+# =============================================================================
+# WASM OUTPUT CONFIGURATION
+# =============================================================================
+
+# Generate both .js and .wasm files
+set_target_properties(dj_universe_audio_engine_wasm PROPERTIES
+    OUTPUT_NAME "dj-universe-audio-engine"
+    SUFFIX ".js"
+)
+
+# Copy output files to web package
+add_custom_command(TARGET dj_universe_audio_engine_wasm POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_BINARY_DIR}/dj-universe-audio-engine.js
+        ${CMAKE_CURRENT_SOURCE_DIR}/../web/public/wasm/
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_BINARY_DIR}/dj-universe-audio-engine.wasm
+        ${CMAKE_CURRENT_SOURCE_DIR}/../web/public/wasm/
+    COMMENT "Copying WASM files to web package"
+)
+
+# =============================================================================
+# BUILD TARGETS
+# =============================================================================
+
+# Debug build with symbols
+add_custom_target(wasm_debug
+    COMMAND emconfigure cmake .. -DCMAKE_BUILD_TYPE=Debug
+    COMMAND emmake make -j4
+    COMMENT "Building WASM debug version"
+)
+
+# Release build optimized
+add_custom_target(wasm_release
+    COMMAND emconfigure cmake .. -DCMAKE_BUILD_TYPE=Release
+    COMMAND emmake make -j4
+    COMMENT "Building WASM release version"
+)
+
+# =============================================================================
+# USAGE INSTRUCTIONS
+# =============================================================================
+
+message(STATUS "")
+message(STATUS "🎵 DJ UNIVERSE AUDIO ENGINE - WASM BUILD")
+message(STATUS "========================================")
+message(STATUS "")
+message(STATUS "Para compilar:")
+message(STATUS "  1. Instalar Emscripten:")
+message(STATUS "     git clone https://github.com/emscripten-core/emsdk.git")
+message(STATUS "     cd emsdk && ./emsdk install latest && ./emsdk activate latest")
+message(STATUS "     source ./emsdk_env.sh")
+message(STATUS "")
+message(STATUS "  2. Configurar build:")
+message(STATUS "     mkdir build_wasm && cd build_wasm")
+message(STATUS "     emconfigure cmake .. -f ../CMakeLists.wasm.txt")
+message(STATUS "")
+message(STATUS "  3. Compilar:")
+message(STATUS "     emmake make -j4")
+message(STATUS "")
+message(STATUS "  4. Output:")
+message(STATUS "     dj-universe-audio-engine.js")
+message(STATUS "     dj-universe-audio-engine.wasm")
+message(STATUS "")
+message(STATUS "🚀 Lo mejor de dos mundos: JUCE nativo + Web híbrido!")
+message(STATUS "")

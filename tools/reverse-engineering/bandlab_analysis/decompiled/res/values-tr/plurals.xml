@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">%d saniye ileri sar</item>
+        <item quantity="one">%d saniye ileri sar</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">%d saniye geri sar</item>
+        <item quantity="one">%d saniye geri sar</item>
+    </plurals>
+    <plurals name="in_the_last_n_days">
+        <item quantity="other">son %s günde</item>
+        <item quantity="one">son %s günde</item>
+    </plurals>
+    <plurals name="last_n_days">
+        <item quantity="other">Son %s gün</item>
+        <item quantity="one">Son %s gün</item>
+    </plurals>
+    <plurals name="long_record_length_warning">
+        <item quantity="other">Kayıt durduruldu. Azami kayıt süresini aştınız (%s dk)</item>
+        <item quantity="one">Kayıt durduruldu. Azami kayıt süresini aştınız (%s dk)</item>
+    </plurals>
+    <plurals name="me_min_n_track_duration_warning">
+        <item quantity="other">Video süresi en az %s saniye olmalıdır.</item>
+        <item quantity="one">Video süresi en az %s saniye olmalıdır.</item>
+    </plurals>
+    <plurals name="me_n_instruments">
+        <item quantity="other">%s Enstrüman</item>
+        <item quantity="one">%s Enstrüman</item>
+    </plurals>
+    <plurals name="me_n_packs">
+        <item quantity="other">%s Paket</item>
+        <item quantity="one">%s Paket</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d yeni bildirim</item>
+        <item quantity="one">%d yeni bildirim</item>
+    </plurals>
+    <plurals name="n_bars">
+        <item quantity="other">%s Ölçü</item>
+        <item quantity="one">%s Ölçü</item>
+    </plurals>
+    <plurals name="n_collaborators">
+        <item quantity="other">%s diğer</item>
+        <item quantity="one">%s diğer</item>
+    </plurals>
+    <plurals name="n_comments">
+        <item quantity="other">%s Yorum</item>
+        <item quantity="one">%s Yorum</item>
+    </plurals>
+    <plurals name="n_days">
+        <item quantity="other">%s günler</item>
+        <item quantity="one">%s gün</item>
+    </plurals>
+    <plurals name="n_deducted_over_n_days">
+        <item quantity="other">%2$s gün için %1$s$</item>
+        <item quantity="one">%2$s gün için %1$s$</item>
+    </plurals>
+    <plurals name="n_engagements">
+        <item quantity="other">%s Yeni bağlantı</item>
+        <item quantity="one">%s Yeni bağlantı</item>
+    </plurals>
+    <plurals name="n_files_added">
+        <item quantity="other">%s dosya eklendi</item>
+        <item quantity="one">%s dosya eklendi</item>
+    </plurals>
+    <plurals name="n_files_remaining">
+        <item quantity="other">%s dosya kaldı</item>
+        <item quantity="one">%s dosya kaldı</item>
+    </plurals>
+    <plurals name="n_followers">
+        <item quantity="other">%s Takipçi</item>
+        <item quantity="one">%s Takipçi</item>
+    </plurals>
+    <plurals name="n_following">
+        <item quantity="other">%s Takip</item>
+        <item quantity="one">%s Takip</item>
+    </plurals>
+    <plurals name="n_genres">
+        <item quantity="other">%s Müzik Türü</item>
+        <item quantity="one">%s Müzik Türü</item>
+    </plurals>
+    <plurals name="n_impressions">
+        <item quantity="other">%s Gürüntülenme</item>
+        <item quantity="one">%s Gürüntülenme</item>
+    </plurals>
+    <plurals name="n_inspired_songs">
+        <item quantity="other">%s şarkıya ilham verdi</item>
+        <item quantity="one">%s şarkıya ilham verdi</item>
+    </plurals>
+    <plurals name="n_likes">
+        <item quantity="other">%s Beğeni</item>
+        <item quantity="one">%s Beğeni</item>
+    </plurals>
+    <plurals name="n_members">
+        <item quantity="other">%s Üye</item>
+        <item quantity="one">%s Üye</item>
+    </plurals>
+    <plurals name="n_message_requests">
+        <item quantity="other">%s mesaj talebi beklemede</item>
+        <item quantity="one">%s mesaj talebi beklemede</item>
+    </plurals>
+    <plurals name="n_milliseconds">
+        <item quantity="other">%s ms</item>
+        <item quantity="one">%s ms</item>
+    </plurals>
+    <plurals name="n_min">
+        <item quantity="other">%s dk</item>
+        <item quantity="one">%s dk</item>
+    </plurals>
+    <plurals name="n_months">
+        <item quantity="other">%s ay</item>
+        <item quantity="one">%s ay</item>
+    </plurals>
+    <plurals name="n_new_notifications">
+        <item quantity="other">%s yeni bildirim</item>
+        <item quantity="one">%s yeni bildirim</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="other">%s Dinleme</item>
+        <item quantity="one">%s Dinleme</item>
+    </plurals>
+    <plurals name="n_posts">
+        <item quantity="other">%s Gönderi</item>
+        <item quantity="one">%s Gönderi</item>
+    </plurals>
+    <plurals name="n_requests_invites">
+        <item quantity="other">%s talep/davet</item>
+        <item quantity="one">%s talep/davet</item>
+    </plurals>
+    <plurals name="n_samples">
+        <item quantity="other">%s ses örneği</item>
+        <item quantity="one">%s ses örneği</item>
+    </plurals>
+    <plurals name="n_seconds">
+        <item quantity="other">%s sn</item>
+        <item quantity="one">%s sn</item>
+    </plurals>
+    <plurals name="n_semitones">
+        <item quantity="other">%s Yarım ses</item>
+        <item quantity="one">%s Yarım ses</item>
+    </plurals>
+    <plurals name="n_tracks">
+        <item quantity="other">%s Şarkı</item>
+        <item quantity="one">%s Şarkı</item>
+    </plurals>
+    <plurals name="n_view">
+        <item quantity="other">%s Görüldü</item>
+        <item quantity="one">%s Görüldü</item>
+    </plurals>
+    <plurals name="plural_followers_without_placeholder">
+        <item quantity="other">Takipçi</item>
+        <item quantity="one">Takipçi</item>
+    </plurals>
+    <plurals name="plural_following_without_placeholder">
+        <item quantity="other">Takip</item>
+        <item quantity="one">Takip</item>
+    </plurals>
+    <plurals name="plural_play_without_placeholder">
+        <item quantity="other">Dinleme</item>
+        <item quantity="one">Dinleme</item>
+    </plurals>
+    <plurals name="relative_time_days">
+        <item quantity="other">%s gün önce</item>
+        <item quantity="one">%s gün önce</item>
+    </plurals>
+    <plurals name="relative_time_hours">
+        <item quantity="other">%s sa önce</item>
+        <item quantity="one">%s sa önce</item>
+    </plurals>
+    <plurals name="relative_time_minutes">
+        <item quantity="other">%s dk önce</item>
+        <item quantity="one">%s dk önce</item>
+    </plurals>
+</resources>

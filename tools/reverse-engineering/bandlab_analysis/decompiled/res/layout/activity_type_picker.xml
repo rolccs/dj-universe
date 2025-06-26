@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/frame_layout_container" android:tag="layout/activity_type_picker_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:theme="@style/DarkControlsToolbar" android:id="@id/toolbar" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height" android:minHeight="@dimen/toolbar_height" bind:title="@string/al_type" />
+    <androidx.recyclerview.widget.RecyclerView android:tag="binding_2" android:clipToPadding="false" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/toolbar_height" bind:layoutManager="@string/linear_layout_manager" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintWidth_max="@dimen/container_max_width" />
+</androidx.constraintlayout.widget.ConstraintLayout>

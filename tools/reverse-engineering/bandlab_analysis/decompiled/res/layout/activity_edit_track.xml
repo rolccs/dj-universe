@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/activity_edit_track_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <com.bandlab.common.views.layout.AutoSizeToolbar android:theme="@style/DarkControlsToolbar" android:id="@id/toolbar" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="@dimen/toolbar_height" bind:title="@string/edit_track" />
+    <ScrollView android:orientation="vertical" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/toolbar_height">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/grid_size_x4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/grid_size_x2">
+            <FrameLayout android:layout_gravity="center_horizontal" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x3">
+                <com.bandlab.uikit.view.placeholder.PlaceholderImageView android:layout_gravity="center_horizontal" android:id="@id/picture" android:tag="binding_4" android:layout_width="@dimen/grid_size_x10" android:layout_height="@dimen/grid_size_x10" bind:entity="track" bind:placeholderRadius="@dimen/grid_size" />
+                <com.bandlab.uikit.view.placeholder.PlaceholderImageView android:layout_gravity="center_horizontal" android:id="@id/edit_track_overlay" android:layout_width="@dimen/grid_size_x10" android:layout_height="@dimen/grid_size_x10" bind:entity="image" bind:placeholderRadius="@dimen/grid_size" />
+            </FrameLayout>
+            <com.bandlab.common.views.text.SingleLineInput android:id="@id/name_input" android:tag="binding_5" android:layout_width="fill_parent" android:layout_height="wrap_content" bind:inputTextColor="@color/glyphs_primary" bind:inputTextSize="@dimen/text_large" bind:inputTitle="@string/name" bind:titleColor="@color/glyphs_secondary" />
+            <TextView android:id="@id/tv_name_notice" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size" android:text="@string/change_track_name_warning" style="@style/SecondaryText" />
+            <TextView android:id="@id/genres_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x4" android:text="@string/genres" />
+            <com.bandlab.bandlab.labels.views.LabelsLayout android:id="@id/genre_labels" android:tag="binding_6" android:background="@color/surface_inactive_screen" android:paddingTop="@dimen/grid_size" android:paddingBottom="@dimen/grid_size" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/minus_grid_size_half" android:layout_marginEnd="@dimen/minus_grid_size_half" bind:justifyContent="flex_start" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size" android:text="@string/select_genre_hint" />
+            <TextView android:textColor="@color/glyphs_secondary" android:id="@id/tv_additional_settings" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x4" android:text="@string/additional_settings" />
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/edit_track_explicit_content" android:tag="binding_7" android:background="@drawable/bg_track_settings_top_item" android:layout_marginTop="@dimen/grid_size" android:text="@string/explicit_content" android:paddingStart="@dimen/grid_size_x1_75" android:paddingEnd="@dimen/grid_size_x1_75" style="@style/SettingsSwitchStyle" />
+            <View android:background="@color/border_neutral" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_hair" />
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@id/edit_track_unlisted" android:tag="binding_8" android:background="@drawable/bg_track_settings_bottom_item" android:text="@string/unlisted" android:paddingStart="@dimen/grid_size_x1_75" android:paddingEnd="@dimen/grid_size_x1_75" style="@style/SettingsSwitchStyle" />
+            <com.bandlab.common.views.text.TextViewFixTouchConsume android:id="@id/tv_unlisted_notice" android:tag="binding_9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size" style="@style/SecondaryText" />
+        </LinearLayout>
+    </ScrollView>
+    <include android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/loader_error_retry" />
+    <include layout="@layout/loader_curtain" />
+</FrameLayout>

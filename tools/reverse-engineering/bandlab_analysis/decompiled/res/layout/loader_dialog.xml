@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:paddingLeft="@dimen/grid_size_x8" android:paddingRight="@dimen/grid_size_x8" android:paddingBottom="@dimen/grid_size_x5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center" android:layout_width="@dimen/grid_size_x5" android:layout_height="@dimen/grid_size_x5" />
+</FrameLayout>

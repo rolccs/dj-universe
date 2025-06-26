@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/tooltip_tip_top" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/tooltip_arrow" />
+    <TextView android:textSize="@dimen/text_medium" android:id="@id/tooltip_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/grid_size_x1_5" android:paddingVertical="@dimen/grid_size" android:lineHeight="@dimen/text_xlarge" app:fontFamily="@font/default_normal" />
+    <ImageView android:id="@id/tooltip_tip_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleY="-1.0" app:srcCompat="@drawable/tooltip_arrow" />
+</LinearLayout>

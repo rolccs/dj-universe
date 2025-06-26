@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bg_inspired_artist" android:paddingTop="@dimen/grid_size" android:paddingBottom="@dimen/grid_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxHeight="@dimen/grid_size_x4" android:paddingStart="@dimen/grid_size_x2" android:paddingEnd="@dimen/grid_size_x2" android:backgroundTint="@color/tint_blue_20"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="@dimen/grid_size_x2" android:layout_height="@dimen/grid_size_x2" app:srcCompat="@drawable/ic_plus" app:tint="@color/tint_blue_base" />
+    <TextView android:textSize="@dimen/text_medium" android:textColor="@color/tint_blue_base" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_artist_button" android:includeFontPadding="false" android:layout_marginStart="@dimen/grid_size" style="@style/MediumText" />
+</LinearLayout>

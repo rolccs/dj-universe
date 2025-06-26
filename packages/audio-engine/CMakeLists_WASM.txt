@@ -1,0 +1,126 @@
+# DJ UNIVERSE AUDIO ENGINE - WEBASSEMBLY BUILD CONFIGURATION
+# Lo mejor de dos mundos: JUCE nativo + Web híbrido
+
+cmake_minimum_required(VERSION 3.20)
+project(DJUniverseAudioEngine_WASM VERSION 1.0.0)
+
+# =============================================================================
+# EMSCRIPTEN CONFIGURATION
+# =============================================================================
+
+if(NOT EMSCRIPTEN)
+    message(FATAL_ERROR "Este CMake es solo para Emscripten. Usa: emcmake cmake ..")
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# =============================================================================
+# EMSCRIPTEN OPTIMIZATION FLAGS
+# =============================================================================
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -flto")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -flto")
+
+# Emscripten-specific optimizations
+set(EMSCRIPTEN_LINK_FLAGS
+    -O3
+    -flto
+    --bind
+    -s WASM=1
+    -s MODULARIZE=1
+    -s EXPORT_NAME="DJUniverseAudioEngine"
+    -s USE_ES6_IMPORT_META=0
+    -s EXPORTED_FUNCTIONS=['_malloc','_free']
+    -s EXPORTED_RUNTIME_METHODS=['ccall','cwrap','setValue','getValue']
+    -s ALLOW_MEMORY_GROWTH=1
+    -s INITIAL_MEMORY=32MB
+    -s MAXIMUM_MEMORY=128MB
+    -s STACK_SIZE=2MB
+    -s USE_PTHREADS=1
+    -s PTHREAD_POOL_SIZE=4
+    -s AUDIO_WORKLET=1
+    -s WEBAUDIO=1
+)
+
+string(REPLACE ";" " " EMSCRIPTEN_LINK_FLAGS "${EMSCRIPTEN_LINK_FLAGS}")
+
+# =============================================================================
+# WASM-SPECIFIC SOURCE FILES
+# =============================================================================
+
+set(WASM_SOURCES
+    # Core audio engine (existing files) - simplified for now
+    src/AudioEngine.cpp
+    src/VirtualDeck.cpp
+    
+    # WASM dependencies (simplified)
+    wasm/deps/SimpleFFT.cpp
+    wasm/deps/SoundTouchWASM.cpp
+    
+    # WASM-specific bindings
+    wasm/WASMBindings.cpp
+    wasm/WebAudioBridge.cpp
+    wasm/WorkerInterface.cpp
+)
+
+set(WASM_HEADERS
+    include/AudioEngine.h
+    include/VirtualDeck.h
+    wasm/WebAudioBridge.h
+    wasm/WorkerInterface.h
+    wasm/deps/SimpleFFT.h
+    wasm/deps/SoundTouchWASM.h
+)
+
+# =============================================================================
+# MAIN WASM LIBRARY
+# =============================================================================
+
+add_executable(dj_universe_audio_engine_wasm ${WASM_SOURCES})
+
+target_include_directories(dj_universe_audio_engine_wasm PRIVATE
+    include/
+    wasm/
+    wasm/deps/
+)
+
+# Apply Emscripten link flags
+set_target_properties(dj_universe_audio_engine_wasm PROPERTIES
+    LINK_FLAGS "${EMSCRIPTEN_LINK_FLAGS}"
+    OUTPUT_NAME "dj-universe-audio-engine"
+    SUFFIX ".js"
+)
+
+# =============================================================================
+# WASM OUTPUT CONFIGURATION
+# =============================================================================
+
+# Create web directory if it doesn't exist
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../web/public/wasm/)
+
+# Copy output files to web package
+add_custom_command(TARGET dj_universe_audio_engine_wasm POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${CMAKE_CURRENT_BINARY_DIR}/dj-universe-audio-engine.js
+        ${CMAKE_CURRENT_SOURCE_DIR}/../web/public/wasm/
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${CMAKE_CURRENT_BINARY_DIR}/dj-universe-audio-engine.wasm
+        ${CMAKE_CURRENT_SOURCE_DIR}/../web/public/wasm/
+    COMMENT "Copying WASM files to web package"
+)
+
+# =============================================================================
+# USAGE INSTRUCTIONS
+# =============================================================================
+
+message(STATUS "")
+message(STATUS "🎵 DJ UNIVERSE AUDIO ENGINE - WASM BUILD")
+message(STATUS "========================================")
+message(STATUS "")
+message(STATUS "Compilando versión simplificada para logro inmediato...")
+message(STATUS "  1. Source files: ${WASM_SOURCES}")
+message(STATUS "  2. Output: dj-universe-audio-engine.js/.wasm")
+message(STATUS "")
+message(STATUS "🚀 Lo mejor de dos mundos: JUCE nativo + Web híbrido!")
+message(STATUS "")

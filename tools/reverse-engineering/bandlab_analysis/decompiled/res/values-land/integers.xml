@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="as_piano_view_octave_count">8</integer>
+    <integer name="as_piano_view_start_octave">0</integer>
+    <integer name="cb_orientation">0</integer>
+    <integer name="ll_columnCount">6</integer>
+    <integer name="mtrl_calendar_header_orientation">0</integer>
+    <integer name="mtrl_calendar_selection_text_lines">6</integer>
+</resources>

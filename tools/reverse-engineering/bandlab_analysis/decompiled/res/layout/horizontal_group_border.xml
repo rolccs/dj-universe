@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:background="@color/border_neutral" android:layout_width="@dimen/grid_size_eighth" android:layout_height="@dimen/grid_size_x1_5"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

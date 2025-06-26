@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textColor="@color/glyphs_permanentWhite" android:ellipsize="end" android:gravity="center" android:tag="layout/error_video_view_0" android:background="@color/overlay_dimmerSoft" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxLines="4" android:paddingStart="@dimen/grid_size_x2" android:paddingEnd="@dimen/grid_size_x2" bind:fontFamily="@font/default_medium"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto" />

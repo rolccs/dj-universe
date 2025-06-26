@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="14.0sp" android:id="@id/linkingValidatorRowTitleText" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Title" android:layout_weight="0.4" />
+        <Button android:textSize="9.0sp" android:id="@id/linkingValidatorRowInfoButton" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Info" android:layout_weight="0.2" />
+        <Button android:textSize="9.0sp" android:id="@id/linkingValidatorRowActionButton" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Share" android:layout_weight="0.2" />
+        <Button android:textSize="9.0sp" android:id="@id/linkingValidatorRowDebugButton" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Debug" android:layout_weight="0.2" />
+    </LinearLayout>
+</LinearLayout>

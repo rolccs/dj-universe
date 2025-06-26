@@ -1,0 +1,697 @@
+{
+  "analysis_date": "2025-06-25T00:26:30.155576",
+  "apk_info": {
+    "package": "com.bandlab.bandlab",
+    "version": "11.0.3",
+    "name": "BandLab",
+    "file_size": 50401106,
+    "file_path": "bandlab_analysis/extracted/com.bandlab.bandlab.apk",
+    "permissions": [
+      "android.permission.INTERNET",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.VIBRATE",
+      "android.permission.RECORD_AUDIO",
+      "android.permission.BLUETOOTH",
+      "android.permission.FOREGROUND_SERVICE",
+      "android.permission.FOREGROUND_SERVICE_MICROPHONE",
+      "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.CAMERA",
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+      "android.permission.READ_CONTACTS",
+      "com.google.android.gms.permission.AD_ID",
+      "android.permission.POST_NOTIFICATIONS",
+      "android.permission.ACCESS_ADSERVICES_AD_ID",
+      "android.permission.ACCESS_ADSERVICES_ATTRIBUTION",
+      "android.permission.ACCESS_ADSERVICES_TOPICS",
+      "android.permission.WAKE_LOCK",
+      "com.android.vending.BILLING"
+    ],
+    "main_activities": [
+      "com.bandlab.navigation.entry.NavigationActivity",
+      "com.bandlab.oauth.OauthActivity",
+      "com.bandlab.album.genrepicker.AlbumGenrePickerActivity",
+      "com.bandlab.album.trackpicker.AlbumTracksActivity",
+      "com.bandlab.album.typepicker.AlbumTypePickerActivity",
+      "com.bandlab.bandlab.feature.mixeditor.MixEditorActivity",
+      "com.bandlab.songstarter.SongStarterActivity",
+      "com.bandlab.band.profile.screen.BandProfileActivity",
+      "com.bandlab.clipmaker.screen.ClipMakerActivity",
+      "com.bandlab.communities.members.CommunityMembersActivity"
+    ]
+  },
+  "social_features": [
+    {
+      "pattern": "band",
+      "total_files": 12,
+      "total_occurrences": 57,
+      "files": [
+        {
+          "file": "smali_classes3/g8/h.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/g8/a.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/g8/b.smali",
+          "count": 8
+        },
+        {
+          "file": "smali_classes3/g8/d.smali",
+          "count": 3
+        },
+        {
+          "file": "smali_classes3/g8/i.smali",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "pattern": "share",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/g8/i.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "user",
+      "total_files": 1,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/g8/i.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "profile",
+      "total_files": 2,
+      "total_occurrences": 3,
+      "files": [
+        {
+          "file": "smali_classes3/T7/a.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/L8/b.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "notification",
+      "total_files": 2,
+      "total_occurrences": 6,
+      "files": [
+        {
+          "file": "smali_classes3/T7/a.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/A2/i.smali",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "pattern": "like",
+      "total_files": 2,
+      "total_occurrences": 16,
+      "files": [
+        {
+          "file": "smali_classes3/Q7/f.smali",
+          "count": 14
+        },
+        {
+          "file": "smali_classes3/Q7/a.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "follow",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/Q7/e.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "group",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/D/f.smali",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "music_production": [
+    {
+      "pattern": "filter",
+      "total_files": 2,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/O5/s.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/O5/n.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "track",
+      "total_files": 2,
+      "total_occurrences": 9,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 8
+        },
+        {
+          "file": "smali_classes3/L8/b.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "record",
+      "total_files": 2,
+      "total_occurrences": 7,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 3
+        },
+        {
+          "file": "smali_classes3/D/h.smali",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "pattern": "mix",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "effect",
+      "total_files": 1,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "wav",
+      "total_files": 2,
+      "total_occurrences": 13,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/M8/a.smali",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "pattern": "loop",
+      "total_files": 1,
+      "total_occurrences": 4,
+      "files": [
+        {
+          "file": "smali_classes3/A2/d.smali",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "pattern": "audio",
+      "total_files": 3,
+      "total_occurrences": 7,
+      "files": [
+        {
+          "file": "smali_classes3/L8/a.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/L8/b.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/M8/a.smali",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "pattern": "delay",
+      "total_files": 1,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/L8/a.smali",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "collaboration_features": [
+    {
+      "pattern": "shared",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/g8/i.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "sync",
+      "total_files": 4,
+      "total_occurrences": 5,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/D/f.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/D/g.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/qM/j.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "edit",
+      "total_files": 2,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/A2/i.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "access",
+      "total_files": 2,
+      "total_occurrences": 21,
+      "files": [
+        {
+          "file": "smali_classes3/sM/b.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/M8/a.smali",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "pattern": "version",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/K2/a.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "session",
+      "total_files": 2,
+      "total_occurrences": 15,
+      "files": [
+        {
+          "file": "smali_classes3/A2/i.smali",
+          "count": 12
+        },
+        {
+          "file": "smali_classes3/D/f.smali",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "pattern": "remote",
+      "total_files": 1,
+      "total_occurrences": 3,
+      "files": [
+        {
+          "file": "smali_classes3/A2/i.smali",
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "ui_components": [
+    {
+      "type": "layout",
+      "name": "com_braze_captioned_image_content_card.xml",
+      "path": "res/layout/com_braze_captioned_image_content_card.xml"
+    },
+    {
+      "type": "layout",
+      "name": "v_add_btn.xml",
+      "path": "res/layout/v_add_btn.xml"
+    },
+    {
+      "type": "layout",
+      "name": "looper_effect_quantization.xml",
+      "path": "res/layout/looper_effect_quantization.xml"
+    },
+    {
+      "type": "layout",
+      "name": "design_layout_tab_icon.xml",
+      "path": "res/layout/design_layout_tab_icon.xml"
+    },
+    {
+      "type": "layout",
+      "name": "exo_styled_settings_list.xml",
+      "path": "res/layout/exo_styled_settings_list.xml"
+    },
+    {
+      "type": "layout",
+      "name": "fmt_webview_error.xml",
+      "path": "res/layout/fmt_webview_error.xml"
+    },
+    {
+      "type": "layout",
+      "name": "material_time_chip.xml",
+      "path": "res/layout/material_time_chip.xml"
+    },
+    {
+      "type": "layout",
+      "name": "mtrl_alert_select_dialog_singlechoice.xml",
+      "path": "res/layout/mtrl_alert_select_dialog_singlechoice.xml"
+    },
+    {
+      "type": "layout",
+      "name": "lb_guidedstep_background.xml",
+      "path": "res/layout/lb_guidedstep_background.xml"
+    },
+    {
+      "type": "layout",
+      "name": "com_braze_captioned_image_card.xml",
+      "path": "res/layout/com_braze_captioned_image_card.xml"
+    },
+    {
+      "type": "layout",
+      "name": "abc_cascading_menu_item_layout.xml",
+      "path": "res/layout/abc_cascading_menu_item_layout.xml"
+    },
+    {
+      "type": "layout",
+      "name": "packs_browser.xml",
+      "path": "res/layout/packs_browser.xml"
+    },
+    {
+      "type": "layout",
+      "name": "preference_widget_seekbar_material.xml",
+      "path": "res/layout/preference_widget_seekbar_material.xml"
+    },
+    {
+      "type": "layout",
+      "name": "fmt_popup_menu.xml",
+      "path": "res/layout/fmt_popup_menu.xml"
+    },
+    {
+      "type": "layout",
+      "name": "ac_community_transfer_owner.xml",
+      "path": "res/layout/ac_community_transfer_owner.xml"
+    },
+    {
+      "type": "layout",
+      "name": "lb_details_overview.xml",
+      "path": "res/layout/lb_details_overview.xml"
+    },
+    {
+      "type": "layout",
+      "name": "lb_control_button_primary.xml",
+      "path": "res/layout/lb_control_button_primary.xml"
+    },
+    {
+      "type": "layout",
+      "name": "v_user_about_n_skills.xml",
+      "path": "res/layout/v_user_about_n_skills.xml"
+    },
+    {
+      "type": "layout",
+      "name": "cast_tracks_chooser_dialog_row_layout.xml",
+      "path": "res/layout/cast_tracks_chooser_dialog_row_layout.xml"
+    },
+    {
+      "type": "layout",
+      "name": "lb_search_orb.xml",
+      "path": "res/layout/lb_search_orb.xml"
+    },
+    {
+      "type": "summary",
+      "drawable_resources": 1113,
+      "layout_files": 460
+    }
+  ],
+  "audio_processing": [
+    {
+      "pattern": "float",
+      "total_files": 3,
+      "total_occurrences": 55,
+      "files": [
+        {
+          "file": "smali_classes3/O5/s.smali",
+          "count": 36
+        },
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 8
+        },
+        {
+          "file": "smali_classes3/g3/b.smali",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "pattern": "Delay",
+      "total_files": 1,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/L8/a.smali",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "networking": [
+    {
+      "pattern": "api",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/g8/i.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "sync",
+      "total_files": 4,
+      "total_occurrences": 5,
+      "files": [
+        {
+          "file": "smali_classes3/O5/j.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/D/f.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/D/g.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/qM/j.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "http",
+      "total_files": 2,
+      "total_occurrences": 4,
+      "files": [
+        {
+          "file": "smali_classes3/QK/a.smali",
+          "count": 2
+        },
+        {
+          "file": "smali_classes3/i4/a.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "socket",
+      "total_files": 1,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/QK/a.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "firebase",
+      "total_files": 2,
+      "total_occurrences": 3,
+      "files": [
+        {
+          "file": "smali_classes3/QK/b.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/Q7/f.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "https",
+      "total_files": 1,
+      "total_occurrences": 2,
+      "files": [
+        {
+          "file": "smali_classes3/i4/a.smali",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "pattern": "streaming",
+      "total_files": 1,
+      "total_occurrences": 1,
+      "files": [
+        {
+          "file": "smali_classes3/i4/a.smali",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "pattern": "storage",
+      "total_files": 3,
+      "total_occurrences": 3,
+      "files": [
+        {
+          "file": "smali_classes3/qM/v.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/qM/t.smali",
+          "count": 1
+        },
+        {
+          "file": "smali_classes3/qM/x.smali",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "dj_universe_integration": [
+    {
+      "category": "Social Network Enhancement",
+      "priority": "high",
+      "features": [
+        "Real-time collaboration in DJ battles",
+        "Music sharing and remix features",
+        "Social feed with DJ performances",
+        "User profiles with music preferences",
+        "Community-driven playlists"
+      ],
+      "implementation": "Integrate BandLab's social patterns with DJ Universe's battle system"
+    },
+    {
+      "category": "Music Production Tools",
+      "priority": "medium",
+      "features": [
+        "In-app music creation tools",
+        "Loop and sample library",
+        "Basic mixing and mastering",
+        "Effect chains for DJ sets",
+        "Export functionality for created content"
+      ],
+      "implementation": "Add lightweight production tools to DJ Universe"
+    },
+    {
+      "category": "Real-time Collaboration",
+      "priority": "high",
+      "features": [
+        "Multi-DJ live sessions",
+        "Real-time sync across devices",
+        "Collaborative playlist creation",
+        "Remote DJ mentoring",
+        "Group practice sessions"
+      ],
+      "implementation": "Extend DJ Universe's real-time architecture for collaboration"
+    },
+    {
+      "category": "Advanced Audio Processing",
+      "priority": "medium",
+      "features": [
+        "Enhanced audio effects",
+        "Real-time audio analysis",
+        "Improved latency optimization",
+        "Audio quality enhancement",
+        "Cross-platform audio compatibility"
+      ],
+      "implementation": "Integrate BandLab's audio processing techniques"
+    }
+  ]
+}

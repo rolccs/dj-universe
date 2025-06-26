@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/item_search_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/uikit_text_3" android:textColor="@color/glyphs_primary" android:ellipsize="end" android:gravity="center_vertical" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x7" android:maxLines="1" android:paddingStart="@dimen/grid_size_x2" android:paddingEnd="@dimen/grid_size_x2" />
+    <View android:tag="binding_2" android:background="@color/border_neutral" android:layout_width="fill_parent" android:layout_height="@dimen/uikit_border_height" />
+</LinearLayout>

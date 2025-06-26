@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bandlab.common.views.NestedScrollableHost android:tag="layout/pb_collection_carousel_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:tag="binding_1" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/grid_size" android:paddingStart="@dimen/grid_size_x1_5" android:paddingEnd="@dimen/grid_size_x1_5" app:layoutManager="@string/linear_layout_manager" />
+</com.bandlab.common.views.NestedScrollableHost>

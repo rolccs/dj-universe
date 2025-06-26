@@ -1,0 +1,12 @@
+
+# Unreal Engine 4/5 PAK extractor
+# Basic PAK structure
+get FILES long
+for i = 0 < FILES
+    get NAME_SIZE long
+    getdstring NAME NAME_SIZE
+    get OFFSET longlong
+    get SIZE longlong
+    get UNK long
+    log NAME OFFSET SIZE
+next i

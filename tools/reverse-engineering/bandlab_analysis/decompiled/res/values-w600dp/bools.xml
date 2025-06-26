@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="ib_carousel_viewpager">false</bool>
+    <bool name="ib_use_linear_layout_manager">false</bool>
+</resources>

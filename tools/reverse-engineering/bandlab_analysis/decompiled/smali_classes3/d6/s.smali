@@ -1,0 +1,182 @@
+.class public final Ld6/s;
+.super LxM/i;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function2;
+
+
+# instance fields
+.field public j:I
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public final synthetic l:Lt6/h;
+
+.field public final synthetic m:Ld6/v;
+
+
+# direct methods
+.method public constructor <init>(Ld6/v;Lt6/h;LvM/d;)V
+    .locals 0
+
+    iput-object p2, p0, Ld6/s;->l:Lt6/h;
+
+    iput-object p1, p0, Ld6/s;->m:Ld6/v;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, LxM/i;-><init>(ILvM/d;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final create(Ljava/lang/Object;LvM/d;)LvM/d;
+    .locals 3
+
+    new-instance v0, Ld6/s;
+
+    iget-object v1, p0, Ld6/s;->l:Lt6/h;
+
+    iget-object v2, p0, Ld6/s;->m:Ld6/v;
+
+    invoke-direct {v0, v2, v1, p2}, Ld6/s;-><init>(Ld6/v;Lt6/h;LvM/d;)V
+
+    iput-object p1, v0, Ld6/s;->k:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, LOM/B;
+
+    check-cast p2, LvM/d;
+
+    invoke-virtual {p0, p1, p2}, Ld6/s;->create(Ljava/lang/Object;LvM/d;)LvM/d;
+
+    move-result-object p1
+
+    check-cast p1, Ld6/s;
+
+    sget-object p2, LqM/B;->a:LqM/B;
+
+    invoke-virtual {p1, p2}, Ld6/s;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
+
+    sget-object v0, LwM/a;->a:LwM/a;
+
+    iget v1, p0, Ld6/s;->j:I
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_1
+
+    if-ne v1, v2, :cond_0
+
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ld6/s;->k:Ljava/lang/Object;
+
+    check-cast p1, LOM/B;
+
+    sget-object v1, LOM/N;->a:LVM/e;
+
+    sget-object v1, LTM/n;->a:LPM/b;
+
+    iget-object v1, v1, LPM/b;->e:LPM/b;
+
+    new-instance v3, Ld6/r;
+
+    iget-object v4, p0, Ld6/s;->m:Ld6/v;
+
+    iget-object v5, p0, Ld6/s;->l:Lt6/h;
+
+    const/4 v6, 0x0
+
+    invoke-direct {v3, v4, v5, v6}, Ld6/r;-><init>(Ld6/v;Lt6/h;LvM/d;)V
+
+    const/4 v4, 0x2
+
+    invoke-static {p1, v1, v3, v4}, LOM/D;->h(LOM/B;LOM/y;Lkotlin/jvm/functions/Function2;I)LOM/H;
+
+    move-result-object p1
+
+    iget-object v1, v5, Lt6/h;->c:Lx6/b;
+
+    instance-of v3, v1, Lx6/c;
+
+    if-eqz v3, :cond_2
+
+    check-cast v1, Lx6/c;
+
+    check-cast v1, Lx6/a;
+
+    invoke-virtual {v1}, Lx6/a;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    invoke-static {v1}, Lcp/e;->z(Landroid/widget/ImageView;)Lt6/r;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Lt6/r;->a(LOM/H;)Lcom/google/android/gms/common/api/internal/m;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v1, Lcom/google/common/collect/g0;
+
+    const/16 v3, 0x11
+
+    invoke-direct {v1, v3, p1}, Lcom/google/common/collect/g0;-><init>(ILjava/lang/Object;)V
+
+    move-object p1, v1
+
+    :goto_0
+    invoke-interface {p1}, Lt6/c;->getJob()LOM/G;
+
+    move-result-object p1
+
+    iput v2, p0, Ld6/s;->j:I
+
+    invoke-interface {p1, p0}, LOM/G;->await(LvM/d;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_3
+
+    return-object v0
+
+    :cond_3
+    :goto_1
+    return-object p1
+.end method

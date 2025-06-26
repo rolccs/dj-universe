@@ -5,6 +5,7 @@
 #include <string>
 #include <atomic>
 #include <mutex>
+#include <functional>
 
 namespace DJUniverse {
 

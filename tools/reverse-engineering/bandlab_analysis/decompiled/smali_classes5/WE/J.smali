@@ -1,0 +1,231 @@
+.class public final LWE/J;
+.super LxM/i;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function2;
+
+
+# instance fields
+.field public j:I
+
+.field public final synthetic k:LWE/N;
+
+
+# direct methods
+.method public constructor <init>(LWE/N;LvM/d;)V
+    .locals 0
+
+    iput-object p1, p0, LWE/J;->k:LWE/N;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, LxM/i;-><init>(ILvM/d;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final create(Ljava/lang/Object;LvM/d;)LvM/d;
+    .locals 1
+
+    new-instance p1, LWE/J;
+
+    iget-object v0, p0, LWE/J;->k:LWE/N;
+
+    invoke-direct {p1, v0, p2}, LWE/J;-><init>(LWE/N;LvM/d;)V
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, LOM/B;
+
+    check-cast p2, LvM/d;
+
+    invoke-virtual {p0, p1, p2}, LWE/J;->create(Ljava/lang/Object;LvM/d;)LvM/d;
+
+    move-result-object p1
+
+    check-cast p1, LWE/J;
+
+    sget-object p2, LqM/B;->a:LqM/B;
+
+    invoke-virtual {p1, p2}, LWE/J;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
+
+    sget-object v0, LwM/a;->a:LwM/a;
+
+    iget v1, p0, LWE/J;->j:I
+
+    sget-object v2, LqM/B;->a:LqM/B;
+
+    const/4 v3, 0x4
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x3
+
+    const/4 v6, 0x2
+
+    iget-object v7, p0, LWE/J;->k:LWE/N;
+
+    if-eqz v1, :cond_4
+
+    if-eq v1, v4, :cond_3
+
+    if-eq v1, v6, :cond_2
+
+    if-eq v1, v5, :cond_1
+
+    if-ne v1, v3, :cond_0
+
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_2
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_4
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    iget-object p1, v7, LWE/N;->j:LIw/n;
+
+    iput v4, p0, LWE/J;->j:I
+
+    invoke-virtual {p1, p0}, LIw/n;->b(LvM/d;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_5
+
+    return-object v0
+
+    :cond_5
+    :goto_0
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_6
+
+    return-object v2
+
+    :cond_6
+    iget-object p1, v7, LWE/N;->c:LMn/t;
+
+    iget-object p1, p1, LMn/t;->h:LRM/e1;
+
+    new-instance v1, LAx/f;
+
+    const/4 v4, 0x7
+
+    invoke-direct {v1, p1, v4}, LAx/f;-><init>(LRM/l;I)V
+
+    new-instance p1, LCv/b;
+
+    const/4 v4, 0x0
+
+    const/16 v8, 0x15
+
+    invoke-direct {p1, v5, v8, v4}, LCv/b;-><init>(IILvM/d;)V
+
+    invoke-static {v1, p1}, LRM/H;->T(LRM/l;Lkotlin/jvm/functions/Function3;)LSM/p;
+
+    move-result-object p1
+
+    new-instance v1, LWE/I;
+
+    invoke-direct {v1, v6, v4}, LxM/i;-><init>(ILvM/d;)V
+
+    iput v6, p0, LWE/J;->j:I
+
+    invoke-static {p1, v1, p0}, LRM/H;->A(LRM/l;Lkotlin/jvm/functions/Function2;LvM/d;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_7
+
+    return-object v0
+
+    :cond_7
+    :goto_1
+    sget-wide v8, LWE/N;->w:J
+
+    iput v5, p0, LWE/J;->j:I
+
+    invoke-static {v8, v9, p0}, LOM/D;->t(JLvM/d;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_8
+
+    return-object v0
+
+    :cond_8
+    :goto_2
+    iget-object p1, v7, LWE/N;->j:LIw/n;
+
+    iput v3, p0, LWE/J;->j:I
+
+    invoke-virtual {p1, p0}, LIw/n;->b(LvM/d;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_9
+
+    return-object v0
+
+    :cond_9
+    :goto_3
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-nez p1, :cond_a
+
+    iget-object p1, v7, LWE/N;->q:LRM/e1;
+
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-static {p1, v0}, Lyh/f;->K(LRM/K0;Ljava/lang/Object;)V
+
+    :cond_a
+    return-object v2
+.end method

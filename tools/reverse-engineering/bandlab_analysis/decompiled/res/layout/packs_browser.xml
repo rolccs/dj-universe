@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/packs_browser_0" android:background="@color/surface_inactive_screen" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/ib_appBar" android:tag="binding_1" android:background="@color/surface_inactive_screen" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout android:id="@id/ib_collapsingToolbarLayout" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" bind:contentScrim="@color/technical_unspecified" bind:layout_behavior="@string/fling_behavior" bind:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlways" bind:titleEnabled="false">
+            <include android:layout_width="fill_parent" android:layout_height="wrap_content" bind:layout_collapseMode="pin" layout="@layout/packs_filters_layout" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:layout_gravity="center_horizontal" android:tag="binding_3" android:layout_height="fill_parent" bind:layout_behavior="@string/appbar_scrolling_view_behavior" style="@style/LibraryContent">
+        <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/packs_list" android:tag="binding_4" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

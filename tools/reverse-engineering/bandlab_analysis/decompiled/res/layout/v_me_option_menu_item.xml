@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/v_me_option_menu_item_0" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x6"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_medium" android:textStyle="normal" android:textColor="@color/glyphs_primary" android:ellipsize="end" android:tag="binding_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toStartOf="@id/check" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@id/check" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" android:layout_marginEnd="@dimen/grid_size_x2" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintTop_toTopOf="parent" bind:srcCompat="@drawable/ic_checkmark" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,117 @@
+.class public final Landroidx/compose/foundation/c;
+.super Lkotlin/jvm/internal/p;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function3;
+
+
+# instance fields
+.field public final synthetic c:LT0/d1;
+
+.field public final synthetic d:Z
+
+.field public final synthetic e:LO1/h;
+
+.field public final synthetic f:Lkotlin/jvm/functions/Function0;
+
+.field public final synthetic g:Lkotlin/jvm/functions/Function0;
+
+.field public final synthetic h:Lkotlin/jvm/functions/Function0;
+
+
+# direct methods
+.method public constructor <init>(LT0/d1;ZLO1/h;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
+    .locals 0
+
+    iput-object p1, p0, Landroidx/compose/foundation/c;->c:LT0/d1;
+
+    iput-boolean p2, p0, Landroidx/compose/foundation/c;->d:Z
+
+    iput-object p3, p0, Landroidx/compose/foundation/c;->e:LO1/h;
+
+    iput-object p4, p0, Landroidx/compose/foundation/c;->f:Lkotlin/jvm/functions/Function0;
+
+    iput-object p5, p0, Landroidx/compose/foundation/c;->g:Lkotlin/jvm/functions/Function0;
+
+    iput-object p6, p0, Landroidx/compose/foundation/c;->h:Lkotlin/jvm/functions/Function0;
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/p;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
+
+    check-cast p1, Lh1/p;
+
+    check-cast p2, Landroidx/compose/runtime/k;
+
+    check-cast p3, Ljava/lang/Number;
+
+    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
+
+    check-cast p2, Landroidx/compose/runtime/o;
+
+    const p1, -0x5af0b3b9
+
+    invoke-virtual {p2, p1}, Landroidx/compose/runtime/o;->Y(I)V
+
+    invoke-virtual {p2}, Landroidx/compose/runtime/o;->M()Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p3, Landroidx/compose/runtime/j;->a:Landroidx/compose/runtime/S;
+
+    if-ne p1, p3, :cond_0
+
+    invoke-static {p2}, Ln0/V;->x(Landroidx/compose/runtime/o;)Lw0/m;
+
+    move-result-object p1
+
+    :cond_0
+    move-object v6, p1
+
+    check-cast v6, Lw0/m;
+
+    sget-object p1, Lh1/m;->a:Lh1/m;
+
+    iget-object p3, p0, Landroidx/compose/foundation/c;->c:LT0/d1;
+
+    invoke-static {p1, v6, p3}, Landroidx/compose/foundation/d;->a(Lh1/p;Lw0/m;Lp0/c0;)Lh1/p;
+
+    move-result-object p1
+
+    new-instance p3, Landroidx/compose/foundation/CombinedClickableElement;
+
+    iget-object v1, p0, Landroidx/compose/foundation/c;->e:LO1/h;
+
+    iget-object v2, p0, Landroidx/compose/foundation/c;->f:Lkotlin/jvm/functions/Function0;
+
+    const/4 v5, 0x0
+
+    iget-boolean v7, p0, Landroidx/compose/foundation/c;->d:Z
+
+    iget-object v3, p0, Landroidx/compose/foundation/c;->g:Lkotlin/jvm/functions/Function0;
+
+    iget-object v4, p0, Landroidx/compose/foundation/c;->h:Lkotlin/jvm/functions/Function0;
+
+    move-object v0, p3
+
+    invoke-direct/range {v0 .. v7}, Landroidx/compose/foundation/CombinedClickableElement;-><init>(LO1/h;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lp0/h0;Lw0/m;Z)V
+
+    invoke-interface {p1, p3}, Lh1/p;->then(Lh1/p;)Lh1/p;
+
+    move-result-object p1
+
+    const/4 p3, 0x0
+
+    invoke-virtual {p2, p3}, Landroidx/compose/runtime/o;->q(Z)V
+
+    return-object p1
+.end method

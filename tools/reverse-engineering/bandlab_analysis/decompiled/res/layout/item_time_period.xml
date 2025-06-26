@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:tag="layout/item_time_period_0" android:background="?selectableItemBackground" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/time_period" android:tag="binding_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="@dimen/grid_size_x2" android:paddingVertical="@dimen/grid_size_x1_5" bind:fontFamily="@font/default_medium" style="@style/PrimaryText" />
+    <ImageView android:id="@id/item_check" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginEnd="@dimen/grid_size_x2" bind:srcCompat="@drawable/ic_checkmark" bind:tint="@color/tint_blue_base" />
+</LinearLayout>

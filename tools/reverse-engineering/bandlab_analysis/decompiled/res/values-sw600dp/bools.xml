@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="is_tablet">true</bool>
+    <bool name="ply_isTablet">true</bool>
+    <bool name="use_large_picture">true</bool>
+</resources>

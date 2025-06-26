@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/transpose_tool_0" android:splitMotionEvents="false" style="@style/METoolLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View style="@style/METoolBorder" />
+    <TextView android:textColor="@color/glyphs_secondary" android:layout_gravity="center_horizontal" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x2" android:layout_marginBottom="@dimen/grid_size" />
+    <com.bandlab.common.views.CenteredSeekbar android:id="@id/transpose_slider" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/grid_size" android:progressDrawable="@drawable/me_progress_center" android:foregroundGravity="center" app:centerProgress="true" app:fixedTickMark="@drawable/tick_mark" style="@style/MeSeekBar" />
+    <include layout="@layout/tool_transport_controls" />
+</LinearLayout>

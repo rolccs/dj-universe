@@ -1,0 +1,106 @@
+.class public final Lkp/Z;
+.super Lkp/a0;
+.source "SourceFile"
+
+
+# annotations
+.annotation runtime LaN/f;
+.end annotation
+
+
+# static fields
+.field public static final INSTANCE:Lkp/Z;
+
+.field public static final synthetic d:Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    new-instance v0, Lkp/Z;
+
+    sget-object v1, Lkp/G;->INSTANCE:Lkp/G;
+
+    const v2, 0x7f080440
+
+    invoke-direct {v0, v1, v2}, Lkp/a0;-><init>(Lkp/H;I)V
+
+    sput-object v0, Lkp/Z;->INSTANCE:Lkp/Z;
+
+    sget-object v0, LqM/j;->a:LqM/j;
+
+    new-instance v1, Lkp/U;
+
+    const/4 v2, 0x5
+
+    invoke-direct {v1, v2}, Lkp/U;-><init>(I)V
+
+    invoke-static {v0, v1}, LLo/b;->G(LqM/j;Lkotlin/jvm/functions/Function0;)LqM/h;
+
+    move-result-object v0
+
+    sput-object v0, Lkp/Z;->d:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p1, p1, Lkp/Z;
+
+    if-nez p1, :cond_1
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    const v0, -0x501919c0    # -4.200036E-10f
+
+    return v0
+.end method
+
+.method public final serializer()LaN/a;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "LaN/a;"
+        }
+    .end annotation
+
+    sget-object v0, Lkp/Z;->d:Ljava/lang/Object;
+
+    invoke-interface {v0}, LqM/h;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LaN/a;
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "Recent"
+
+    return-object v0
+.end method

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="about_n_minutes_remaining">
+        <item quantity="other">लगभग %s मिनट शेष हैं</item>
+        <item quantity="one">लगभग %s मिनट शेष है</item>
+    </plurals>
+    <plurals name="add_n_tracks">
+        <item quantity="other">%s ट्रैक जोड़ें</item>
+        <item quantity="one">%s ट्रैक जोड़ें</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days">
+        <item quantity="other">यह अभियान &lt;b>%s दिनों&lt;/b> में पूरा हो जाएगा।</item>
+        <item quantity="one">यह अभियान &lt;b>%s दिन&lt;/b> में पूरा हो जाएगा।</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days_short">
+        <item quantity="other">समाप्त होने में %s दिन</item>
+        <item quantity="one">समाप्त होने में %s दिन</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">वीडियो को %d सेकंड आगे बढ़ाएं</item>
+        <item quantity="one">वीडियो को %d सेकंड आगे बढ़ाएं</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">वीडियो को %d सेकंड पीछे ले जाएं</item>
+        <item quantity="one">वीडियो को %d सेकंड पीछे ले जाएं</item>
+    </plurals>
+    <plurals name="in_the_last_n_days">
+        <item quantity="other">पिछले %s दिनों में</item>
+        <item quantity="one">पिछले %s दिन में</item>
+    </plurals>
+    <plurals name="last_n_days">
+        <item quantity="other">पिछले %s दिन</item>
+        <item quantity="one">पिछले %s दिन</item>
+    </plurals>
+    <plurals name="long_record_length_warning">
+        <item quantity="other">रिकॉर्डिंग बंद हुआ। अधिकतम अवधि की सीमा पहुंची (%s मिनट)</item>
+        <item quantity="one">रिकॉर्डिंग बंद हुआ। अधिकतम अवधि की सीमा पहुंची (%s मिनट)</item>
+    </plurals>
+    <plurals name="me_long_file_n_duration_limit_warning">
+        <item quantity="other">आप जिस फ़ाइल को इंपोर्ट करने का प्रयास कर रहे हैं वह बहुत लंबी है। अधिकतम %s मिनट है।</item>
+        <item quantity="one">आप जिस फ़ाइल को इंपोर्ट करने का प्रयास कर रहे हैं वह बहुत लंबी है। अधिकतम %s मिनट है।</item>
+    </plurals>
+    <plurals name="me_min_n_track_duration_warning">
+        <item quantity="other">वीडियो अवधि कम से कम %s सेकेंड होनी चाहिए।</item>
+        <item quantity="one">वीडियो अवधि कम से कम %s सेकेंड होनी चाहिए।</item>
+    </plurals>
+    <plurals name="me_n_instruments">
+        <item quantity="other">%s वाद्ययंत्र</item>
+        <item quantity="one">%s वाद्ययंत्र</item>
+    </plurals>
+    <plurals name="me_n_packs">
+        <item quantity="other">%s पैक</item>
+        <item quantity="one">%s पैक</item>
+    </plurals>
+    <plurals name="me_n_regions_selected">
+        <item quantity="other">%s क्षेत्र चयनित</item>
+        <item quantity="one">%s क्षेत्र चयनित</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d नई सूचनाएं</item>
+        <item quantity="one">%d नई सूचनाएं</item>
+    </plurals>
+    <plurals name="n_available_free_beats">
+        <item quantity="other">आपके पास %s मुफ्त बीट्स हैं</item>
+        <item quantity="one">आपके पास %s मुफ्त बीट है</item>
+    </plurals>
+    <plurals name="n_bars">
+        <item quantity="other">%s बार</item>
+        <item quantity="one">%s बार</item>
+    </plurals>
+    <plurals name="n_beats">
+        <item quantity="other">%s बीट्स</item>
+        <item quantity="one">%s बीट</item>
+    </plurals>
+    <plurals name="n_beats_free_left">
+        <item quantity="other">मुफ़्त BandLab बीट्स शेष</item>
+        <item quantity="one">मुफ़्त BandLab बीट शेष</item>
+    </plurals>
+    <plurals name="n_collaborators">
+        <item quantity="other">%s अन्य</item>
+        <item quantity="one">%s अन्य</item>
+    </plurals>
+    <plurals name="n_collections">
+        <item quantity="other">%s संग्रह</item>
+        <item quantity="one">%s संग्रह</item>
+    </plurals>
+    <plurals name="n_comments">
+        <item quantity="other">%s टिप्पणियां</item>
+        <item quantity="one">%s टिप्पणी</item>
+    </plurals>
+    <plurals name="n_days">
+        <item quantity="other">%s दिन</item>
+        <item quantity="one">%s दिन</item>
+    </plurals>
+    <plurals name="n_days_after_submission">
+        <item quantity="other">जमा करने के बाद न्यूनतम %s दिन</item>
+        <item quantity="one">जमा करने के बाद न्यूनतम %s दिन</item>
+    </plurals>
+    <plurals name="n_days_free_trial">
+        <item quantity="other">%s दिन का निःशुल्क परीक्षण</item>
+        <item quantity="one">%s दिन का निःशुल्क परीक्षण</item>
+    </plurals>
+    <plurals name="n_deducted_over_n_days">
+        <item quantity="other">%2$s दिनों में %1$s</item>
+        <item quantity="one">%2$s दिन में %1$s</item>
+    </plurals>
+    <plurals name="n_engagements">
+        <item quantity="other">%s इंगेजमेंट</item>
+        <item quantity="one">%s इंगेजमेंट</item>
+    </plurals>
+    <plurals name="n_files_added">
+        <item quantity="other">%s फ़ाइलें जोड़ी गईं</item>
+        <item quantity="one">%s फ़ाइल जोड़े गए</item>
+    </plurals>
+    <plurals name="n_files_remaining">
+        <item quantity="other">%s फ़ाइलें शेष</item>
+        <item quantity="one">%s फ़ाइल शेष</item>
+    </plurals>
+    <plurals name="n_followers">
+        <item quantity="other">%s फॉलोअर</item>
+        <item quantity="one">%s फॉलोअर</item>
+    </plurals>
+    <plurals name="n_following">
+        <item quantity="other">%s फॉलो कर रहे हैं</item>
+        <item quantity="one">%s फॉलो कर रहे हैं</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_member">
+        <item quantity="other">एक सदस्य के रूप में, आप अब हर सप्ताह %s मुफ्त BandLab बीट का आनंद ले सकते हैं!</item>
+        <item quantity="one">एक सदस्य के रूप में, आप अब हर सप्ताह %s मुफ्त BandLab बीट का आनंद ले सकते हैं!</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial">
+        <item quantity="other">आपने अपनी आज़माइश अवधि में %s मुफ़्त BandLab बीट्स अनलॉक कर लिए हैं। इन्हें अभी क्लेम करें!</item>
+        <item quantity="one">आपने अपनी आज़माइश अवधि में %s मुफ़्त BandLab बीट अनलॉक कर लिया है। इसे अभी क्लेम करें!</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial_upgrade">
+        <item quantity="other">एक मासिक या वार्षिक प्लान पर अपग्रेड करें और हर सप्ताह %s मुफ्त बीट पाएँ।</item>
+        <item quantity="one">एक मासिक या वार्षिक प्लान पर अपग्रेड करें और हर सप्ताह %s मुफ्त बीट पाएँ।</item>
+    </plurals>
+    <plurals name="n_free_beats_with_membership_next_date">
+        <item quantity="other">अपने अगले %1$s बीट यहाँ पाएँ: %2$s</item>
+        <item quantity="one">अपना अगला %1$s बीट यहाँ पाएँ: %2$s</item>
+    </plurals>
+    <plurals name="n_free_beats_without_membership_description">
+        <item quantity="other">हर हफ़्ते अपनी पसंद के %s मुफ्त बीट्स के साथ अपना अगला गीत फ़ास्ट-ट्रैक करें! और चाहिए?</item>
+        <item quantity="one">हर हफ़्ते अपनी पसंद के %s मुफ्त बीट के साथ अपना अगला गीत फ़ास्ट-ट्रैक करें! और चाहिए?</item>
+    </plurals>
+    <plurals name="n_free_daily_splits_left">
+        <item quantity="other">आज %s मुफ्त स्प्लिट बचे हैं</item>
+        <item quantity="one">आज %s मुफ्त स्प्लिट बचा है</item>
+    </plurals>
+    <plurals name="n_free_splits_left">
+        <item quantity="other">इस महीने %s मुफ्त स्प्लिट्स बाकी हैं</item>
+        <item quantity="one">इस महीने %s मुफ्त स्प्लिट बाकी है</item>
+    </plurals>
+    <plurals name="n_genres">
+        <item quantity="other">%s विधाएं</item>
+        <item quantity="one">%s विधा</item>
+    </plurals>
+    <plurals name="n_hours">
+        <item quantity="other">%s घंटे</item>
+        <item quantity="one">%s घंटा</item>
+    </plurals>
+    <plurals name="n_impressions">
+        <item quantity="other">%s इम्प्रेशन</item>
+        <item quantity="one">%s इम्प्रेशन</item>
+    </plurals>
+    <plurals name="n_inspired_songs">
+        <item quantity="other">%s ट्रैक प्रेरित हुए</item>
+        <item quantity="one">%s ट्रैक प्रेरित हुए</item>
+    </plurals>
+    <plurals name="n_latency_manual">
+        <item quantity="other">आपने सेट किया है: लैटेंसी %s मि.से.</item>
+        <item quantity="one">आपने सेट किया है: लैटेंसी %s मि.से.</item>
+    </plurals>
+    <plurals name="n_latency_test_result">
+        <item quantity="other">टेस्ट नतीजा: लैटेंसी %s ms</item>
+        <item quantity="one">टेस्ट नतीजा: लैटेंसी %s ms</item>
+    </plurals>
+    <plurals name="n_likes">
+        <item quantity="other">%s पसंद</item>
+        <item quantity="one">%s पसंद</item>
+    </plurals>
+    <plurals name="n_members">
+        <item quantity="other">%s सदस्य</item>
+        <item quantity="one">%s सदस्य</item>
+    </plurals>
+    <plurals name="n_message_requests">
+        <item quantity="other">%s संदेश आग्रह</item>
+        <item quantity="one">%s संदेश आग्रह</item>
+    </plurals>
+    <plurals name="n_milliseconds">
+        <item quantity="other">%s मि.से.</item>
+        <item quantity="one">%s मि.से.</item>
+    </plurals>
+    <plurals name="n_min">
+        <item quantity="other">%s मि.</item>
+        <item quantity="one">%s मि.</item>
+    </plurals>
+    <plurals name="n_months">
+        <item quantity="other">%s माह</item>
+        <item quantity="one">%s माह</item>
+    </plurals>
+    <plurals name="n_mutuals">
+        <item quantity="other">%s आपसी मित्र</item>
+        <item quantity="one">%s आपसी मित्र</item>
+    </plurals>
+    <plurals name="n_new_notifications">
+        <item quantity="other">%s नई अधिसूचनाएं</item>
+        <item quantity="one">%s नई अधिसूचना</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="other">%s प्ले</item>
+        <item quantity="one">%s प्ले</item>
+    </plurals>
+    <plurals name="n_posts">
+        <item quantity="other">%s पोस्ट</item>
+        <item quantity="one">%s पोस्ट</item>
+    </plurals>
+    <plurals name="n_requests_invites">
+        <item quantity="other">%s आग्रह/आमंत्रण</item>
+        <item quantity="one">%s आग्रह/आमंत्रण</item>
+    </plurals>
+    <plurals name="n_samples">
+        <item quantity="other">%s सैंपल</item>
+        <item quantity="one">%s सैंपल</item>
+    </plurals>
+    <plurals name="n_seconds">
+        <item quantity="other">%s से.</item>
+        <item quantity="one">%s से.</item>
+    </plurals>
+    <plurals name="n_semitones">
+        <item quantity="other">%s सेमीटोन</item>
+        <item quantity="one">%s सेमीटोन</item>
+    </plurals>
+    <plurals name="n_tracks">
+        <item quantity="other">%s ट्रैक</item>
+        <item quantity="one">%s ट्रैक</item>
+    </plurals>
+    <plurals name="n_unlock_free_beats_with_membership">
+        <item quantity="other">हर सप्ताह %s मुफ्त बीट्स अनलॉक करें</item>
+        <item quantity="one">हर सप्ताह %s मुफ्त बीट अनलॉक करें</item>
+    </plurals>
+    <plurals name="n_view">
+        <item quantity="other">%s दृश्य</item>
+        <item quantity="one">%s दृश्य</item>
+    </plurals>
+    <plurals name="n_weeks">
+        <item quantity="other">%s सप्ताह</item>
+        <item quantity="one">%s सप्ताह</item>
+    </plurals>
+    <plurals name="n_zero_free_beats_without_membership_description">
+        <item quantity="other">और चाहिए? हर सप्ताह %s मुफ्त बीट्स अनलॉक करने के लिए सदस्यता लें।</item>
+        <item quantity="one">और चाहिए? हर सप्ताह %s मुफ्त बीट अनलॉक करने के लिए सदस्यता लें।</item>
+    </plurals>
+    <plurals name="plural_followers_without_placeholder">
+        <item quantity="other">फॉलोअर</item>
+        <item quantity="one">फॉलोअर</item>
+    </plurals>
+    <plurals name="plural_following_without_placeholder">
+        <item quantity="other">फॉलोइंग</item>
+        <item quantity="one">फॉलोइंग</item>
+    </plurals>
+    <plurals name="plural_play_without_placeholder">
+        <item quantity="other">प्ले</item>
+        <item quantity="one">प्ले</item>
+    </plurals>
+    <plurals name="relative_time_days">
+        <item quantity="other">%s दिन पहले</item>
+        <item quantity="one">%s दिन पहले</item>
+    </plurals>
+    <plurals name="relative_time_hours">
+        <item quantity="other">%s घं. पहले</item>
+        <item quantity="one">%s घं. पहले</item>
+    </plurals>
+    <plurals name="relative_time_minutes">
+        <item quantity="other">%s मि. पहले</item>
+        <item quantity="one">%s मि. पहले</item>
+    </plurals>
+    <plurals name="show_n_more_tracks">
+        <item quantity="other">%s और ट्रैक दिखाएं</item>
+        <item quantity="one">%s और ट्रैक दिखाएं</item>
+    </plurals>
+    <plurals name="show_n_results">
+        <item quantity="other">%s परिणाम दिखाएँ</item>
+        <item quantity="one">%s परिणाम दिखाएँ</item>
+    </plurals>
+    <plurals name="try_free_for_n_days">
+        <item quantity="other">%s दिनों के लिए निःशुल्क प्रयास करें</item>
+        <item quantity="one">%s दिवस के लिए निःशुल्क प्रयास करें</item>
+    </plurals>
+    <plurals name="unit_n_bytes">
+        <item quantity="other">%s बाइट</item>
+        <item quantity="one">%s बाइट</item>
+    </plurals>
+    <plurals name="x_and_n_mutual_connections">
+        <item quantity="other">%1$s और %2$s अन्य साझा संपर्क</item>
+        <item quantity="one">%1$s और %2$s अन्य साझा संपर्क</item>
+    </plurals>
+</resources>

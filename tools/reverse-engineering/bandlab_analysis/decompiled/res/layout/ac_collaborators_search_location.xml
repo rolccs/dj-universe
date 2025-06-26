@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/ac_collaborators_search_location_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <com.bandlab.common.views.layout.AutoSizeToolbar android:theme="@style/AppTheme.DarkControls" android:id="@id/toolbar" android:tag="binding_1" android:layout_width="0.0dip" android:layout_height="@dimen/toolbar_height" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" bind:title="@string/search_location" />
+    <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:tag="binding_2" android:paddingTop="@dimen/location_search_margin_top" android:layout_width="0.0dip" android:layout_height="0.0dip" bind:layoutManager="@string/linear_layout_manager" bind:layout_constraintBottom_toBottomOf="parent" bind:layout_constraintEnd_toEndOf="parent" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toBottomOf="@id/toolbar" bind:layout_constraintWidth_max="@dimen/container_max_width" />
+</androidx.constraintlayout.widget.ConstraintLayout>

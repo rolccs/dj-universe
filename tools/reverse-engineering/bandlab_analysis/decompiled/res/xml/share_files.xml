@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path name="share" path="Share/" />
+    <cache-path name="video" path="Video/" />
+    <cache-path name="audio" path="AudioCache/" />
+    <external-cache-path name="audio-share" path="AudioShareCache/" />
+    <cache-path name="audio-share-internal-cache" path="AudioShareCache/" />
+    <cache-path name="images" path="Images/" />
+    <cache-path name="video_mix" path="video_mix/" />
+    <external-cache-path name="video_mix" path="video_mix/" />
+    <external-cache-path name="audiostretch-export" path="AudioStretch/export/" />
+</paths>

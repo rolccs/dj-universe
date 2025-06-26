@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Channel.ChartRecycler" parent="@style/Channel">
+        <item name="layoutManager">@string/grid_layout_manager</item>
+        <item name="spanCount">3</item>
+    </style>
+    <style name="Channel.Recycler" parent="@style/Channel">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:layout_marginStart">@dimen/grid_size_x1_5</item>
+        <item name="android:layout_marginEnd">@dimen/grid_size_x1_5</item>
+        <item name="layoutManager">@string/linear_layout_manager</item>
+    </style>
+    <style name="ClipStateButton" parent="@style/MeToolRowButton">
+        <item name="android:layout_height">@dimen/grid_size_x5</item>
+    </style>
+    <style name="ImageOverlayStyle">
+        <item name="android:background">@drawable/image_overlay_bg</item>
+    </style>
+    <style name="LooperEditClipState">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/grid_size</item>
+        <item name="android:layout_marginStart">@dimen/grid_size</item>
+        <item name="android:layout_marginEnd">@dimen/grid_size_half</item>
+        <item name="layout_constraintEnd_toStartOf">@id/quantizations</item>
+        <item name="layout_constraintHorizontal_weight">2.0</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toBottomOf">@id/looper_edit_separator</item>
+    </style>
+    <style name="LooperEditControl.Base" parent="@style/LooperEditControl">
+        <item name="android:drawablePadding">@dimen/grid_size_half</item>
+    </style>
+    <style name="LooperEditControl.Base.Gate" parent="@style/LooperEditControl.Base">
+        <item name="drawableStartCompat">@drawable/ic_audio_play_mode_gate</item>
+    </style>
+    <style name="LooperEditControl.Base.Loop" parent="@style/LooperEditControl.Base">
+        <item name="drawableStartCompat">@drawable/ic_audio_play_mode_loop</item>
+    </style>
+    <style name="LooperEditControl.Base.OneShot" parent="@style/LooperEditControl.Base">
+        <item name="drawableStartCompat">@drawable/ic_audio_play_mode_oneshoot</item>
+    </style>
+    <style name="LooperEditControl.Base.Retrigger" parent="@style/LooperEditControl.Base">
+        <item name="drawableStartCompat">@drawable/ic_arrow_right</item>
+    </style>
+    <style name="LooperEditQuantization">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/grid_size</item>
+        <item name="android:layout_marginStart">@dimen/grid_size_half</item>
+        <item name="android:layout_marginEnd">@dimen/grid_size</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintHorizontal_weight">1.0</item>
+        <item name="layout_constraintStart_toEndOf">@id/clip_states</item>
+        <item name="layout_constraintTop_toBottomOf">@id/looper_edit_separator</item>
+    </style>
+    <style name="MeSettings">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">@dimen/container_max_width</item>
+    </style>
+</resources>

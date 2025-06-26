@@ -1,0 +1,80 @@
+.class public final synthetic LG3/E;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ly3/m;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lv3/A0;
+
+
+# direct methods
+.method public synthetic constructor <init>(LH3/a;Lv3/A0;)V
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x1
+
+    iput p1, p0, LG3/E;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, LG3/E;->b:Lv3/A0;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lv3/A0;)V
+    .locals 1
+
+    .line 2
+    const/4 v0, 0x0
+
+    iput v0, p0, LG3/E;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, LG3/E;->b:Lv3/A0;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
+
+    iget v0, p0, LG3/E;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, LH3/b;
+
+    iget-object v0, p0, LG3/E;->b:Lv3/A0;
+
+    invoke-interface {p1, v0}, LH3/b;->a(Lv3/A0;)V
+
+    iget p1, v0, Lv3/A0;->a:I
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Lv3/X;
+
+    iget-object v0, p0, LG3/E;->b:Lv3/A0;
+
+    invoke-interface {p1, v0}, Lv3/X;->a(Lv3/A0;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method

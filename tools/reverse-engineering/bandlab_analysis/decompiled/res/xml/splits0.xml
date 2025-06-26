@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<splits>
+    <module name="">
+        <language>
+            <entry key="es" split="" />
+            <entry key="fr" split="" />
+            <entry key="hi" split="" />
+            <entry key="ja" split="" />
+            <entry key="pt" split="" />
+            <entry key="ru" split="" />
+            <entry key="tr" split="" />
+        </language>
+    </module>
+</splits>

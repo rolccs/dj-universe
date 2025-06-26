@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/mix_editor_settings_0" android:background="@color/surface_inactive_screen" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:id="@id/scroll_view" android:tag="binding_1" android:layout_height="fill_parent" android:fillViewport="true" android:animateLayoutChanges="true" style="@style/MeSettings">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.bandlab.bandlab.feature.mixeditor.viewmodel.settings.SafeModeBannerView android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <com.bandlab.mixeditor.uikit.membership.view.MembershipBannerView android:tag="binding_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x1_5" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" />
+            <TextView android:text="@string/me_project_settings" style="@style/MeSettingsCategoryTitle" />
+            <LinearLayout android:tag="binding_4" style="@style/MeSettingsSectionContainer">
+                <TextView android:tag="binding_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size_x1_5" android:text="@string/mix_editor_tempo" android:layout_marginStart="@dimen/grid_size_x2" style="@style/MeSettingsCellTitle" />
+                <com.bandlab.mixeditor.settings.metronomesetting.ui.view.TempoInputView android:tag="binding_6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/grid_size" android:layout_marginBottom="@dimen/grid_size_x1_5" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+            </LinearLayout>
+            <TextView android:text="@string/studio_settings" style="@style/MeSettingsCategoryTitle" />
+            <TextView android:text="@string/me_multi_track_tools" style="@style/MeSettingsSectionTitle" />
+            <LinearLayout android:tag="binding_7" style="@style/MeSettingsSectionContainer">
+                <include layout="@layout/item_mixeditor_settings_switch" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_switch" />
+            </LinearLayout>
+            <TextView android:text="@string/recording_and_playback" style="@style/MeSettingsSectionTitle" />
+            <LinearLayout android:tag="binding_8" style="@style/MeSettingsSectionContainer">
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/mix_editor_metronome_volume" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_switch" />
+                <include layout="@layout/item_mixeditor_settings_switch" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_switch" />
+                <View style="@style/MeSettingsSeparator" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+            </LinearLayout>
+            <TextView android:text="@string/troubleshooting" style="@style/MeSettingsSectionTitle" />
+            <LinearLayout android:id="@id/troubleshooting_division" android:tag="binding_9" style="@style/MeSettingsSectionContainer">
+                <include layout="@layout/item_mixeditor_settings_switch" />
+            </LinearLayout>
+            <TextView android:text="@string/tools" style="@style/MeSettingsCategoryTitle" />
+            <LinearLayout android:tag="binding_10" style="@style/MeSettingsSectionContainer">
+                <include layout="@layout/item_mixeditor_settings_string" />
+            </LinearLayout>
+            <TextView android:text="@string/help" style="@style/MeSettingsCategoryTitle" />
+            <LinearLayout android:tag="binding_11" style="@style/MeSettingsSectionContainer">
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+                <include layout="@layout/item_mixeditor_settings_string" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

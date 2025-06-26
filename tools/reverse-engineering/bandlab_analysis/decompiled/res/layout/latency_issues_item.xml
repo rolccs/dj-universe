@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textColor="@color/glyphs_primary" android:tag="layout/latency_issues_item_0" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x8" android:layout_margin="@dimen/grid_size"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

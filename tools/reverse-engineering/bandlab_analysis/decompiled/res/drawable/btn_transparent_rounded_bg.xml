@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="?android:colorControlHighlight" android:exitFadeDuration="@android:integer/config_shortAnimTime"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <padding android:left="0.0dip" android:top="@dimen/grid_size" android:right="0.0dip" android:bottom="@dimen/grid_size" />
+            <corners android:radius="@dimen/grid_size_x2" />
+            <solid android:color="@color/technical_black_mask" />
+        </shape>
+    </item>
+</ripple>

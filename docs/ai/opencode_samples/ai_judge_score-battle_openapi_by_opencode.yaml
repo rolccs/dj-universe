@@ -1,0 +1,128 @@
+# 🤖 Generado por opencode AI - NO por Claude ni por humanos del equipo
+# Especificación OpenAPI para /api/ai-judge/score-battle (scoring numérico, optimizado CPU)
+# Fecha: 2025-06-25
+---
+openapi: 3.0.1
+info:
+  title: DJ Universe AI Judge Score API (by opencode)
+  description: |
+    Endpoint para juzgar una battle DJ basado en features tabulares numéricos. Ultra-rápido, 100% CPU-friendly.
+    No utiliza deep learning pesado ni procesado de audio crudo. TODOS los datos son inputs numéricos procesados previamente.
+    Este archivo fue generado por opencode AI, separado intencionalmente del trabajo de Claude.
+  version: 0.1.0-opencode
+paths:
+  /api/ai-judge/score-battle:
+    post:
+      summary: Scoring automático de una battle DJ (fast CPU)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - dj_id
+                - battle_id
+                - track_features
+                - battle_metadata
+              properties:
+                dj_id:
+                  type: string
+                  example: "b347d8"
+                battle_id:
+                  type: string
+                  example: "082dc0"
+                track_features:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - track_number
+                      - bpm
+                      - delta_bpm
+                      - key
+                      - pitch_diff
+                      - transition_quality
+                      - energy_level
+                    properties:
+                      track_number:
+                        type: integer
+                        example: 1
+                      bpm:
+                        type: number
+                        format: float
+                        example: 128.1
+                      delta_bpm:
+                        type: number
+                        format: float
+                        example: -0.5
+                      key:
+                        type: integer
+                        example: 7
+                      pitch_diff:
+                        type: number
+                        format: float
+                        example: 0.12
+                      transition_quality:
+                        type: number
+                        format: float
+                        example: 0.95
+                      energy_level:
+                        type: number
+                        format: float
+                        example: 0.86
+                battle_metadata:
+                  type: object
+                  required:
+                    - genre
+                    - avg_energy
+                    - avg_bpm
+                  properties:
+                    genre:
+                      type: string
+                      example: "tech_house"
+                    avg_energy:
+                      type: number
+                      format: float
+                      example: 0.82
+                    avg_bpm:
+                      type: number
+                      format: float
+                      example: 127.4
+      responses:
+        '200':
+          description: Scores calculados por AI Judge (CPU)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  battle_score:
+                    type: integer
+                    example: 91
+                  technical:
+                    type: integer
+                    example: 88
+                  creativity:
+                    type: integer
+                    example: 92
+                  crowd_pred:
+                    type: integer
+                    example: 84
+                  transition:
+                    type: integer
+                    example: 95
+                  details:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        track_number:
+                          type: integer
+                          example: 1
+                        score:
+                          type: integer
+                          example: 90
+                        comments:
+                          type: string
+                          example: "Smooth transition, good key match."

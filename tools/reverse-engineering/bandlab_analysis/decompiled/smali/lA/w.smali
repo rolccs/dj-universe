@@ -1,0 +1,37 @@
+.class public final LlA/w;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field public final a:LRM/R0;
+
+.field public final b:LRM/L0;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v0, LQM/c;->b:LQM/c;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {v1, v2, v0}, LRM/H;->a(IILQM/c;)LRM/R0;
+
+    move-result-object v0
+
+    iput-object v0, p0, LlA/w;->a:LRM/R0;
+
+    new-instance v1, LRM/L0;
+
+    invoke-direct {v1, v0}, LRM/L0;-><init>(LRM/J0;)V
+
+    iput-object v1, p0, LlA/w;->b:LRM/L0;
+
+    return-void
+.end method

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="about_n_minutes_remaining">
+        <item quantity="other">残り約%s分</item>
+    </plurals>
+    <plurals name="add_n_tracks">
+        <item quantity="other">%s個のトラックを追加</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days">
+        <item quantity="other">このキャンペーンは&lt;b>%s日&lt;/b>で完了します。</item>
+    </plurals>
+    <plurals name="boost_ends_in_n_days_short">
+        <item quantity="other">%s日後に終了します</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">%d 秒早送り</item>
+        <item quantity="one">%d 秒早送り</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">%d 秒巻き戻し</item>
+        <item quantity="one">%d 秒巻き戻し</item>
+    </plurals>
+    <plurals name="in_the_last_n_days">
+        <item quantity="other">過去%s日で</item>
+    </plurals>
+    <plurals name="last_n_days">
+        <item quantity="other">過去%s日</item>
+    </plurals>
+    <plurals name="long_record_length_warning">
+        <item quantity="other">録音を停止しました。最大録音時間に達しました（%s分）</item>
+    </plurals>
+    <plurals name="me_long_file_n_duration_limit_warning">
+        <item quantity="other">インポートしようとしているファイルが長すぎます。最大値は%s分です。</item>
+    </plurals>
+    <plurals name="me_min_n_track_duration_warning">
+        <item quantity="other">動画の再生時間は少なくとも%s秒である必要があります。</item>
+    </plurals>
+    <plurals name="me_n_instruments">
+        <item quantity="other">インスツルメント %s個</item>
+    </plurals>
+    <plurals name="me_n_packs">
+        <item quantity="other">%sパック</item>
+    </plurals>
+    <plurals name="me_n_regions_selected">
+        <item quantity="other">%sリージョン選択済み</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d 件の新しい通知</item>
+        <item quantity="one">%d 件の新しい通知</item>
+    </plurals>
+    <plurals name="n_available_free_beats">
+        <item quantity="other">無料のビートが%s個あります</item>
+    </plurals>
+    <plurals name="n_bars">
+        <item quantity="other">%s小節</item>
+    </plurals>
+    <plurals name="n_beats">
+        <item quantity="other">%s個のビート</item>
+    </plurals>
+    <plurals name="n_beats_free_left">
+        <item quantity="other">残りの無料BandLabビート</item>
+    </plurals>
+    <plurals name="n_collaborators">
+        <item quantity="other">他%s人</item>
+    </plurals>
+    <plurals name="n_collections">
+        <item quantity="other">%s個のコレクション</item>
+    </plurals>
+    <plurals name="n_comments">
+        <item quantity="other">%s件のコメント</item>
+    </plurals>
+    <plurals name="n_days">
+        <item quantity="other">%s日</item>
+    </plurals>
+    <plurals name="n_days_after_submission">
+        <item quantity="other">送信後最低%s日</item>
+    </plurals>
+    <plurals name="n_days_free_trial">
+        <item quantity="other">%s日間無料トライアル</item>
+    </plurals>
+    <plurals name="n_deducted_over_n_days">
+        <item quantity="other">%2$s日間で%1$s</item>
+    </plurals>
+    <plurals name="n_engagements">
+        <item quantity="other">%sエンゲージメント</item>
+    </plurals>
+    <plurals name="n_files_added">
+        <item quantity="other">追加されたファイル%s個</item>
+    </plurals>
+    <plurals name="n_files_remaining">
+        <item quantity="other">残りのファイル%s個</item>
+    </plurals>
+    <plurals name="n_followers">
+        <item quantity="other">フォロワー%s人</item>
+    </plurals>
+    <plurals name="n_following">
+        <item quantity="other">%s人をフォロー中</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_member">
+        <item quantity="other">メンバーとして毎週%sの無料BandLabビートをお楽しみいただけます！</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial">
+        <item quantity="other">トライアル期間中に、%s個の無料BandLabビートがご利用いただけるようになりました。今すぐお受け取りください！</item>
+    </plurals>
+    <plurals name="n_free_beats_tokens_trial_upgrade">
+        <item quantity="other">毎週%sの無料ビートを受け取るには、月額または年額プランにアップグレードしてください。</item>
+    </plurals>
+    <plurals name="n_free_beats_with_membership_next_date">
+        <item quantity="other">次の%1$sビートを%2$sで獲得してください。</item>
+    </plurals>
+    <plurals name="n_free_beats_without_membership_description">
+        <item quantity="other">毎週、お好みの無料ビート%s個で次のヒット曲制作を加速させましょう！さらにいかがですか？</item>
+    </plurals>
+    <plurals name="n_free_daily_splits_left">
+        <item quantity="other">本日の無料音源分離はあと%s回です</item>
+    </plurals>
+    <plurals name="n_free_splits_left">
+        <item quantity="other">今月は無料の音源分離があと%s回残っています</item>
+    </plurals>
+    <plurals name="n_genres">
+        <item quantity="other">%sジャンル</item>
+    </plurals>
+    <plurals name="n_hours">
+        <item quantity="other">%s時間</item>
+    </plurals>
+    <plurals name="n_impressions">
+        <item quantity="other">%sインプレッション</item>
+    </plurals>
+    <plurals name="n_inspired_songs">
+        <item quantity="other">%s個のトラックをインスパイア済み</item>
+    </plurals>
+    <plurals name="n_latency_manual">
+        <item quantity="other">設定したレイテンシ: %sミリ秒</item>
+    </plurals>
+    <plurals name="n_latency_test_result">
+        <item quantity="other">テスト結果: レイテンシ %sミリ秒</item>
+    </plurals>
+    <plurals name="n_likes">
+        <item quantity="other">%s件の「いいね」</item>
+    </plurals>
+    <plurals name="n_members">
+        <item quantity="other">%s人のメンバー</item>
+    </plurals>
+    <plurals name="n_message_requests">
+        <item quantity="other">保留中メッセージリクエスト %s件</item>
+    </plurals>
+    <plurals name="n_milliseconds">
+        <item quantity="other">%sミリ秒</item>
+    </plurals>
+    <plurals name="n_min">
+        <item quantity="other">%s分</item>
+    </plurals>
+    <plurals name="n_months">
+        <item quantity="other">%sか月</item>
+    </plurals>
+    <plurals name="n_mutuals">
+        <item quantity="other">%s件共通</item>
+    </plurals>
+    <plurals name="n_new_notifications">
+        <item quantity="other">%s件の新しい通知</item>
+    </plurals>
+    <plurals name="n_plays">
+        <item quantity="other">%s回再生</item>
+    </plurals>
+    <plurals name="n_posts">
+        <item quantity="other">%s件の投稿</item>
+    </plurals>
+    <plurals name="n_requests_invites">
+        <item quantity="other">%s件のリクエスト/招待</item>
+    </plurals>
+    <plurals name="n_samples">
+        <item quantity="other">サンプル%s個</item>
+    </plurals>
+    <plurals name="n_seconds">
+        <item quantity="other">%s秒</item>
+    </plurals>
+    <plurals name="n_semitones">
+        <item quantity="other">%s個の半音</item>
+    </plurals>
+    <plurals name="n_tracks">
+        <item quantity="other">トラック %s個</item>
+    </plurals>
+    <plurals name="n_unlock_free_beats_with_membership">
+        <item quantity="other">毎週%s個の無料ビートをアンロック</item>
+    </plurals>
+    <plurals name="n_view">
+        <item quantity="other">%s回再生/閲覧</item>
+    </plurals>
+    <plurals name="n_weeks">
+        <item quantity="other">%s週間</item>
+    </plurals>
+    <plurals name="n_zero_free_beats_without_membership_description">
+        <item quantity="other">さらにご希望ですか？メンバーシップにアップグレードして、毎週%sの無料ビートをアンロックしましょう。</item>
+    </plurals>
+    <plurals name="plural_followers_without_placeholder">
+        <item quantity="other">フォロワー</item>
+    </plurals>
+    <plurals name="plural_following_without_placeholder">
+        <item quantity="other">フォロー中</item>
+    </plurals>
+    <plurals name="plural_play_without_placeholder">
+        <item quantity="other">回再生</item>
+    </plurals>
+    <plurals name="relative_time_days">
+        <item quantity="other">%s日前</item>
+    </plurals>
+    <plurals name="relative_time_hours">
+        <item quantity="other">%s時間前</item>
+    </plurals>
+    <plurals name="relative_time_minutes">
+        <item quantity="other">%s分前</item>
+    </plurals>
+    <plurals name="show_n_more_tracks">
+        <item quantity="other">その他の%sトラックを表示</item>
+    </plurals>
+    <plurals name="show_n_results">
+        <item quantity="other">%s件の結果を表示</item>
+    </plurals>
+    <plurals name="try_free_for_n_days">
+        <item quantity="other">%s日間無料で試す</item>
+    </plurals>
+    <plurals name="unit_n_bytes">
+        <item quantity="other">%s バイト</item>
+    </plurals>
+    <plurals name="x_and_n_mutual_connections">
+        <item quantity="other">%1$sほか%2$s人の共通のつながり</item>
+    </plurals>
+</resources>

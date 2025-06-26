@@ -1,0 +1,12 @@
+v1.0.1c (22 oct 2023):
+* auto-repeat in the virtual (on-screen) text keyboard;
+* bug fixes.
+v1.0.1b (13 may 2022):
+* Android: bug fixes.
+v1.0.1 (15 dec 2020):
+* iOS: user files are now available through the Files app;
+* iOS: partial USB/Bluetooth keyboard support (no key release, no Home/End, no F1/F2/...);
+* Android: the built-in video recording feature is temporarily unavailable (due to incompatibility with new systems); but if necessary, i can provide a link to the previous version - just write to me at nightradio@gmail.com;
+* bug fixes.
+v1.0 (22 dec 2016):
+* the first release.

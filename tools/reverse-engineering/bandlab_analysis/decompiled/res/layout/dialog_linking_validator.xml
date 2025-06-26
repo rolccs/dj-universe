@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/linkingValidatorHeader" android:layout_width="409.0dip" android:layout_height="100.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <Space android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.1" />
+        <ImageView android:layout_gravity="center" android:id="@id/branchLogoImage" android:layout_width="0.0dip" android:layout_height="50.0dip" android:src="@drawable/branch_icon" android:layout_weight="0.15" />
+        <TextView android:textSize="20.0sp" android:gravity="center" android:id="@id/linkingValidatorTitle" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Branch Deep Link Validator" android:layout_weight="0.65" />
+        <Space android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.1" />
+    </LinearLayout>
+    <Spinner android:id="@id/linkingValidatorDropdownMenu" android:visibility="visible" android:layout_width="351.0dip" android:layout_height="50.0dip" app:layout_constraintBottom_toTopOf="@id/linkingValidatorButton" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/linkingValidatorText" />
+    <TextView android:textSize="20.0sp" android:gravity="center" android:id="@id/linkingValidatorText" android:layout_width="312.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="What key do you use for deep link routing?" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/linkingValidatorHeader" />
+    <EditText android:id="@id/linkingValidatorEditText" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Enter a value" android:ems="10" android:inputType="text" app:layout_constraintBottom_toTopOf="@id/linkingValidatorButton" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/linkingValidatorText" />
+    <Button android:textColor="#ffffffff" android:id="@id/linkingValidatorButton" android:background="#ff377feb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="50.0dip" android:text="Next" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/customKVPField" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/linkingValidatorButton" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/linkingValidatorText">
+        <Space android:layout_width="0.0dip" android:layout_height="50.0dip" android:layout_weight="0.1" />
+        <EditText android:id="@id/keyEditText" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:hint="key" android:ems="10" android:layout_weight="0.35" android:inputType="text" />
+        <Space android:layout_width="0.0dip" android:layout_height="50.0dip" android:layout_weight="0.1" />
+        <EditText android:id="@id/valueEditText" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:hint="value" android:ems="10" android:layout_weight="0.35" android:inputType="text" />
+        <Space android:layout_width="0.0dip" android:layout_height="50.0dip" android:layout_weight="0.1" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/linkingValidatorRows" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" app:layout_constraintBottom_toTopOf="@id/linkingValidatorButton" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/linkingValidatorHeader">
+        <TextView android:textSize="20.0sp" android:id="@id/textView" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="Here are links for testing:" />
+        <Space android:layout_width="0.0dip" android:layout_height="30.0dip" />
+        <io.branch.referral.validators.LinkingValidatorDialogRowItem android:id="@id/linkingValidatorRow1" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <Space android:layout_width="0.0dip" android:layout_height="10.0dip" />
+        <io.branch.referral.validators.LinkingValidatorDialogRowItem android:id="@id/linkingValidatorRow2" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <Space android:layout_width="0.0dip" android:layout_height="10.0dip" />
+        <io.branch.referral.validators.LinkingValidatorDialogRowItem android:id="@id/linkingValidatorRow3" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <Space android:layout_width="0.0dip" android:layout_height="10.0dip" />
+        <io.branch.referral.validators.LinkingValidatorDialogRowItem android:id="@id/linkingValidatorRow4" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <Space android:layout_width="0.0dip" android:layout_height="30.0dip" />
+        <TextView android:textSize="20.0sp" android:id="@id/textView6" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="Additional use cases to test:" />
+        <Space android:layout_width="0.0dip" android:layout_height="30.0dip" android:layout_weight="0.5" />
+        <io.branch.referral.validators.LinkingValidatorDialogRowItem android:id="@id/linkingValidatorRow5" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+        <Space android:layout_width="0.0dip" android:layout_height="10.0dip" android:layout_weight="0.5" />
+        <io.branch.referral.validators.LinkingValidatorDialogRowItem android:id="@id/linkingValidatorRow6" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

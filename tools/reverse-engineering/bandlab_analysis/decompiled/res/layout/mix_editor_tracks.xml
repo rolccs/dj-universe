@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:tag="layout/mix_editor_tracks_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/mix_editor_multitrack_view" />
+    <com.bandlab.mixeditor.voicebanners.ui.VoiceBannerView android:layout_gravity="bottom" android:id="@id/voice_warning" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:id="@id/me_track_view" layout="@layout/track_view" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

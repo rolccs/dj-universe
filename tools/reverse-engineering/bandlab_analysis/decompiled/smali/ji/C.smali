@@ -1,0 +1,50 @@
+.class public final synthetic Lji/C;
+.super Lkotlin/jvm/internal/a;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function4;
+
+
+# static fields
+.field public static final a:Lji/C;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 7
+
+    new-instance v6, Lji/C;
+
+    const-string v4, "<init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"
+
+    const/4 v5, 0x4
+
+    const/4 v1, 0x4
+
+    const-class v2, LqM/r;
+
+    const-string v3, "<init>"
+
+    move-object v0, v6
+
+    invoke-direct/range {v0 .. v5}, Lkotlin/jvm/internal/a;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sput-object v6, Lji/C;->a:Lji/C;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p4, LvM/d;
+
+    new-instance p4, LqM/r;
+
+    invoke-direct {p4, p1, p2, p3}, LqM/r;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p4
+.end method

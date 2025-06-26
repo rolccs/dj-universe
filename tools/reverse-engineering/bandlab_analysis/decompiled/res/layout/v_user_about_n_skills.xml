@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/v_user_about_n_skills" android:tag="layout/v_user_about_n_skills_0" android:paddingLeft="@dimen/grid_size_x2" android:paddingTop="@dimen/grid_size" android:paddingRight="@dimen/grid_size_x2" android:paddingBottom="@dimen/grid_size" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_mlarge" android:textColor="@color/glyphs_primary" android:id="@id/tv_user_about" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/grid_size" android:layout_marginTop="@dimen/grid_size" android:layout_marginRight="@dimen/grid_size" android:layout_marginBottom="@dimen/grid_size" />
+    <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/rv_user_skills" android:tag="binding_2" android:paddingTop="@dimen/grid_size_x2" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <set>
+            <objectAnimator android:duration="150" android:valueFrom="1.0" android:valueTo="0.3" android:valueType="floatType" android:propertyName="alpha" />
+        </set>
+    </item>
+    <item android:state_enabled="true">
+        <set>
+            <objectAnimator android:duration="150" android:valueFrom="0.3" android:valueTo="1.0" android:valueType="floatType" android:propertyName="alpha" />
+        </set>
+    </item>
+</selector>

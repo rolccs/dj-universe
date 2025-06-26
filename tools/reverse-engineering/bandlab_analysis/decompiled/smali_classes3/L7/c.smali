@@ -1,0 +1,19 @@
+.class public final LL7/c;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public final serializer()LaN/a;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "LaN/a;"
+        }
+    .end annotation
+
+    sget-object v0, LL7/b;->a:LL7/b;
+
+    return-object v0
+.end method

@@ -1,0 +1,98 @@
+.class public final LGF/d0;
+.super LxM/i;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function2;
+
+
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+
+# virtual methods
+.method public final create(Ljava/lang/Object;LvM/d;)LvM/d;
+    .locals 2
+
+    new-instance v0, LGF/d0;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1, p2}, LxM/i;-><init>(ILvM/d;)V
+
+    iput-object p1, v0, LGF/d0;->j:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, LFF/D;
+
+    check-cast p2, LvM/d;
+
+    invoke-virtual {p0, p1, p2}, LGF/d0;->create(Ljava/lang/Object;LvM/d;)LvM/d;
+
+    move-result-object p1
+
+    check-cast p1, LGF/d0;
+
+    sget-object p2, LqM/B;->a:LqM/B;
+
+    invoke-virtual {p1, p2}, LGF/d0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, LwM/a;->a:LwM/a;
+
+    invoke-static {p1}, LMJ/b;->s0(Ljava/lang/Object;)V
+
+    iget-object p1, p0, LGF/d0;->j:Ljava/lang/Object;
+
+    check-cast p1, LFF/D;
+
+    iget-object v0, p1, LFF/D;->a:Ljava/lang/String;
+
+    invoke-static {v0}, LMM/q;->G0(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, LFF/D;->e:LMl/r;
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p1, LFF/D;->g:LFF/x;
+
+    if-eqz v0, :cond_0
+
+    iget-object p1, p1, LFF/D;->f:Lru/l;
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
+.end method

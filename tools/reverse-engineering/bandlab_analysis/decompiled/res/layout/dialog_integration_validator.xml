@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="#96ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="60.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <Space android:layout_width="30.0dip" android:layout_height="fill_parent" android:layout_weight="0.1" />
+        <ImageView android:id="@id/imageView" android:layout_width="100.0dip" android:layout_height="wrap_content" android:src="@drawable/branch_icon" android:layout_weight="0.3" />
+        <Space android:layout_width="30.0dip" android:layout_height="fill_parent" android:layout_weight="0.1" />
+        <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/textView2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="Branch Integration Validator" android:layout_weight="0.4" />
+        <Space android:layout_width="30.0dip" android:layout_height="fill_parent" android:layout_weight="0.1" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="1.0" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/linearLayout">
+        <TextView android:textSize="20.0sp" android:gravity="center" android:id="@id/sdk_version" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="TextView" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_1_auto_instance_validator_row" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_2_verify_branch_keys" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_3_verify_package_name" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_4_verify_uri_scheme" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_5_verify_app_links" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_6_verify_custom_domain" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_7_domain_intent_filters" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <io.branch.referral.validators.IntegrationValidatorDialogRowItem android:gravity="start" android:id="@id/test_8_alternate_domain_intent_filters" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.1">
+            <Button android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/export_logs_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Export Logs" android:layout_weight="0.5" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" android:backgroundTint="#ff2a97ff" />
+            <Button android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/test_deep_linking_button" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Test Deep Linking" android:layout_weight="0.5" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" android:backgroundTint="#ff2a97ff" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

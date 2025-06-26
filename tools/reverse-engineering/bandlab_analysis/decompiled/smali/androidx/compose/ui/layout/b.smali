@@ -1,0 +1,61 @@
+.class public abstract Landroidx/compose/ui/layout/b;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method public static final a(Lh1/p;Lkotlin/jvm/functions/Function3;)Lh1/p;
+    .locals 1
+
+    new-instance v0, Landroidx/compose/ui/layout/LayoutElement;
+
+    invoke-direct {v0, p1}, Landroidx/compose/ui/layout/LayoutElement;-><init>(Lkotlin/jvm/functions/Function3;)V
+
+    invoke-interface {p0, v0}, Lh1/p;->then(Lh1/p;)Lh1/p;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final b(Lh1/p;Lkotlin/jvm/functions/Function1;)Lh1/p;
+    .locals 1
+
+    new-instance v0, Landroidx/compose/ui/layout/OnGloballyPositionedElement;
+
+    invoke-direct {v0, p1}, Landroidx/compose/ui/layout/OnGloballyPositionedElement;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-interface {p0, v0}, Lh1/p;->then(Lh1/p;)Lh1/p;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final c(Lh1/p;Lkotlin/jvm/functions/Function1;)Lh1/p;
+    .locals 1
+
+    new-instance v0, Landroidx/compose/ui/layout/OnPlacedElement;
+
+    invoke-direct {v0, p1}, Landroidx/compose/ui/layout/OnPlacedElement;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-interface {p0, v0}, Lh1/p;->then(Lh1/p;)Lh1/p;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final d(Lh1/p;Lkotlin/jvm/functions/Function1;)Lh1/p;
+    .locals 1
+
+    new-instance v0, Landroidx/compose/ui/layout/OnSizeChangedModifier;
+
+    invoke-direct {v0, p1}, Landroidx/compose/ui/layout/OnSizeChangedModifier;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-interface {p0, v0}, Lh1/p;->then(Lh1/p;)Lh1/p;
+
+    move-result-object p0
+
+    return-object p0
+.end method

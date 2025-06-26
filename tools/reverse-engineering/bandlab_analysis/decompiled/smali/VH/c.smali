@@ -1,0 +1,98 @@
+.class public final LVH/c;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LHK/c;
+
+
+# static fields
+.field public static final a:LVH/c;
+
+.field public static final b:LHK/b;
+
+.field public static final c:LHK/b;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
+
+    new-instance v0, LVH/c;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, LVH/c;->a:LVH/c;
+
+    new-instance v0, LKK/a;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, LKK/a;-><init>(I)V
+
+    const-class v1, LKK/e;
+
+    invoke-static {v1, v0}, LN8/p;->p(Ljava/lang/Class;LKK/a;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v2, LHK/b;
+
+    invoke-static {v0}, LN8/p;->q(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v3, "eventsDroppedCount"
+
+    invoke-direct {v2, v3, v0}, LHK/b;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v2, LVH/c;->b:LHK/b;
+
+    new-instance v0, LKK/a;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v0, v2}, LKK/a;-><init>(I)V
+
+    invoke-static {v1, v0}, LN8/p;->p(Ljava/lang/Class;LKK/a;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v1, LHK/b;
+
+    invoke-static {v0}, LN8/p;->q(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v2, "reason"
+
+    invoke-direct {v1, v2, v0}, LHK/b;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v1, LVH/c;->c:LHK/b;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
+
+    check-cast p1, LYH/d;
+
+    check-cast p2, LHK/d;
+
+    iget-wide v0, p1, LYH/d;->a:J
+
+    sget-object v2, LVH/c;->b:LHK/b;
+
+    invoke-interface {p2, v2, v0, v1}, LHK/d;->c(LHK/b;J)LHK/d;
+
+    iget-object p1, p1, LYH/d;->b:LYH/c;
+
+    sget-object v0, LVH/c;->c:LHK/b;
+
+    invoke-interface {p2, v0, p1}, LHK/d;->f(LHK/b;Ljava/lang/Object;)LHK/d;
+
+    return-void
+.end method

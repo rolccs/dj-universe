@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:tag="layout/v_option_menu_item_0" android:background="@drawable/bg_option_menu_item" android:layout_width="fill_parent" android:layout_height="@dimen/grid_size_x6"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_medium" android:textStyle="normal" android:textColor="@color/glyphs_primary" android:ellipsize="end" android:tag="binding_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="@dimen/grid_size_x2" android:layout_marginEnd="@dimen/grid_size_x2" android:lineHeight="@dimen/text_xlarge" />
+    <ImageView android:id="@id/check" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/grid_size_x2" bind:srcCompat="@drawable/ic_checkmark" bind:tint="@color/glyphs_primary" />
+</LinearLayout>

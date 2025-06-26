@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageButton android:id="@id/recordStop" android:background="@drawable/ic_outer_ring" android:layout_marginBottom="24.0dip" app:srcCompat="@drawable/vm_record_stop_animated" style="@style/VideoMixFab" />
+    <com.bandlab.countdown.RoundCountdownView android:id="@id/countdownProgress" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_margin="6.0dip" app:fillColor="#4cffffff" app:layout_constraintBottom_toBottomOf="@id/recordStop" app:layout_constraintEnd_toEndOf="@id/recordStop" app:layout_constraintStart_toStartOf="@id/recordStop" app:layout_constraintTop_toTopOf="@id/recordStop" />
+    <TextView android:textSize="26.0sp" android:textColor="@color/glyphs_permanentWhite" android:gravity="center" android:id="@id/countdownTime" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="@id/recordStop" app:layout_constraintEnd_toEndOf="@id/recordStop" app:layout_constraintStart_toStartOf="@id/recordStop" app:layout_constraintTop_toTopOf="@id/recordStop" />
+</androidx.constraintlayout.widget.ConstraintLayout>
